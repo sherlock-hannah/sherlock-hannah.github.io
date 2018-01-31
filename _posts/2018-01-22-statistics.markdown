@@ -4,7 +4,6 @@ title:  "statistics"
 date:   2018-01-22 18:43:31 +0800
 categories: jekyll update
 ---
-# statistics
 - 1.range,variance,standand deviation,standand error
 - 2.*DATA* *data analysis* "decriptive statistics"
 skewness positive numbers means it's right skewed
@@ -23,11 +22,3 @@ standandlise regression coeffient
 # mistakes:
 - 1.right skewed
 - 2.liner regression
-
-# python
-- 1.variable,type
-`**` means square
-- 2.list
-don't forget`,`between two variables
-Subsetting list
-x[index],index=0,1,2....

@@ -4,7 +4,6 @@ title:  "How to use linux terminal"
 date:   2018-01-14 18:43:31 +0800
 categories: jekyll update
 ---
-## How to use linux terminal
 - list files `ls`
 - `find / -name FILENAME` ingnore case `-iname FILENAME`
 - autocomplete filename `TAB`+`FILENAME`

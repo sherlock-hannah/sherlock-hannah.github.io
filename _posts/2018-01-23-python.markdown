@@ -5,7 +5,14 @@ date:   2018-01-23 18:43:31 +0800
 categories: jekyll update
 ---
 
-## python
+### python
+- 1.variable,type
+`**` means square
+- 2.list
+don't forget`,`between two variables
+Subsetting list
+x[index],index=0,1,2....
+
 ### Manipulating list
 - 1.change List elements
 `x[n]=new elements`
@@ -43,3 +50,21 @@ AS a directory of python script
 `import Packages`
 `import numpy as np`` from numpy import array`
 [Modules](https://docs.python.org/3/tutorial/modules.html)
+
+### Boolean Logic and Control Flow
+[Boolean Operations](https://docs.python.org/3/library/stdtypes.html#boolean-operations-and-or-not)
+- 1.relational operators`!=`not equal `==` equal `<` less than `>` greater than
+- 2.logical operators `and` `or` `not`
+Notice that `not` has a higher priority than `and` and `or`, it is executed first.
+- 3.conditional statements`if` `else` `elif`
+
+```
+if condition :
+expression
+elif condition :
+expression
+else condition :
+expression
+
+```
+[More Control Flow Tools](https://docs.python.org/3.5/tutorial/controlflow.html)

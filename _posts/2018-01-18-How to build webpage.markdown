@@ -4,7 +4,6 @@ title:  "How to build webpage"
 date:   2018-01-18 18:43:31 +0800
 categories: jekyll update
 ---
-# How to build webpage
 
 ## Basic HTML tags
 - ``<a href="URL">clickable text</a>``

@@ -4,8 +4,6 @@ title:  "numpy"
 date:   2018-01-24 18:43:31 +0800
 categories: jekyll update
 ---
-## python
-### numpy
 - 1.numpy array contain only one type,if contain different types,the boolean and the float were both convert to strings.`import array from numpy` use `array()`directly
 - 2.2D Numpy Arrays
 `shape`show x row y column

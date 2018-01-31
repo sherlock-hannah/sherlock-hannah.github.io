@@ -4,7 +4,6 @@ title:  "How To Make a WordPress Website"
 date:   2018-01-17 18:43:31 +0800
 categories: jekyll update
 ---
-## How To Make a WordPress Website
 - [Initial Server Setup with Ubuntu 14.04](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu-14-04#step-four-%E2%80%94-add-public-key-authentication-(recommended))
 ```
 local$ ssh root@SERVER_IP_ADDRESS
