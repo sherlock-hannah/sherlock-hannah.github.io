@@ -1,3 +1,9 @@
+---
+layout: post
+title:  "How to put website online"
+date:   2018-01-16 18:43:31 +0800
+categories: jekyll update
+---
 ## How to put website online
 ### How DNS works
 - [Inside the Domain Name System](https://www.youtube.com/watch?v=GlZC4Jwf3xQ)

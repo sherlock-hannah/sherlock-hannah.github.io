@@ -1,3 +1,9 @@
+---
+layout: post
+title:  "How to use git"
+date:   2018-01-15 18:43:31 +0800
+categories: jekyll update
+---
 ## How to use git
 ```
 git clone

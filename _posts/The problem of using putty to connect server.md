@@ -1,3 +1,9 @@
+---
+layout: post
+title:  "The problem of using putty to connect server"
+date:   2018-01-13 18:43:31 +0800
+categories: jekyll update
+---
 ## The problem of using putty to connect server
 - [SSH (Secure Shell) without password using Putty
 ](https://www.getfilecloud.com/blog/ssh-without-password-using-putty/)
