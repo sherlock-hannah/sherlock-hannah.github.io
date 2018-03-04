@@ -1,0 +1,70 @@
+---
+layout: post
+title:  "Python"
+date:   2018-01-23 18:43:31 +0800
+categories: jekyll update
+---
+
+### python
+- 1.variable,type
+`**` means square
+- 2.list
+don't forget`,`between two variables
+Subsetting list
+x[index],index=0,1,2....
+
+### Manipulating list
+- 1.change List elements
+`x[n]=new elements`
+ prevent changes in new List to also take effect in old list,  `list()` or by using `[:]`.also means do not copy the reference of the list x to y
+- 2.add List elements
+`x_ext=x+[y]`
+- 3.remove List elements
+`del(x[n])`
+*list contain the refenrence not real elements*
+[Data Structures](https://docs.python.org/3.5/tutorial/datastructures.html)
+
+### functions
+- 1.`type()` return the type of a value
+- 2.`max()` maximum of list
+- 3.`round(numbers,ndigits)` ndigits means how many digits behind the decimal point
+- 4.`help(functions name)` know how to use it
+- 5.` str(), int(), bool() , float() ` to switch between data type.
+- 6.`len()` length of list or string
+- 7.`reverse()` reverse the values of the list
+
+sorted what means
+[Python - Functions](http://www.tutorialspoint.com/python/python_functions.htm)
+
+### method
+- 1.everything=object,object have method associated,depending on type.
+call functions on object.
+- 2.`x.index(value)``x.append()` `x.count(values)`count the number of occurence of the value in x
+why some can not apply
+
+[Improve Your Python: Python Classes and Object Oriented Programming](https://jeffknupp.com/blog/2014/06/18/improve-your-python-python-classes-and-object-oriented-programming/)
+
+### Packages
+AS a directory of python script
+- 1.numpy matplotlib
+`import Packages`
+`import numpy as np`` from numpy import array`
+[Modules](https://docs.python.org/3/tutorial/modules.html)
+
+### Boolean Logic and Control Flow
+[Boolean Operations](https://docs.python.org/3/library/stdtypes.html#boolean-operations-and-or-not)
+- 1.relational operators`!=`not equal `==` equal `<` less than `>` greater than
+- 2.logical operators `and` `or` `not`
+Notice that `not` has a higher priority than `and` and `or`, it is executed first.
+- 3.conditional statements`if` `else` `elif`
+
+```
+if condition :
+expression
+elif condition :
+expression
+else condition :
+expression
+
+```
+[More Control Flow Tools](https://docs.python.org/3.5/tutorial/controlflow.html)

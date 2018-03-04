@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "statistics"
+title:  "Statistics"
 date:   2018-01-22 18:43:31 +0800
 categories: jekyll update
 ---
@@ -22,3 +22,5 @@ standandlise regression coeffient
 # mistakes:
 - 1.right skewed
 - 2.liner regression
+
+[Statistics Primer : A Brief Overview of Basic Statistical and Probability Principles](https://prod-edxapp.edx-cdn.org/assets/courseware/v1/d2dce71b2552f8d45d47102929821e87/asset-v1:Microsoft+DAT222x+1T2018+type@asset+block/Statistics_Overview_for_Essentials_Course-Updated.pdf)

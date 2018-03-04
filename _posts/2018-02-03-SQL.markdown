@@ -1,0 +1,41 @@
+---
+layout: post
+title:  "SQL"
+date:   2018-02-03 18:43:31 +0800
+categories: jekyll update
+---
+## SQL
+structure query language
+### DDL(data defination language)
+- CREATE DATABASE`CREATE DATABASE <DATABASE Name>`
+- DELETE table `DROP TABLE <tableNAME>;`
+- Update table `ALTER  <Tablename> ADD (<column name1>,<name2>,.....);`
+`UPDATE table_name
+SET column1 = value1, column2 = value2, ...
+WHERE condition;`
+
+### DML(data Manipulation language)
+- SELECT(define which columns to return)
+`SELECT <Column name>,..,...
+FROM <TABLEname>;`
+query all columns: use `*` to replace ` <column name>`
+- WHERE(searsh condition,filters rows using a predicate)
+`WHERE search condition'`
+- GROUP BY (group by list,arrange rows by group)
+`GROUP BY listname`
+- HAVING(search condition,filters group using a predicate)
+`HAVING search condition`
+- ORDER BY
+`ORDER BY listname`
+
+INSERT
+`insert into table_name column_name value()`
+ UPDATE The UPDATE statement is used to modify the existing records in a table
+ `update table_name set column_name="value" where search condition`
+ DELETE
+
+### DCL(data Control language)
+COMMIT ROLLBACK GRANT REVOKE
+`;`
+
+* rename `RENAME TABLE newname to oldname;`
