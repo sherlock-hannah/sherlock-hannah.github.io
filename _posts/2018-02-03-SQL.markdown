@@ -4,8 +4,20 @@ title:  "SQL"
 date:   2018-02-03 18:43:31 +0800
 categories: jekyll update
 ---
+- GUI Tools:Navicat
+- RDBMS: Relational Database Management System.
+- Windows power shell:
+ `mysql -uroot -p`
+ `show databases;`
+- create sql user:
+ `grant all on databases name.* to "username"@"localhost" identified by "password"`
+- show the structure of tables:
+ `desc tablename;`
 ## SQL
 structure query language
+unserstanding entity relationship(ER)
+- how to execute outside sql files
+ `source d:/mmzm.sql`
 ### DDL(data defination language)
 - CREATE DATABASE`CREATE DATABASE <DATABASE Name>`
 - DELETE table `DROP TABLE <tableNAME>;`
@@ -13,29 +25,101 @@ structure query language
 `UPDATE table_name
 SET column1 = value1, column2 = value2, ...
 WHERE condition;`
+- create table
+ `create tablename(columnname1 type primary key,columnname2 type,columnname3 type ) ;`
+
 
 ### DML(data Manipulation language)
 - SELECT(define which columns to return)
 `SELECT <Column name>,..,...
 FROM <TABLEname>;`
 query all columns: use `*` to replace ` <column name>`
+  - DELETE repeated values
+`SELECT distinct `
 - WHERE(searsh condition,filters rows using a predicate)
 `WHERE search condition'`
+`WHERE like "k%"`
 - GROUP BY (group by list,arrange rows by group)
 `GROUP BY listname`
 - HAVING(search condition,filters group using a predicate)
 `HAVING search condition`
 - ORDER BY
 `ORDER BY listname`
+upward `asc`
+downward `desc`
+- limit
+`limit m,n`  m stands for starting from m-1 rows,n means n rows
+sort before limit
 
-INSERT
-`insert into table_name column_name value()`
- UPDATE The UPDATE statement is used to modify the existing records in a table
+- INSERT
+`insert into table_name (column_name) value()`
+- UPDATE The UPDATE statement is used to modify the existing records in a table
  `update table_name set column_name="value" where search condition`
- DELETE
+- DELETE
 
 ### DCL(data Control language)
 COMMIT ROLLBACK GRANT REVOKE
 `;`
 
 * rename `RENAME TABLE newname to oldname;`
+
+### data type
+data type(https://www.w3schools.com/sql/sql_datatypes.asp)
+- null
+- int
+ - tinyint 1byte
+ - smallint 2byte
+ - mediumint 4byte
+ - int bigint
+Adding the `UNSIGNED` attribute will move that range up so it starts at zero instead of a negative number.
+- float
+float 4byte
+double 8byte
+- decimal(M,N)
+ scale numbers`M` precision numbers`N`
+- date
+
+## Text datatype
+character type(repository of saving Text) :
+gbk (21000chinese character 2byte) , big5 ,
+gb2312 (6700 chinese character),
+utf8,unicode (all language)
+- binary System(voice,image etc binary data)
+binary ,varbinary ,blob
+- non binary System
+char, varchar, text
+- `show character set;`
+- show collation rule `show collation`
+`collate utf8_bin`
+`collate ut8_general_ci`
+
+### functions
+`count()
+sum()
+avg()
+max()
+min()`
+
+`SELECT length(column_name) from table_name`
+
+## The SQL AND, OR and NOT Operators
+- AND
+`SELECT column1, column2, ...
+FROM table_name
+WHERE condition1 AND condition2 AND condition3 ...;`
+- OR
+`SELECT column1, column2, ...
+FROM table_name
+WHERE condition1 OR condition2 OR condition3 ...;`
+- NOT
+`SELECT column1, column2, ...
+FROM table_name
+WHERE NOT condition;`
+
+## JOINS
+
+## problems
+- 1.when insert chinese character into table
+`ERROR 1366 (HY000): Incorrect string value: '\xD4\xF8\xBB\xAA' for column 'sname' at row 1`
+- 2.How to change the length of character
+solution:`ALTER table table_name column_name varchar(30)`
