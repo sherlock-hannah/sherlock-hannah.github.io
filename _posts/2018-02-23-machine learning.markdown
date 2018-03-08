@@ -1,4 +1,4 @@
----
+S---
 layout: post
 title:  "machine learning"
 date:   2018-02-23 18:43:31 +0800
@@ -12,6 +12,7 @@ unsupervised learning
 ### classification
 - loss functions
 - statistics learning theory
+- logistic regression
 
 ### regression
 

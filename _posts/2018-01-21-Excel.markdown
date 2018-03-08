@@ -12,13 +12,13 @@ download excel 2016
 - 2.count sum
 - fliter,slicer
 - 3.histogram
-## tips
+## Tips
 - `ctrl + shift + down`
 can select all on column datas  
 - F3 key lets you paste name in formula
 - `ctrl + 1` into format cells
 
-## use decriptive statistics
+## Use decriptive statistics
 1. skewness-1<x<1`skew()`kurtosis`Kurt()`
 2. mean`average()`,range,median`median()`,variance`var()`,standand deviation`stdev()`,mode`mode()`,standand error(most frequently occuring values)
 3. 2nd highest value`large(values,2)`
