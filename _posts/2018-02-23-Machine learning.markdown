@@ -18,6 +18,8 @@ unsupervised learning
 confusion matrix
 misclassification error
 (FN+FN)/N
+- ROC curves
+- ROC curves algorithm
 
 
 ### regression

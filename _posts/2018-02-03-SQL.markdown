@@ -103,7 +103,7 @@ min()`
 - `SELECT length(column_name) from table_name`Returns the length of the specified string (in bytes)
 `CAST`Converts a value from one datatype to another datatype
 
-`CONVERT`Converts a value from one datatype to another, or one character set to another
+`CONVERT(value USING charset)`Converts a value from one datatype to another, or one character set to another
 [Additional reading](https://www.w3schools.com/sql/sql_ref_mysql.asp)
 
 ### null
