@@ -4,6 +4,7 @@ title:  "Statistics"
 date:   2018-01-22 18:43:31 +0800
 categories: jekyll update
 ---
+used to make decisions
 - 1.range,variance,standand deviation,standand error
 - 2.*DATA* *data analysis* "decriptive statistics"
 skewness positive numbers means it's right skewed

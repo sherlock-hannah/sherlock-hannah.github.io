@@ -6,12 +6,11 @@ categories: jekyll update
 ---
 download excel 2016
 ## Functions
-- 1.TEXT(WEEKAND([DATE],"dddd"))
-- modify "date" format,
+- 1.TEXT(WEEKAND([DATE],"dddd"))   modify "date" format,
 `DATA`+FENLIE
-- 2.count sum
-- fliter,slicer
+- 2.count sum, fliter,slicer
 - 3.histogram
+
 ## Tips
 - `ctrl + shift + down`
 can select all on column datas  
@@ -27,3 +26,7 @@ rank `rank(cell,columnname,0 or 1)`
 4. geometric mean `geomean()`
 CAGR(compound annual growth rate)
 5. RULE OF THUMB:95% of your data is within 2 standand deviation of the mean, anything more than 2 std dev of mean is called outlier
+`HOME - conditional formating - highlight cells rule - less than or more than`
+
+## Boxplot
+- box visually showing the range of the middle 50% of your data

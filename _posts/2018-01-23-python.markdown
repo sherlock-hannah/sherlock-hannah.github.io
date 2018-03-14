@@ -5,7 +5,11 @@ date:   2018-01-23 18:43:31 +0800
 categories: jekyll update
 ---
 
-### python
+### Python Basic
+`conda info --envs` can list different python version
+`source activate python35` open python35 through cmd
+`ipython notebook` open jupyter notebook
+`exit()` exit the python       
 - 1.variable,type
 `**` means square
 - 2.list
@@ -24,7 +28,7 @@ x[index],index=0,1,2....
 *list contain the refenrence not real elements*
 [Data Structures](https://docs.python.org/3.5/tutorial/datastructures.html)
 
-### functions
+### Functions
 - 1.`type()` return the type of a value
 - 2.`max()` maximum of list
 - 3.`round(numbers,ndigits)` ndigits means how many digits behind the decimal point
@@ -36,7 +40,7 @@ x[index],index=0,1,2....
 sorted what means
 [Python - Functions](http://www.tutorialspoint.com/python/python_functions.htm)
 
-### method
+### Method
 - 1.everything=object,object have method associated,depending on type.
 call functions on object.
 - 2.`x.index(value)``x.append()` `x.count(values)`count the number of occurence of the value in x

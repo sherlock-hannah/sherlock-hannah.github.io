@@ -79,7 +79,7 @@ double 8byte
  scale numbers`M` precision numbers`N`
 - date
 
-## Text datatype
+### Text datatype
 character type(repository of saving Text) :
 gbk (21000chinese character 2byte) , big5 ,
 gb2312 (6700 chinese character),
@@ -100,9 +100,18 @@ avg()
 max()
 min()`
 
-`SELECT length(column_name) from table_name`
+- `SELECT length(column_name) from table_name`Returns the length of the specified string (in bytes)
+`CAST`Converts a value from one datatype to another datatype
 
-## The SQL AND, OR and NOT Operators
+`CONVERT`Converts a value from one datatype to another, or one character set to another
+[Additional reading](https://www.w3schools.com/sql/sql_ref_mysql.asp)
+
+### null
+The result of any expression containing a NULL value is NULL
+`2 + NULL = NULL`
+
+
+### The SQL AND, OR and NOT Operators
 - AND
 `SELECT column1, column2, ...
 FROM table_name
