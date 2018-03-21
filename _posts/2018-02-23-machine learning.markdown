@@ -1,4 +1,4 @@
-S---
+---
 layout: post
 title:  "machine learning"
 date:   2018-02-23 18:43:31 +0800
@@ -20,8 +20,10 @@ misclassification error
 (FN+FN)/N
 - ROC curves
 - ROC curves algorithm
+- Creating a Classifier with Python
 
 
 ### regression
-
+### clustering
+### Dimensionality Reduction
 ### Improving Machine Learning Models

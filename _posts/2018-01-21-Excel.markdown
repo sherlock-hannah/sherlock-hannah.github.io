@@ -14,8 +14,10 @@ download excel 2016
 ## Tips
 - `ctrl + shift + down`
 can select all on column datas  
+`ctrl + shift + *` can select all table
 - F3 key lets you paste name in formula
 - `ctrl + 1` into format cells
+-
 
 ## Use decriptive statistics
 1. skewness-1<x<1`skew()`kurtosis`Kurt()`
@@ -23,10 +25,35 @@ can select all on column datas
 3. 2nd highest value`large(values,2)`
 2nd lowest value `small(values,2)`
 rank `rank(cell,columnname,0 or 1)`
-4. geometric mean `geomean()`
+4. geometric mean `geomean()` is used to compute growth rate
 CAGR(compound annual growth rate)
 5. RULE OF THUMB:95% of your data is within 2 standand deviation of the mean, anything more than 2 std dev of mean is called outlier
 `HOME - conditional formating - highlight cells rule - less than or more than`
 
 ## Boxplot
 - box visually showing the range of the middle 50% of your data
+- The line in the box is the median. The X in the box is the mean
+
+## nominal data and ordinal data
+- inserting pivot table to count the number of each category
+- using `group` can divide data into some different scale
+
+## Hierarchical Data
+- Create a PivotTable and then change from Design tab the layout to Outline format and  then Paste Special Values the relevant data outside the PivotTable.
+- Create sunburst and treemap charts to summarize this data.
+
+## 80-20 rule and pareto charts
+
+## problem
+1. how to compute the rate of return for stock
+2. tell the difference of nominal and ordinal,numerical and categorical.
+If they do have a natural ordering, they are called ordinal categorical features. Otherwise if there is no intrinsic ordering, they are called nominal categorical features.(not numeral)
+Nominal:
+Car Models
+Colors
+TV Shows
+Ordinal:
+High-Medium-Low
+1-10 Years Old, 11-20 Years Old, 30-40 Years Old
+Happy, Neutral, Sad
+3. Continuous features are usually numeric, and tend to exist within the subset of all real numbers.

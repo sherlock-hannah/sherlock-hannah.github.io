@@ -1,0 +1,16 @@
+---
+layout: post
+title:  "AB TEST"
+date:   2018-03-14 18:43:31 +0800
+categories: jekyll update
+---
+## Range of Application
+AB test cannot be used into some situation that needing long time and complex.
+
+## Example
+initial hypothesis
+- choose a metric :such as click through Probability or click through rate
+- review  statistics
+
+- design
+- analyse

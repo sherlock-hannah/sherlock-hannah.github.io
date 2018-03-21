@@ -4,15 +4,103 @@ title:  "Pandas"
 date:   2018-01-30 18:43:31 +0800
 categories: jekyll update
 ---
-- 1. `import Pandas as pd`    
- `x = pd.read_csv("path/to/x.csv"), index_col = 0`
-- 2.column access`x["column label"]`
-raw access`x.loc[row label]` elements access `x[row,column]`
-`loc` also allows you to select both rows and columns from a DataFrame.
-[pandas](http://pandas.pydata.org/)
-df.loc[:,['A','B']]
-Selecting on a multi-axis by label
+first `conda list` to ensure if pandas package has been installed
+if not `pip install pandas`
+then `import Pandas as pd`
+two datastructures:series dataframe
+### loading data
+1. Here are some methods for loading data:
+
+```
+sql_dataframe   = pd.read_sql_table('my_table', engine, columns=['ColA', 'ColB'])
+xls_dataframe   = pd.read_excel('my_dataset.xlsx', 'Sheet1', na_values=['NA', '?'])
+json_dataframe  = pd.read_json('my_dataset.json', orien t='columns')
+csv_dataframe   = pd.read_csv('my_dataset.csv', sep=',',names=['1','2'])
+table_dataframe = pd.read_html('http://page.com/with/table.html')[0]
+
+```
+before you read html ,first install lxml,html5,beautifulsoup4
+```
+pip install pandas
+pip install lxml
+pip install html5lib
+pip install BeautifulSoup4
+
+```
+
+### Slicing
+-   column access`x["column label"]`
+   raw access`x.loc[row label]`
+   elements access `x[row,column]`
+-  `loc` also allows you to select both rows and columns from a DataFrame.
+   `df.loc[number1:number2,['column_name','column_name1']]`used to slicing data ,.loc[] method selects by column label
+-  `df.iloc[:, [0]]`.iloc[] selects by column index
+-  `.iloc[]`is non-inclusive. `.loc[] `is inclusive of the range of values specified
+-  `df.loc[df['column_name'] == some_value]`can select rows when column_value is equal to some value
+-  `df.loc[(df['column_name'] == some_value) & df['other_column'].isin(some_values)]`
+combine different condition together
+
+3. To get a quick peek at your data by selecting its top or bottom few rows using `.head()`and `.tail()`
+4. To see a descriptive statistical summary of your dataframe's numeric columns using `.describe()`
+5. `.columns` will display the name of the columns in your dataframe:
+6. to display the index values, enter `.index`
+7. Print the entire dataframe, using `print dataframe_name`
+8. `my_dataframe.columns = ['new', 'column', 'header', 'labels']` can rename column title
+9. `.dtypes`can view columns datatypes
 
 
-how to add columns
-how to putput selected row and columns
+### textual data
+- using `astype` converta textual data to categorical
+`df['col2'] = df['col2'].astype('int')`change one column data_type
+- convert them to the desired type using the: `.to_datetime()`, `.to_numeric()`, and `.to_timedelta()` methods:
+```
+df.Date = pd.to_datetime(df.Date, errors='coerce')
+df.Height = pd.to_numeric(df.Height, errors='coerce')
+```
+
+
+
+
+### Wrangling Your Data
+1. Dropping Data
+
+```
+df = df.dropna(axis=0)  # remove any row with nans
+df = df.dropna(axis=1)  # remove any column with nans
+
+# Drop any row with NaNs that has at least 4 non-NaNs within it:
+df = df.dropna(axis=0, thresh=4)
+```
+ - drop columns
+`df = df.drop(labels=['Features', 'To', 'Delete'], axis=1)`
+ - Drop rows by index
+ `df = df.drop([0,1])`
+ - delete indentical data
+`df = df.drop_duplicates(subset=['Feature_1', 'Feature_2'])`
+ - reindex your dataframe
+`df = df.reset_index(drop=True)`
+
+2. filling data
+replace NA with a scalar value
+`df.my_feature.fillna( df.my_feature.mean() )
+df.fillna(0)`
+how far you want the fill to go
+
+```
+df.fillna(method='ffill')  # fill the values forward
+df.fillna(method='bfill')  # fill the values in reverse
+df.fillna(limit=5)
+```
+3. unique data in a column
+
+ `your_data_frame['your_column'].unique()` or equally, `your_data_frame.your_column.unique()` to see the unique values of each column and identify the rogue values.
+
+
+### problems
+1. how to add columns
+2. [Get HTML table into pandas Dataframe, not list of dataframe objects
+](https://stackoverflow.com/questions/38486477/get-html-table-into-pandas-dataframe-not-list-of-dataframe-objects)
+
+
+[Additional reading](http://pandas.pydata.org/)
+[Further Reading](https://courses.edx.org/courses/course-v1:Microsoft+DAT210x+1T2018/courseware/b7aa9093-0ee1-9e62-4188-6f9d25a2ce85/7fc08411-6ab9-100a-b198-91b8ac2dc84a/?child=first)

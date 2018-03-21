@@ -57,7 +57,7 @@ AS a directory of python script
 
 ### Boolean Logic and Control Flow
 [Boolean Operations](https://docs.python.org/3/library/stdtypes.html#boolean-operations-and-or-not)
-- 1.relational operators`!=`not equal `==` equal `<` less than `>` greater than
+- 1.relational operators`!=`not equal(notice 2 = not 1) `==` equal `<` less than `>` greater than
 - 2.logical operators `and` `or` `not`
 Notice that `not` has a higher priority than `and` and `or`, it is executed first.
 - 3.conditional statements`if` `else` `elif`

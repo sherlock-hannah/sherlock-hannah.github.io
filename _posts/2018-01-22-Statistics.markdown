@@ -4,12 +4,14 @@ title:  "Statistics"
 date:   2018-01-22 18:43:31 +0800
 categories: jekyll update
 ---
-used to make decisions
+Used to make decisions
+
 - 1.range,variance,standand deviation,standand error
 - 2.*DATA* *data analysis* "decriptive statistics"
 skewness positive numbers means it's right skewed
 negative numbers means it's left skewed
-Histogram: look at the tail.If one tail is longer than another, the distribution is skewed.
+- Histogram: look at the tail.If one tail is longer than another, the distribution is skewed.
+just need 1D data can contrive histogram because of y axis is becomes the count of data ,and bar chart need 2D data.
 - 3.correlation
 mention spurious relationship
 - 4.p value

@@ -4,26 +4,23 @@ title:  "SQL"
 date:   2018-02-03 18:43:31 +0800
 categories: jekyll update
 ---
-- GUI Tools:Navicat
-- RDBMS: Relational Database Management System.
+## Tips
+- structure query language, GUI Tools:Navicat
+- RDBMS: Relational Database Management System.ER:entity relationship
 - Windows power shell:
  `mysql -uroot -p`
  `show databases;`
 - create sql user:
- `grant all on databases name.* to "username"@"localhost" identified by "password"`
-- show the structure of tables:
- `desc tablename;`
-## SQL
-structure query language
-unserstanding entity relationship(ER)
+ `grant all on databases_name.* to "username"@"localhost" identified by "password"`
+- show the structure of tables:`desc tablename;`
 - how to execute outside sql files
  `source d:/mmzm.sql`
 ### DDL(data defination language)
 - CREATE DATABASE`CREATE DATABASE <DATABASE Name>`
 - DELETE table `DROP TABLE <tableNAME>;`
-- Update table `ALTER  <Tablename> ADD (<column name1>,<name2>,.....);`
-`UPDATE table_name
-SET column1 = value1, column2 = value2, ...
+- Update table
+`ALTER  <Tablename> ADD (<column name1>,<name2>,.....);`
+`UPDATE table_name SET column1 = value1, column2 = value2, ...
 WHERE condition;`
 - create table
  `create tablename(columnname1 type primary key,columnname2 type,columnname3 type ) ;`
@@ -34,56 +31,58 @@ WHERE condition;`
 `SELECT <Column name>,..,...
 FROM <TABLEname>;`
 query all columns: use `*` to replace ` <column name>`
-  - DELETE repeated values
+- using alias to creat a new column
+`select column_name1,column_name2 as alias from table_name`
+- removing duplicates
 `SELECT distinct `
 - WHERE(searsh condition,filters rows using a predicate)
 `WHERE search condition'`
 `WHERE like "k%"`
+ to match any string of zero or more characters, use %
+ to match characters that are not R, use [^R]
+ to match a numeral, use [0-9]
 - GROUP BY (group by list,arrange rows by group)
 `GROUP BY listname`
 - HAVING(search condition,filters group using a predicate)
 `HAVING search condition`
 - ORDER BY
-`ORDER BY listname`
+`ORDER BY listname asc`
 upward `asc`
 downward `desc`
+`offset x rows fetch next y rows only`
+
 - limit
 `limit m,n`  m stands for starting from m-1 rows,n means n rows
 sort before limit
 
 - INSERT
 `insert into table_name (column_name) value()`
-- UPDATE The UPDATE statement is used to modify the existing records in a table
- `update table_name set column_name="value" where search condition`
-- DELETE
+- UPDATE statement is used to modify the existing records in a table
+ `update table_name set column_name="value" where condition`
+- DELETE `DELETE FROM table_name WHERE condition;`
+- rename `RENAME TABLE newname to oldname;`
 
 ### DCL(data Control language)
 COMMIT ROLLBACK GRANT REVOKE
-`;`
-
-* rename `RENAME TABLE newname to oldname;`
 
 ### data type
 data type(https://www.w3schools.com/sql/sql_datatypes.asp)
 - null
 - int
- - tinyint 1byte
- - smallint 2byte
- - mediumint 4byte
- - int bigint
+ tinyint 1byte
+ smallint 2byte
+ mediumint 4byte
+ bigint
 Adding the `UNSIGNED` attribute will move that range up so it starts at zero instead of a negative number.
 - float
-float 4byte
-double 8byte
+ float 4byte
+ double 8byte
 - decimal(M,N)
  scale numbers`M` precision numbers`N`
 - date
 
 ### Text datatype
-character type(repository of saving Text) :
-gbk (21000chinese character 2byte) , big5 ,
-gb2312 (6700 chinese character),
-utf8,unicode (all language)
+character type(repository of saving Text) :gbk (21000chinese character 2byte) , big5 ,gb2312 (6700 chinese character),utf8,unicode (alllanguage)
 - binary System(voice,image etc binary data)
 binary ,varbinary ,blob
 - non binary System
@@ -101,17 +100,26 @@ max()
 min()`
 
 - `SELECT length(column_name) from table_name`Returns the length of the specified string (in bytes)
-`CAST`Converts a value from one datatype to another datatype
-
-`CONVERT(value USING charset)`Converts a value from one datatype to another, or one character set to another
+- `CAST`Converts a value from one datatype to another datatype
+`CAST(column_name AS varchar)`
+- `CONVERT(data_type(length), expression, style)`Convert an expression from one datatype to another, or one character set to another
+-`STR(number, length, decimal_places)` return a string representation of a number
+- `CONCAT(string1, string2, ...., string_n)`Concatenate string together
 [Additional reading](https://www.w3schools.com/sql/sql_ref_mysql.asp)
+-`SELECT COALESCE(NULL, NULL, NULL, 'W3Schools.com', 'Example.com');`
+return the first non-null expression in a list
 
 ### null
 The result of any expression containing a NULL value is NULL
 `2 + NULL = NULL`
+- null functions: `IFNULL()`function lets you return an alternative value if an expression is NULL:
 
 
-### The SQL AND, OR and NOT Operators
+### The predicates and NOT Operators
+- = < >
+- in a specified value matches any value in a subquery or a list
+- like
+- between  
 - AND
 `SELECT column1, column2, ...
 FROM table_name
@@ -126,9 +134,11 @@ FROM table_name
 WHERE NOT condition;`
 
 ## JOINS
+inner joins
 
 ## problems
 - 1.when insert chinese character into table
 `ERROR 1366 (HY000): Incorrect string value: '\xD4\xF8\xBB\xAA' for column 'sname' at row 1`
 - 2.How to change the length of character
 solution:`ALTER table table_name column_name varchar(30)`
+- 3.Notice `''` when you retrieve a value in string
