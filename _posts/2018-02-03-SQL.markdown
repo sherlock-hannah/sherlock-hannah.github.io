@@ -69,14 +69,23 @@ COMMIT ROLLBACK GRANT REVOKE
 data type(https://www.w3schools.com/sql/sql_datatypes.asp)
 - null
 - int
- tinyint 1byte
- smallint 2byte
- mediumint 4byte
- bigint
-Adding the `UNSIGNED` attribute will move that range up so it starts at zero instead of a negative number.
+ Adding the `UNSIGNED` attribute will move that range up so it starts at zero instead of a negative number.
+int_    Default integer type (same as C long; normally either int64 or int32)
+intc    Identical to C int (normally int32 or int64)
+intp    Integer used for indexing (same as C ssize_t; normally either int32 or int64)
+int8    Byte (-128 to 127)
+int16   Integer (-32768 to 32767)
+int32   Integer (-2147483648 to 2147483647)
+int64   Integer (-9223372036854775808 to 9223372036854775807)
+uint8   Unsigned integer (0 to 255)
+uint16  Unsigned integer (0 to 65535)
+uint32  Unsigned integer (0 to 4294967295)
+uint64  Unsigned integer (0 to 18446744073709551615)
 - float
- float 4byte
- double 8byte
+float_  Shorthand for float64.
+float16 Half precision float: sign bit, 5 bits exponent, 10 bits mantissa
+float32 Single precision float: sign bit, 8 bits exponent, 23 bits mantissa
+float64 Double precision float: sign bit, 11 bits exponent, 52 bits mantissa
 - decimal(M,N)
  scale numbers`M` precision numbers`N`
 - date
@@ -134,8 +143,38 @@ FROM table_name
 WHERE NOT condition;`
 
 ## JOINS
-inner joins
+combine rows from multiple tables by specifying matching criteria,usually
+based on primary key -foreign key relationship
 
+- inner joins
+`SELECT column_name(s)
+FROM table1
+INNER JOIN table2 ON table1.column_name = table2.column_name;`
+Inner joins return only rows where a match can be found in both tables.
+
+- outer JOINS(designated with left,right,full keyword)
+Use a Left Outer Join to include all rows from the first table and values from matched rows in the second table. Columns in the second table for which no matching rows exist are populated with NULLs.
+`SELECT column_name(s)
+FROM table1
+LEFT JOIN table2 ON table1.column_name = table2.column_name;`
+full
+`SELECT column_name(s)
+FROM table1
+FULL OUTER JOIN table2 ON table1.column_name = table2.column_name;`
+
+- cross JOINS
+combine each row from first table with each row from second table
+`select column_name1,column_name2
+FROM table1 as t1
+CROSS JOIN table2 as t2 `
+
+- self JOINS
+
+## union
+
+`SELECT column_name(s) FROM table1
+UNION
+SELECT column_name(s) FROM table2;`
 ## problems
 - 1.when insert chinese character into table
 `ERROR 1366 (HY000): Incorrect string value: '\xD4\xF8\xBB\xAA' for column 'sname' at row 1`

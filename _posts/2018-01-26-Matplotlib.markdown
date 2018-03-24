@@ -16,4 +16,8 @@ categories: jekyll update
  * ii. `fill_between() `  build a line plot where the area under the graph is colored.
  * iii.  `plt.scatter(alpha = n, ,)`. Alpha can be set from zero to one, where 0 totally transparant, and 1 is not transparant.
  * iiii. Add `plt.grid(True)` after the `plt.text()`calls so that gridlines are drawn on the plot.
+
+
+
+## Additional reeding
 [size image and source code](https://matplotlib.org/1.5.1/gallery.html)
