@@ -15,6 +15,7 @@ categories: jekyll update
 - show the structure of tables:`desc tablename;`
 - how to execute outside sql files
  `source d:/mmzm.sql`
+- `'string' as column_name`can use this string instead column
 ### DDL(data defination language)
 - CREATE DATABASE`CREATE DATABASE <DATABASE Name>`
 - DELETE table `DROP TABLE <tableNAME>;`
@@ -23,7 +24,20 @@ categories: jekyll update
 `UPDATE table_name SET column1 = value1, column2 = value2, ...
 WHERE condition;`
 - create table
- `create tablename(columnname1 type primary key,columnname2 type,columnname3 type ) ;`
+ `create table tablename(columnname1 type primary key,columnname2 type,columnname3 type ) ;`
+ ```
+ Create table test(PassengerId      int(64) primary key,
+Pclass           int(64),
+Name            varchar,
+Sex             varchar,
+Age            float,
+SibSp            int,
+Parch            int,
+Ticket          int,
+Fare           float,
+Cabin           varchar,
+Embarked        varchar);
+```
 
 
 ### DML(data Manipulation language)
@@ -169,12 +183,32 @@ FROM table1 as t1
 CROSS JOIN table2 as t2 `
 
 - self JOINS
+`SELECT column_name(s)
+FROM table1 T1, table1 T2
+WHERE condition;`
 
 ## union
-
+- UNION(returns a result set of distinct rows)
 `SELECT column_name(s) FROM table1
 UNION
 SELECT column_name(s) FROM table2;`
+UNION ALL retains duplicates during query processing
+- intersect(returns only distinct rows that appear in both result set )
+
+
+- except  (returns only distinct rows that appear in the first set but not the second)
+
+## loading data
+```
+load data local infile "C:/ProgramData/MySQL/MySQL Server 5.1/Data/Kaggle/test.csv"
+into table test
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 LINES
+(PassengerId,Pclass,Name,Sex,Age,SibSp,Parch,Ticket,Fare,Cabin,Embarked;)
+```
+
 ## problems
 - 1.when insert chinese character into table
 `ERROR 1366 (HY000): Incorrect string value: '\xD4\xF8\xBB\xAA' for column 'sname' at row 1`
