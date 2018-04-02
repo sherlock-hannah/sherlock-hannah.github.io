@@ -21,16 +21,22 @@ predict which passengers survived from the titanic sinking
 | Fare         | float64 price of Ticket        |
 | Cabin        | varchar                        |
 | Embarked     | embarked	Portof Embarkation    |
-## goal
+## goal58i
 For each PassengerId, predict a 0 or 1 value for the Survived variable.
 ## Metric
 the percentage of passengers you correctly predict
 ## analysis
-![pclass and age](pictures/pclass and age.png)
+![pclass and age](pictures/pclassandage.png)
 age distribution of different class
 
-![age distribution](pictures/age distribution.png)
+![age distribution](pictures/agedistribution.png)
 
-how much people pay for Ticket
 
-![Fare distribution](pictures/Fare.png)
+![notalone](pictures/notalone.png)
+![survived and features](pictures/survivedandfeature.png)
+## model_selection
+1. linear regression
+
+## problems
+1.when I use linux ,it couldn't show my drawings.so at first I should put `%matlotlib inline`
+2.deprecation warning when using sklearn 0.19 , the solution is using `from sklearn.model_selection import KFold` instead of `from sklearn.cross_validation import KFold`

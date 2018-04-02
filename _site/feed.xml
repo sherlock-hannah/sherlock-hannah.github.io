@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-04-02T10:22:54+08:00</updated><id>http://localhost:4000/</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">titanic</title><link href="http://localhost:4000/jekyll/update/2018/03/29/titanic.html" rel="alternate" type="text/html" title="titanic" /><published>2018-03-29T18:43:31+08:00</published><updated>2018-03-29T18:43:31+08:00</updated><id>http://localhost:4000/jekyll/update/2018/03/29/titanic</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2018/03/29/titanic.html">&lt;h2 id=&quot;decription&quot;&gt;decription&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-04-02T10:39:43+08:00</updated><id>http://localhost:4000/</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">titanic</title><link href="http://localhost:4000/jekyll/update/2018/03/29/titanic.html" rel="alternate" type="text/html" title="titanic" /><published>2018-03-29T18:43:31+08:00</published><updated>2018-03-29T18:43:31+08:00</updated><id>http://localhost:4000/jekyll/update/2018/03/29/titanic</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2018/03/29/titanic.html">&lt;h2 id=&quot;decription&quot;&gt;decription&lt;/h2&gt;
 &lt;p&gt;predict which passengers survived from the titanic sinking&lt;/p&gt;
 &lt;h2 id=&quot;data&quot;&gt;data&lt;/h2&gt;
 &lt;p&gt;| variable     | description                    |&lt;br /&gt;
@@ -15,19 +15,26 @@
 | Fare         | float64 price of Ticket        |
 | Cabin        | varchar                        |
 | Embarked     | embarked	Portof Embarkation    |&lt;/p&gt;
-&lt;h2 id=&quot;goal&quot;&gt;goal&lt;/h2&gt;
+&lt;h2 id=&quot;goal58i&quot;&gt;goal58i&lt;/h2&gt;
 &lt;p&gt;For each PassengerId, predict a 0 or 1 value for the Survived variable.&lt;/p&gt;
 &lt;h2 id=&quot;metric&quot;&gt;Metric&lt;/h2&gt;
 &lt;p&gt;the percentage of passengers you correctly predict&lt;/p&gt;
 &lt;h2 id=&quot;analysis&quot;&gt;analysis&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&quot;pictures/pclass and age.png&quot; alt=&quot;pclass and age&quot; /&gt;
+&lt;p&gt;&lt;img src=&quot;pictures/pclassandage.png&quot; alt=&quot;pclass and age&quot; /&gt;
 age distribution of different class&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;pictures/age distribution.png&quot; alt=&quot;age distribution&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;pictures/agedistribution.png&quot; alt=&quot;age distribution&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;how much people pay for Ticket&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;pictures/notalone.png&quot; alt=&quot;notalone&quot; /&gt;
+&lt;img src=&quot;pictures/survivedandfeature.png&quot; alt=&quot;survived and features&quot; /&gt;&lt;/p&gt;
+&lt;h2 id=&quot;model_selection&quot;&gt;model_selection&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;linear regression&lt;/li&gt;
+&lt;/ol&gt;
 
-&lt;p&gt;&lt;img src=&quot;pictures/Fare.png&quot; alt=&quot;Fare distribution&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">decription predict which passengers survived from the titanic sinking data | variable | description | | :————| :————- | | PassengerId | int64 | | survived | int64 Survival 0 = No, 1 = Yes | | Pclass | 1(upper),2(middle),3(lower) | | Name | varchar | | Sex | varchar male or female | | Age | float64 | | SibSp | int64 sibship numbers | | Parch | Parent Child | | Ticket | varchar | | Fare | float64 price of Ticket | | Cabin | varchar | | Embarked | embarked Portof Embarkation | goal For each PassengerId, predict a 0 or 1 value for the Survived variable. Metric the percentage of passengers you correctly predict analysis age distribution of different class how much people pay for Ticket</summary></entry><entry><title type="html">AB TEST</title><link href="http://localhost:4000/jekyll/update/2018/03/14/AB-TEST.html" rel="alternate" type="text/html" title="AB TEST" /><published>2018-03-14T18:43:31+08:00</published><updated>2018-03-14T18:43:31+08:00</updated><id>http://localhost:4000/jekyll/update/2018/03/14/AB%20TEST</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2018/03/14/AB-TEST.html">&lt;h2 id=&quot;range-of-application&quot;&gt;Range of Application&lt;/h2&gt;
+&lt;h2 id=&quot;problems&quot;&gt;problems&lt;/h2&gt;
+&lt;p&gt;1.when I use linux ,it couldn’t show my drawings.so at first I should put &lt;code class=&quot;highlighter-rouge&quot;&gt;%matlotlib inline&lt;/code&gt;
+2.deprecation warning when using sklearn 0.19 , the solution is using &lt;code class=&quot;highlighter-rouge&quot;&gt;from sklearn.model_selection import KFold&lt;/code&gt; instead of &lt;code class=&quot;highlighter-rouge&quot;&gt;from sklearn.cross_validation import KFold&lt;/code&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">decription predict which passengers survived from the titanic sinking data | variable | description | | :————| :————- | | PassengerId | int64 | | survived | int64 Survival 0 = No, 1 = Yes | | Pclass | 1(upper),2(middle),3(lower) | | Name | varchar | | Sex | varchar male or female | | Age | float64 | | SibSp | int64 sibship numbers | | Parch | Parent Child | | Ticket | varchar | | Fare | float64 price of Ticket | | Cabin | varchar | | Embarked | embarked Portof Embarkation | goal58i For each PassengerId, predict a 0 or 1 value for the Survived variable. Metric the percentage of passengers you correctly predict analysis age distribution of different class model_selection linear regression problems 1.when I use linux ,it couldn’t show my drawings.so at first I should put %matlotlib inline 2.deprecation warning when using sklearn 0.19 , the solution is using from sklearn.model_selection import KFold instead of from sklearn.cross_validation import KFold</summary></entry><entry><title type="html">AB TEST</title><link href="http://localhost:4000/jekyll/update/2018/03/14/AB-TEST.html" rel="alternate" type="text/html" title="AB TEST" /><published>2018-03-14T18:43:31+08:00</published><updated>2018-03-14T18:43:31+08:00</updated><id>http://localhost:4000/jekyll/update/2018/03/14/AB%20TEST</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2018/03/14/AB-TEST.html">&lt;h2 id=&quot;range-of-application&quot;&gt;Range of Application&lt;/h2&gt;
 &lt;p&gt;AB test cannot be used into some situation that needing long time and complex.&lt;/p&gt;
 
 &lt;h2 id=&quot;example&quot;&gt;Example&lt;/h2&gt;
