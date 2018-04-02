@@ -32,7 +32,7 @@ age distribution of different class
 ![age distribution](pictures/agedistribution.png)
 
 
-![notalone](pictures/notalone.png)
+![notalone](/pictures/notalone.png)
 ![survived and features](pictures/survivedandfeature.png)
 ## model_selection
 1. linear regression
