@@ -7,6 +7,7 @@ categories: jekyll update
 
 ### Python Basic
 `conda info --envs` can list different python version
+`conda list` ensure what package has been installed
 `source activate python35` open python35 through cmd
 `ipython notebook` open jupyter notebook
 `exit()` exit the python       
@@ -36,6 +37,7 @@ x[index],index=0,1,2....
 - 5.` str(), int(), bool() , float() ` to switch between data type.
 - 6.`len()` length of list or string
 - 7.`reverse()` reverse the values of the list
+- 8.`value.counts` count frequence of value `data_t.duplicated().value_counts()`display duplicated value
 
 sorted what means
 [Python - Functions](http://www.tutorialspoint.com/python/python_functions.htm)
@@ -71,4 +73,20 @@ else condition :
 expression
 
 ```
+
+### sort
+`titanic.sort_values(by = 'Pclass', inplace=True)`
+
+
+### for
+
+`Age = []
+Levels = titanic.Pclass.unique()
+for Pclass in Levels:
+    Age.append(titanic.loc[titanic.Pclass==Pclass,'Age'])`
+
+
+
+
+
 [More Control Flow Tools](https://docs.python.org/3.5/tutorial/controlflow.html)

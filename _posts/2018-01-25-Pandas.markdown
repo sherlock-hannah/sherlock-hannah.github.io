@@ -27,9 +27,10 @@ pip install html5lib
 pip install BeautifulSoup4
 
 ```
-
+2. out datas
+`df.to_csv('D:\data\out2.csv',index=False)`
 ### Slicing
--   column access`x["column label"]`
+-   column access`x[["column label","column_name2"]`
    raw access`x.loc[row label]`
    elements access `x[row,column]`
 -  `loc` also allows you to select both rows and columns from a DataFrame.
@@ -62,6 +63,11 @@ df.Height = pd.to_numeric(df.Height, errors='coerce')
 
 
 ### Wrangling Your Data
+check if there duplicate or null
+ ```
+ test['Age'].isnull().value_counts()
+ test.duplicated().value_counts()
+ ```
 1. Dropping Data
 
 ```
@@ -77,13 +83,18 @@ df = df.dropna(axis=0, thresh=4)
  `df = df.drop([0,1])`
  - delete indentical data
 `df = df.drop_duplicates(subset=['Feature_1', 'Feature_2'])`
+ - delete column null value
+ `df.dropna(subset=['column_name'], inplace=True)`
  - reindex your dataframe
 `df = df.reset_index(drop=True)`
 
 2. filling data
 replace NA with a scalar value
-`df.my_feature.fillna( df.my_feature.mean() )
-df.fillna(0)`
+```
+df[my_feature].fillna( df[my_feature].mean())
+df[my_feature].fillna(df[my_feature].mode())
+df.fillna(0)
+```
 how far you want the fill to go
 
 ```
@@ -94,6 +105,23 @@ df.fillna(limit=5)
 3. unique data in a column
 
  `your_data_frame['your_column'].unique()` or equally, `your_data_frame.your_column.unique()` to see the unique values of each column and identify the rogue values.
+
+### combine dataset
+- pandas.merge use key combine rows from different dataset
+
+### Time series
+`train_user_df['time']=[datetime.strptime(x.split()[0],"%Y-%m-%d") for x in time_series]`
+convertion of time_series and string
+
+
+[pandas time_series](http://www.cnblogs.com/lemonbit/p/6896499.html)
+### group by
+
+
+### tips
+`any(titanic.Age.isnull())`
+can detect if this column have null values
+
 
 
 ### problems

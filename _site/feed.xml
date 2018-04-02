@@ -1,15 +1,626 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-01-31T00:05:38+08:00</updated><id>http://localhost:4000/</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">Jekyll!</title><link href="http://localhost:4000/jekyll/update/2018/01/30/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Jekyll!" /><published>2018-01-30T18:43:31+08:00</published><updated>2018-01-30T18:43:31+08:00</updated><id>http://localhost:4000/jekyll/update/2018/01/30/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2018/01/30/welcome-to-jekyll.html">&lt;p&gt;fuck you！&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.7.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-04-02T10:22:54+08:00</updated><id>http://localhost:4000/</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">titanic</title><link href="http://localhost:4000/jekyll/update/2018/03/29/titanic.html" rel="alternate" type="text/html" title="titanic" /><published>2018-03-29T18:43:31+08:00</published><updated>2018-03-29T18:43:31+08:00</updated><id>http://localhost:4000/jekyll/update/2018/03/29/titanic</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2018/03/29/titanic.html">&lt;h2 id=&quot;decription&quot;&gt;decription&lt;/h2&gt;
+&lt;p&gt;predict which passengers survived from the titanic sinking&lt;/p&gt;
+&lt;h2 id=&quot;data&quot;&gt;data&lt;/h2&gt;
+&lt;p&gt;| variable     | description                    |&lt;br /&gt;
+| :————| :————-                 |
+| PassengerId  | int64                          |
+| survived     | int64 Survival 0 = No, 1 = Yes |
+| Pclass       | 1(upper),2(middle),3(lower)    |
+| Name         | varchar                        |
+| Sex          | varchar male or female         |
+| Age          | float64                        |
+| SibSp        | int64 sibship numbers          |
+| Parch        | Parent Child                   |
+| Ticket       | varchar                        |
+| Fare         | float64 price of Ticket        |
+| Cabin        | varchar                        |
+| Embarked     | embarked	Portof Embarkation    |&lt;/p&gt;
+&lt;h2 id=&quot;goal&quot;&gt;goal&lt;/h2&gt;
+&lt;p&gt;For each PassengerId, predict a 0 or 1 value for the Survived variable.&lt;/p&gt;
+&lt;h2 id=&quot;metric&quot;&gt;Metric&lt;/h2&gt;
+&lt;p&gt;the percentage of passengers you correctly predict&lt;/p&gt;
+&lt;h2 id=&quot;analysis&quot;&gt;analysis&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;pictures/pclass and age.png&quot; alt=&quot;pclass and age&quot; /&gt;
+age distribution of different class&lt;/p&gt;
 
-&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;pictures/age distribution.png&quot; alt=&quot;age distribution&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+&lt;p&gt;how much people pay for Ticket&lt;/p&gt;
 
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;pictures/Fare.png&quot; alt=&quot;Fare distribution&quot; /&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">decription predict which passengers survived from the titanic sinking data | variable | description | | :————| :————- | | PassengerId | int64 | | survived | int64 Survival 0 = No, 1 = Yes | | Pclass | 1(upper),2(middle),3(lower) | | Name | varchar | | Sex | varchar male or female | | Age | float64 | | SibSp | int64 sibship numbers | | Parch | Parent Child | | Ticket | varchar | | Fare | float64 price of Ticket | | Cabin | varchar | | Embarked | embarked Portof Embarkation | goal For each PassengerId, predict a 0 or 1 value for the Survived variable. Metric the percentage of passengers you correctly predict analysis age distribution of different class how much people pay for Ticket</summary></entry><entry><title type="html">AB TEST</title><link href="http://localhost:4000/jekyll/update/2018/03/14/AB-TEST.html" rel="alternate" type="text/html" title="AB TEST" /><published>2018-03-14T18:43:31+08:00</published><updated>2018-03-14T18:43:31+08:00</updated><id>http://localhost:4000/jekyll/update/2018/03/14/AB%20TEST</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2018/03/14/AB-TEST.html">&lt;h2 id=&quot;range-of-application&quot;&gt;Range of Application&lt;/h2&gt;
+&lt;p&gt;AB test cannot be used into some situation that needing long time and complex.&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;h2 id=&quot;example&quot;&gt;Example&lt;/h2&gt;
+&lt;p&gt;initial hypothesis&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;choose a metric :such as click through Probability or click through rate&lt;/li&gt;
+  &lt;li&gt;review  statistics&lt;/li&gt;
+  &lt;li&gt;design&lt;/li&gt;
+  &lt;li&gt;analyse&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">Range of Application AB test cannot be used into some situation that needing long time and complex. Example initial hypothesis choose a metric :such as click through Probability or click through rate review statistics design analyse</summary></entry><entry><title type="html">linear algebra</title><link href="http://localhost:4000/jekyll/update/2018/03/06/Linear-algebra.html" rel="alternate" type="text/html" title="linear algebra" /><published>2018-03-06T18:43:31+08:00</published><updated>2018-03-06T18:43:31+08:00</updated><id>http://localhost:4000/jekyll/update/2018/03/06/Linear%20algebra</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2018/03/06/Linear-algebra.html">&lt;h2 id=&quot;linear-combination-and-span&quot;&gt;linear combination and span&lt;/h2&gt;
 
-&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><summary type="html">fuck you！</summary></entry></feed>
+&lt;h2 id=&quot;linear-transfromation&quot;&gt;linear transfromation&lt;/h2&gt;</content><author><name></name></author><summary type="html">linear combination and span linear transfromation</summary></entry><entry><title type="html">machine learning</title><link href="http://localhost:4000/jekyll/update/2018/02/23/Machine-learning.html" rel="alternate" type="text/html" title="machine learning" /><published>2018-02-23T18:43:31+08:00</published><updated>2018-02-23T18:43:31+08:00</updated><id>http://localhost:4000/jekyll/update/2018/02/23/Machine%20learning</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2018/02/23/Machine-learning.html">&lt;h2 id=&quot;machine-learning&quot;&gt;machine learning&lt;/h2&gt;
+&lt;p&gt;supervised learning
+unsupervised learning&lt;/p&gt;
+
+&lt;h3 id=&quot;classification&quot;&gt;classification&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;loss functions&lt;/li&gt;
+  &lt;li&gt;statistics learning theory&lt;/li&gt;
+  &lt;li&gt;logistic regression&lt;/li&gt;
+  &lt;li&gt;maximum likelihood perspective&lt;/li&gt;
+  &lt;li&gt;evaluation method for classifier
+confusion matrix
+misclassification error
+(FN+FN)/N&lt;/li&gt;
+  &lt;li&gt;ROC curves&lt;/li&gt;
+  &lt;li&gt;ROC curves algorithm&lt;/li&gt;
+  &lt;li&gt;Creating a Classifier with Python&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;regression&quot;&gt;regression&lt;/h3&gt;
+
+&lt;h3 id=&quot;clustering&quot;&gt;clustering&lt;/h3&gt;
+
+&lt;h3 id=&quot;dimensionality-reduction&quot;&gt;Dimensionality Reduction&lt;/h3&gt;
+&lt;p&gt;Principal Component Analysis (PCA)&lt;/p&gt;
+
+&lt;h3 id=&quot;improving-machine-learning-models&quot;&gt;Improving Machine Learning Models&lt;/h3&gt;</content><author><name></name></author><summary type="html">machine learning supervised learning unsupervised learning classification loss functions statistics learning theory logistic regression maximum likelihood perspective evaluation method for classifier confusion matrix misclassification error (FN+FN)/N ROC curves ROC curves algorithm Creating a Classifier with Python regression clustering Dimensionality Reduction Principal Component Analysis (PCA) Improving Machine Learning Models</summary></entry><entry><title type="html">SQL</title><link href="http://localhost:4000/jekyll/update/2018/02/03/SQL.html" rel="alternate" type="text/html" title="SQL" /><published>2018-02-03T18:43:31+08:00</published><updated>2018-02-03T18:43:31+08:00</updated><id>http://localhost:4000/jekyll/update/2018/02/03/SQL</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2018/02/03/SQL.html">&lt;h2 id=&quot;tips&quot;&gt;Tips&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;structure query language, GUI Tools:Navicat&lt;/li&gt;
+  &lt;li&gt;RDBMS: Relational Database Management System.ER:entity relationship&lt;/li&gt;
+  &lt;li&gt;Windows power shell:
+ &lt;code class=&quot;highlighter-rouge&quot;&gt;mysql -uroot -p&lt;/code&gt;
+ &lt;code class=&quot;highlighter-rouge&quot;&gt;show databases;&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;create sql user:
+ &lt;code class=&quot;highlighter-rouge&quot;&gt;grant all on databases_name.* to &quot;username&quot;@&quot;localhost&quot; identified by &quot;password&quot;&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;show the structure of tables:&lt;code class=&quot;highlighter-rouge&quot;&gt;desc tablename;&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;how to execute outside sql files
+ &lt;code class=&quot;highlighter-rouge&quot;&gt;source d:/mmzm.sql&lt;/code&gt;
+    &lt;h3 id=&quot;ddldata-defination-language&quot;&gt;DDL(data defination language)&lt;/h3&gt;
+  &lt;/li&gt;
+  &lt;li&gt;CREATE DATABASE&lt;code class=&quot;highlighter-rouge&quot;&gt;CREATE DATABASE &amp;lt;DATABASE Name&amp;gt;&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;DELETE table &lt;code class=&quot;highlighter-rouge&quot;&gt;DROP TABLE &amp;lt;tableNAME&amp;gt;;&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Update table
+&lt;code class=&quot;highlighter-rouge&quot;&gt;ALTER  &amp;lt;Tablename&amp;gt; ADD (&amp;lt;column name1&amp;gt;,&amp;lt;name2&amp;gt;,.....);&lt;/code&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;UPDATE table_name SET column1 = value1, column2 = value2, ...
+WHERE condition;&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;create table
+ &lt;code class=&quot;highlighter-rouge&quot;&gt;create tablename(columnname1 type primary key,columnname2 type,columnname3 type ) ;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;dmldata-manipulation-language&quot;&gt;DML(data Manipulation language)&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;SELECT(define which columns to return)
+&lt;code class=&quot;highlighter-rouge&quot;&gt;SELECT &amp;lt;Column name&amp;gt;,..,...
+FROM &amp;lt;TABLEname&amp;gt;;&lt;/code&gt;
+query all columns: use &lt;code class=&quot;highlighter-rouge&quot;&gt;*&lt;/code&gt; to replace ` &lt;column name=&quot;&quot;&gt;`&lt;/column&gt;&lt;/li&gt;
+  &lt;li&gt;using alias to creat a new column
+&lt;code class=&quot;highlighter-rouge&quot;&gt;select column_name1,column_name2 as alias from table_name&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;removing duplicates
+&lt;code class=&quot;highlighter-rouge&quot;&gt;SELECT distinct &lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;WHERE(searsh condition,filters rows using a predicate)
+&lt;code class=&quot;highlighter-rouge&quot;&gt;WHERE search condition'&lt;/code&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;WHERE like &quot;k%&quot;&lt;/code&gt;
+ to match any string of zero or more characters, use %
+ to match characters that are not R, use [^R]
+ to match a numeral, use [0-9]&lt;/li&gt;
+  &lt;li&gt;GROUP BY (group by list,arrange rows by group)
+&lt;code class=&quot;highlighter-rouge&quot;&gt;GROUP BY listname&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;HAVING(search condition,filters group using a predicate)
+&lt;code class=&quot;highlighter-rouge&quot;&gt;HAVING search condition&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;ORDER BY
+&lt;code class=&quot;highlighter-rouge&quot;&gt;ORDER BY listname asc&lt;/code&gt;
+upward &lt;code class=&quot;highlighter-rouge&quot;&gt;asc&lt;/code&gt;
+downward &lt;code class=&quot;highlighter-rouge&quot;&gt;desc&lt;/code&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;offset x rows fetch next y rows only&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;limit
+&lt;code class=&quot;highlighter-rouge&quot;&gt;limit m,n&lt;/code&gt;  m stands for starting from m-1 rows,n means n rows
+sort before limit&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;INSERT
+&lt;code class=&quot;highlighter-rouge&quot;&gt;insert into table_name (column_name) value()&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;UPDATE statement is used to modify the existing records in a table
+ &lt;code class=&quot;highlighter-rouge&quot;&gt;update table_name set column_name=&quot;value&quot; where condition&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;DELETE &lt;code class=&quot;highlighter-rouge&quot;&gt;DELETE FROM table_name WHERE condition;&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;rename &lt;code class=&quot;highlighter-rouge&quot;&gt;RENAME TABLE newname to oldname;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;dcldata-control-language&quot;&gt;DCL(data Control language)&lt;/h3&gt;
+&lt;p&gt;COMMIT ROLLBACK GRANT REVOKE&lt;/p&gt;
+
+&lt;h3 id=&quot;data-type&quot;&gt;data type&lt;/h3&gt;
+&lt;p&gt;data type(https://www.w3schools.com/sql/sql_datatypes.asp)&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;null&lt;/li&gt;
+  &lt;li&gt;int
+ Adding the &lt;code class=&quot;highlighter-rouge&quot;&gt;UNSIGNED&lt;/code&gt; attribute will move that range up so it starts at zero instead of a negative number.
+int_    Default integer type (same as C long; normally either int64 or int32)
+intc    Identical to C int (normally int32 or int64)
+intp    Integer used for indexing (same as C ssize_t; normally either int32 or int64)
+int8    Byte (-128 to 127)
+int16   Integer (-32768 to 32767)
+int32   Integer (-2147483648 to 2147483647)
+int64   Integer (-9223372036854775808 to 9223372036854775807)
+uint8   Unsigned integer (0 to 255)
+uint16  Unsigned integer (0 to 65535)
+uint32  Unsigned integer (0 to 4294967295)
+uint64  Unsigned integer (0 to 18446744073709551615)&lt;/li&gt;
+  &lt;li&gt;float
+float_  Shorthand for float64.
+float16 Half precision float: sign bit, 5 bits exponent, 10 bits mantissa
+float32 Single precision float: sign bit, 8 bits exponent, 23 bits mantissa
+float64 Double precision float: sign bit, 11 bits exponent, 52 bits mantissa&lt;/li&gt;
+  &lt;li&gt;decimal(M,N)
+ scale numbers&lt;code class=&quot;highlighter-rouge&quot;&gt;M&lt;/code&gt; precision numbers&lt;code class=&quot;highlighter-rouge&quot;&gt;N&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;date&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;text-datatype&quot;&gt;Text datatype&lt;/h3&gt;
+&lt;p&gt;character type(repository of saving Text) :gbk (21000chinese character 2byte) , big5 ,gb2312 (6700 chinese character),utf8,unicode (alllanguage)&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;binary System(voice,image etc binary data)
+binary ,varbinary ,blob&lt;/li&gt;
+  &lt;li&gt;non binary System
+char, varchar, text&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;show character set;&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;show collation rule &lt;code class=&quot;highlighter-rouge&quot;&gt;show collation&lt;/code&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;collate utf8_bin&lt;/code&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;collate ut8_general_ci&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;functions&quot;&gt;functions&lt;/h3&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;count()
+sum()
+avg()
+max()
+min()&lt;/code&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;SELECT length(column_name) from table_name&lt;/code&gt;Returns the length of the specified string (in bytes)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;CAST&lt;/code&gt;Converts a value from one datatype to another datatype
+&lt;code class=&quot;highlighter-rouge&quot;&gt;CAST(column_name AS varchar)&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;CONVERT(data_type(length), expression, style)&lt;/code&gt;Convert an expression from one datatype to another, or one character set to another
+-&lt;code class=&quot;highlighter-rouge&quot;&gt;STR(number, length, decimal_places)&lt;/code&gt; return a string representation of a number&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;CONCAT(string1, string2, ...., string_n)&lt;/code&gt;Concatenate string together
+&lt;a href=&quot;https://www.w3schools.com/sql/sql_ref_mysql.asp&quot;&gt;Additional reading&lt;/a&gt;
+-&lt;code class=&quot;highlighter-rouge&quot;&gt;SELECT COALESCE(NULL, NULL, NULL, 'W3Schools.com', 'Example.com');&lt;/code&gt;
+return the first non-null expression in a list&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;null&quot;&gt;null&lt;/h3&gt;
+&lt;p&gt;The result of any expression containing a NULL value is NULL
+&lt;code class=&quot;highlighter-rouge&quot;&gt;2 + NULL = NULL&lt;/code&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;null functions: &lt;code class=&quot;highlighter-rouge&quot;&gt;IFNULL()&lt;/code&gt;function lets you return an alternative value if an expression is NULL:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;the-predicates-and-not-operators&quot;&gt;The predicates and NOT Operators&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;= &amp;lt; &amp;gt;&lt;/li&gt;
+  &lt;li&gt;in a specified value matches any value in a subquery or a list&lt;/li&gt;
+  &lt;li&gt;like&lt;/li&gt;
+  &lt;li&gt;between&lt;/li&gt;
+  &lt;li&gt;AND
+&lt;code class=&quot;highlighter-rouge&quot;&gt;SELECT column1, column2, ...
+FROM table_name
+WHERE condition1 AND condition2 AND condition3 ...;&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;OR
+&lt;code class=&quot;highlighter-rouge&quot;&gt;SELECT column1, column2, ...
+FROM table_name
+WHERE condition1 OR condition2 OR condition3 ...;&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;NOT
+&lt;code class=&quot;highlighter-rouge&quot;&gt;SELECT column1, column2, ...
+FROM table_name
+WHERE NOT condition;&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;joins&quot;&gt;JOINS&lt;/h2&gt;
+&lt;p&gt;combine rows from multiple tables by specifying matching criteria,usually
+based on primary key -foreign key relationship&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;inner joins
+&lt;code class=&quot;highlighter-rouge&quot;&gt;SELECT column_name(s)
+FROM table1
+INNER JOIN table2 ON table1.column_name = table2.column_name;&lt;/code&gt;
+Inner joins return only rows where a match can be found in both tables.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;outer JOINS(designated with left,right,full keyword)
+Use a Left Outer Join to include all rows from the first table and values from matched rows in the second table. Columns in the second table for which no matching rows exist are populated with NULLs.
+&lt;code class=&quot;highlighter-rouge&quot;&gt;SELECT column_name(s)
+FROM table1
+LEFT JOIN table2 ON table1.column_name = table2.column_name;&lt;/code&gt;
+full
+&lt;code class=&quot;highlighter-rouge&quot;&gt;SELECT column_name(s)
+FROM table1
+FULL OUTER JOIN table2 ON table1.column_name = table2.column_name;&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;cross JOINS
+combine each row from first table with each row from second table
+&lt;code class=&quot;highlighter-rouge&quot;&gt;select column_name1,column_name2
+FROM table1 as t1
+CROSS JOIN table2 as t2 &lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;self JOINS&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;union&quot;&gt;union&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;SELECT column_name(s) FROM table1
+UNION
+SELECT column_name(s) FROM table2;&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&quot;problems&quot;&gt;problems&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;1.when insert chinese character into table
+&lt;code class=&quot;highlighter-rouge&quot;&gt;ERROR 1366 (HY000): Incorrect string value: '\xD4\xF8\xBB\xAA' for column 'sname' at row 1&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;2.How to change the length of character
+solution:&lt;code class=&quot;highlighter-rouge&quot;&gt;ALTER table table_name column_name varchar(30)&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;3.Notice &lt;code class=&quot;highlighter-rouge&quot;&gt;''&lt;/code&gt; when you retrieve a value in string&lt;/li&gt;
+&lt;/ul&gt;</content><author><name></name></author><summary type="html">Tips structure query language, GUI Tools:Navicat RDBMS: Relational Database Management System.ER:entity relationship Windows power shell: mysql -uroot -p show databases; create sql user: grant all on databases_name.* to &quot;username&quot;@&quot;localhost&quot; identified by &quot;password&quot; show the structure of tables:desc tablename; how to execute outside sql files source d:/mmzm.sql DDL(data defination language) CREATE DATABASECREATE DATABASE &amp;lt;DATABASE Name&amp;gt; DELETE table DROP TABLE &amp;lt;tableNAME&amp;gt;; Update table ALTER &amp;lt;Tablename&amp;gt; ADD (&amp;lt;column name1&amp;gt;,&amp;lt;name2&amp;gt;,.....); UPDATE table_name SET column1 = value1, column2 = value2, ... WHERE condition; create table create tablename(columnname1 type primary key,columnname2 type,columnname3 type ) ; DML(data Manipulation language) SELECT(define which columns to return) SELECT &amp;lt;Column name&amp;gt;,..,... FROM &amp;lt;TABLEname&amp;gt;; query all columns: use * to replace ` ` using alias to creat a new column select column_name1,column_name2 as alias from table_name removing duplicates SELECT distinct WHERE(searsh condition,filters rows using a predicate) WHERE search condition' WHERE like &quot;k%&quot; to match any string of zero or more characters, use % to match characters that are not R, use [^R] to match a numeral, use [0-9] GROUP BY (group by list,arrange rows by group) GROUP BY listname HAVING(search condition,filters group using a predicate) HAVING search condition ORDER BY ORDER BY listname asc upward asc downward desc offset x rows fetch next y rows only limit limit m,n m stands for starting from m-1 rows,n means n rows sort before limit INSERT insert into table_name (column_name) value() UPDATE statement is used to modify the existing records in a table update table_name set column_name=&quot;value&quot; where condition DELETE DELETE FROM table_name WHERE condition; rename RENAME TABLE newname to oldname; DCL(data Control language) COMMIT ROLLBACK GRANT REVOKE data type data type(https://www.w3schools.com/sql/sql_datatypes.asp) null int Adding the UNSIGNED attribute will move that range up so it starts at zero instead of a negative number. int_ Default integer type (same as C long; normally either int64 or int32) intc Identical to C int (normally int32 or int64) intp Integer used for indexing (same as C ssize_t; normally either int32 or int64) int8 Byte (-128 to 127) int16 Integer (-32768 to 32767) int32 Integer (-2147483648 to 2147483647) int64 Integer (-9223372036854775808 to 9223372036854775807) uint8 Unsigned integer (0 to 255) uint16 Unsigned integer (0 to 65535) uint32 Unsigned integer (0 to 4294967295) uint64 Unsigned integer (0 to 18446744073709551615) float float_ Shorthand for float64. float16 Half precision float: sign bit, 5 bits exponent, 10 bits mantissa float32 Single precision float: sign bit, 8 bits exponent, 23 bits mantissa float64 Double precision float: sign bit, 11 bits exponent, 52 bits mantissa decimal(M,N) scale numbersM precision numbersN date Text datatype character type(repository of saving Text) :gbk (21000chinese character 2byte) , big5 ,gb2312 (6700 chinese character),utf8,unicode (alllanguage) binary System(voice,image etc binary data) binary ,varbinary ,blob non binary System char, varchar, text show character set; show collation rule show collation collate utf8_bin collate ut8_general_ci functions count() sum() avg() max() min() SELECT length(column_name) from table_nameReturns the length of the specified string (in bytes) CASTConverts a value from one datatype to another datatype CAST(column_name AS varchar) CONVERT(data_type(length), expression, style)Convert an expression from one datatype to another, or one character set to another -STR(number, length, decimal_places) return a string representation of a number CONCAT(string1, string2, ...., string_n)Concatenate string together Additional reading -SELECT COALESCE(NULL, NULL, NULL, 'W3Schools.com', 'Example.com'); return the first non-null expression in a list null The result of any expression containing a NULL value is NULL 2 + NULL = NULL null functions: IFNULL()function lets you return an alternative value if an expression is NULL: The predicates and NOT Operators = &amp;lt; &amp;gt; in a specified value matches any value in a subquery or a list like between AND SELECT column1, column2, ... FROM table_name WHERE condition1 AND condition2 AND condition3 ...; OR SELECT column1, column2, ... FROM table_name WHERE condition1 OR condition2 OR condition3 ...; NOT SELECT column1, column2, ... FROM table_name WHERE NOT condition; JOINS combine rows from multiple tables by specifying matching criteria,usually based on primary key -foreign key relationship inner joins SELECT column_name(s) FROM table1 INNER JOIN table2 ON table1.column_name = table2.column_name; Inner joins return only rows where a match can be found in both tables. outer JOINS(designated with left,right,full keyword) Use a Left Outer Join to include all rows from the first table and values from matched rows in the second table. Columns in the second table for which no matching rows exist are populated with NULLs. SELECT column_name(s) FROM table1 LEFT JOIN table2 ON table1.column_name = table2.column_name; full SELECT column_name(s) FROM table1 FULL OUTER JOIN table2 ON table1.column_name = table2.column_name; cross JOINS combine each row from first table with each row from second table select column_name1,column_name2 FROM table1 as t1 CROSS JOIN table2 as t2 self JOINS union SELECT column_name(s) FROM table1 UNION SELECT column_name(s) FROM table2; problems 1.when insert chinese character into table ERROR 1366 (HY000): Incorrect string value: '\xD4\xF8\xBB\xAA' for column 'sname' at row 1 2.How to change the length of character solution:ALTER table table_name column_name varchar(30) 3.Notice '' when you retrieve a value in string</summary></entry><entry><title type="html">Pandas</title><link href="http://localhost:4000/jekyll/update/2018/01/30/Pandas.html" rel="alternate" type="text/html" title="Pandas" /><published>2018-01-30T18:43:31+08:00</published><updated>2018-01-30T18:43:31+08:00</updated><id>http://localhost:4000/jekyll/update/2018/01/30/Pandas</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2018/01/30/Pandas.html">&lt;p&gt;first &lt;code class=&quot;highlighter-rouge&quot;&gt;conda list&lt;/code&gt; to ensure if pandas package has been installed
+if not &lt;code class=&quot;highlighter-rouge&quot;&gt;pip install pandas&lt;/code&gt;
+then &lt;code class=&quot;highlighter-rouge&quot;&gt;import Pandas as pd&lt;/code&gt;
+two datastructures:series dataframe&lt;/p&gt;
+&lt;h3 id=&quot;loading-data&quot;&gt;loading data&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;Here are some methods for loading data:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sql_dataframe   = pd.read_sql_table('my_table', engine, columns=['ColA', 'ColB'])
+xls_dataframe   = pd.read_excel('my_dataset.xlsx', 'Sheet1', na_values=['NA', '?'])
+json_dataframe  = pd.read_json('my_dataset.json', orien t='columns')
+csv_dataframe   = pd.read_csv('my_dataset.csv', sep=',',names=['1','2'])
+table_dataframe = pd.read_html('http://page.com/with/table.html')[0]
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;before you read html ,first install lxml,html5,beautifulsoup4&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pip install pandas
+pip install lxml
+pip install html5lib
+pip install BeautifulSoup4
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ol&gt;
+  &lt;li&gt;out datas
+&lt;code class=&quot;highlighter-rouge&quot;&gt;df.to_csv('D:\data\out2.csv',index=False)&lt;/code&gt;
+    &lt;h3 id=&quot;slicing&quot;&gt;Slicing&lt;/h3&gt;
+    &lt;ul&gt;
+      &lt;li&gt;column access&lt;code class=&quot;highlighter-rouge&quot;&gt;x[[&quot;column label&quot;,&quot;column_name2&quot;]&lt;/code&gt;
+raw access&lt;code class=&quot;highlighter-rouge&quot;&gt;x.loc[row label]&lt;/code&gt;
+elements access &lt;code class=&quot;highlighter-rouge&quot;&gt;x[row,column]&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;loc&lt;/code&gt; also allows you to select both rows and columns from a DataFrame.
+&lt;code class=&quot;highlighter-rouge&quot;&gt;df.loc[number1:number2,['column_name','column_name1']]&lt;/code&gt;used to slicing data ,.loc[] method selects by column label&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;df.iloc[:, [0]]&lt;/code&gt;.iloc[] selects by column index&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;.iloc[]&lt;/code&gt;is non-inclusive. &lt;code class=&quot;highlighter-rouge&quot;&gt;.loc[] &lt;/code&gt;is inclusive of the range of values specified&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;df.loc[df['column_name'] == some_value]&lt;/code&gt;can select rows when column_value is equal to some value&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;df.loc[(df['column_name'] == some_value) &amp;amp; df['other_column'].isin(some_values)]&lt;/code&gt;
+combine different condition together&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;To get a quick peek at your data by selecting its top or bottom few rows using &lt;code class=&quot;highlighter-rouge&quot;&gt;.head()&lt;/code&gt;and &lt;code class=&quot;highlighter-rouge&quot;&gt;.tail()&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;To see a descriptive statistical summary of your dataframe’s numeric columns using &lt;code class=&quot;highlighter-rouge&quot;&gt;.describe()&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;.columns&lt;/code&gt; will display the name of the columns in your dataframe:&lt;/li&gt;
+  &lt;li&gt;to display the index values, enter &lt;code class=&quot;highlighter-rouge&quot;&gt;.index&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Print the entire dataframe, using &lt;code class=&quot;highlighter-rouge&quot;&gt;print dataframe_name&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;my_dataframe.columns = ['new', 'column', 'header', 'labels']&lt;/code&gt; can rename column title&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;.dtypes&lt;/code&gt;can view columns datatypes&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;textual-data&quot;&gt;textual data&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;using &lt;code class=&quot;highlighter-rouge&quot;&gt;astype&lt;/code&gt; converta textual data to categorical
+&lt;code class=&quot;highlighter-rouge&quot;&gt;df['col2'] = df['col2'].astype('int')&lt;/code&gt;change one column data_type&lt;/li&gt;
+  &lt;li&gt;convert them to the desired type using the: &lt;code class=&quot;highlighter-rouge&quot;&gt;.to_datetime()&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;.to_numeric()&lt;/code&gt;, and &lt;code class=&quot;highlighter-rouge&quot;&gt;.to_timedelta()&lt;/code&gt; methods:
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;df.Date = pd.to_datetime(df.Date, errors='coerce')
+df.Height = pd.to_numeric(df.Height, errors='coerce')
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;wrangling-your-data&quot;&gt;Wrangling Your Data&lt;/h3&gt;
+&lt;p&gt;check if there duplicate or null&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; test['Age'].isnull().value_counts()
+ test.duplicated().value_counts()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ol&gt;
+  &lt;li&gt;Dropping Data&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;df = df.dropna(axis=0)  # remove any row with nans
+df = df.dropna(axis=1)  # remove any column with nans
+
+# Drop any row with NaNs that has at least 4 non-NaNs within it:
+df = df.dropna(axis=0, thresh=4)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;drop columns
+&lt;code class=&quot;highlighter-rouge&quot;&gt;df = df.drop(labels=['Features', 'To', 'Delete'], axis=1)&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Drop rows by index
+ &lt;code class=&quot;highlighter-rouge&quot;&gt;df = df.drop([0,1])&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;delete indentical data
+&lt;code class=&quot;highlighter-rouge&quot;&gt;df = df.drop_duplicates(subset=['Feature_1', 'Feature_2'])&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;delete column null value
+ &lt;code class=&quot;highlighter-rouge&quot;&gt;df.dropna(subset=['column_name'], inplace=True)&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;reindex your dataframe
+&lt;code class=&quot;highlighter-rouge&quot;&gt;df = df.reset_index(drop=True)&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;filling data
+replace NA with a scalar value
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;df[my_feature].fillna( df[my_feature].mean())
+df[my_feature].fillna(df[my_feature].mode())
+df.fillna(0)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;how far you want the fill to go&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;df.fillna(method='ffill')  # fill the values forward
+df.fillna(method='bfill')  # fill the values in reverse
+df.fillna(limit=5)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ol&gt;
+  &lt;li&gt;unique data in a column&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;your_data_frame['your_column'].unique()&lt;/code&gt; or equally, &lt;code class=&quot;highlighter-rouge&quot;&gt;your_data_frame.your_column.unique()&lt;/code&gt; to see the unique values of each column and identify the rogue values.&lt;/p&gt;
+
+&lt;h3 id=&quot;combine-dataset&quot;&gt;combine dataset&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;pandas.merge use key combine rows from different dataset&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;time-series&quot;&gt;Time series&lt;/h3&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;train_user_df['time']=[datetime.strptime(x.split()[0],&quot;%Y-%m-%d&quot;) for x in time_series]&lt;/code&gt;
+convertion of time_series and string&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.cnblogs.com/lemonbit/p/6896499.html&quot;&gt;pandas time_series&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;group-by&quot;&gt;group by&lt;/h3&gt;
+
+&lt;h3 id=&quot;tips&quot;&gt;tips&lt;/h3&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;any(titanic.Age.isnull())&lt;/code&gt;
+can detect if this column have null values&lt;/p&gt;
+
+&lt;h3 id=&quot;problems&quot;&gt;problems&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;how to add columns&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/questions/38486477/get-html-table-into-pandas-dataframe-not-list-of-dataframe-objects&quot;&gt;Get HTML table into pandas Dataframe, not list of dataframe objects
+&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://pandas.pydata.org/&quot;&gt;Additional reading&lt;/a&gt;
+&lt;a href=&quot;https://courses.edx.org/courses/course-v1:Microsoft+DAT210x+1T2018/courseware/b7aa9093-0ee1-9e62-4188-6f9d25a2ce85/7fc08411-6ab9-100a-b198-91b8ac2dc84a/?child=first&quot;&gt;Further Reading&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">first conda list to ensure if pandas package has been installed if not pip install pandas then import Pandas as pd two datastructures:series dataframe loading data Here are some methods for loading data: sql_dataframe = pd.read_sql_table('my_table', engine, columns=['ColA', 'ColB']) xls_dataframe = pd.read_excel('my_dataset.xlsx', 'Sheet1', na_values=['NA', '?']) json_dataframe = pd.read_json('my_dataset.json', orien t='columns') csv_dataframe = pd.read_csv('my_dataset.csv', sep=',',names=['1','2']) table_dataframe = pd.read_html('http://page.com/with/table.html')[0] before you read html ,first install lxml,html5,beautifulsoup4 pip install pandas pip install lxml pip install html5lib pip install BeautifulSoup4 out datas df.to_csv('D:\data\out2.csv',index=False) Slicing column accessx[[&quot;column label&quot;,&quot;column_name2&quot;] raw accessx.loc[row label] elements access x[row,column] loc also allows you to select both rows and columns from a DataFrame. df.loc[number1:number2,['column_name','column_name1']]used to slicing data ,.loc[] method selects by column label df.iloc[:, [0]].iloc[] selects by column index .iloc[]is non-inclusive. .loc[] is inclusive of the range of values specified df.loc[df['column_name'] == some_value]can select rows when column_value is equal to some value df.loc[(df['column_name'] == some_value) &amp;amp; df['other_column'].isin(some_values)] combine different condition together To get a quick peek at your data by selecting its top or bottom few rows using .head()and .tail() To see a descriptive statistical summary of your dataframe’s numeric columns using .describe() .columns will display the name of the columns in your dataframe: to display the index values, enter .index Print the entire dataframe, using print dataframe_name my_dataframe.columns = ['new', 'column', 'header', 'labels'] can rename column title .dtypescan view columns datatypes textual data using astype converta textual data to categorical df['col2'] = df['col2'].astype('int')change one column data_type convert them to the desired type using the: .to_datetime(), .to_numeric(), and .to_timedelta() methods: df.Date = pd.to_datetime(df.Date, errors='coerce') df.Height = pd.to_numeric(df.Height, errors='coerce') Wrangling Your Data check if there duplicate or null test['Age'].isnull().value_counts() test.duplicated().value_counts() Dropping Data df = df.dropna(axis=0) # remove any row with nans df = df.dropna(axis=1) # remove any column with nans # Drop any row with NaNs that has at least 4 non-NaNs within it: df = df.dropna(axis=0, thresh=4) drop columns df = df.drop(labels=['Features', 'To', 'Delete'], axis=1) Drop rows by index df = df.drop([0,1]) delete indentical data df = df.drop_duplicates(subset=['Feature_1', 'Feature_2']) delete column null value df.dropna(subset=['column_name'], inplace=True) reindex your dataframe df = df.reset_index(drop=True) filling data replace NA with a scalar value df[my_feature].fillna( df[my_feature].mean()) df[my_feature].fillna(df[my_feature].mode()) df.fillna(0) how far you want the fill to go df.fillna(method='ffill') # fill the values forward df.fillna(method='bfill') # fill the values in reverse df.fillna(limit=5) unique data in a column your_data_frame['your_column'].unique() or equally, your_data_frame.your_column.unique() to see the unique values of each column and identify the rogue values. combine dataset pandas.merge use key combine rows from different dataset Time series train_user_df['time']=[datetime.strptime(x.split()[0],&quot;%Y-%m-%d&quot;) for x in time_series] convertion of time_series and string pandas time_series group by tips any(titanic.Age.isnull()) can detect if this column have null values problems how to add columns Get HTML table into pandas Dataframe, not list of dataframe objects Additional reading Further Reading</summary></entry><entry><title type="html">Matplotlib</title><link href="http://localhost:4000/jekyll/update/2018/01/26/Matplotlib.html" rel="alternate" type="text/html" title="Matplotlib" /><published>2018-01-26T18:43:31+08:00</published><updated>2018-01-26T18:43:31+08:00</updated><id>http://localhost:4000/jekyll/update/2018/01/26/Matplotlib</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2018/01/26/Matplotlib.html">&lt;h2 id=&quot;basic-plots-with-matplotlib&quot;&gt;Basic Plots with Matplotlib&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;The general syntax is&lt;code class=&quot;highlighter-rouge&quot;&gt;import package.subpackage as local_name.&lt;/code&gt;such as &lt;code class=&quot;highlighter-rouge&quot;&gt;import matplotlib.pyplot as plt &lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;plt.plot(a, b)&lt;/code&gt;  &lt;code class=&quot;highlighter-rouge&quot;&gt;plt.xscale(log)&lt;/code&gt; on a logarithmic scale&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;plt.show()&lt;/code&gt; to display the plot&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;plt.clf()&lt;/code&gt; clean and start again&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;histograms&quot;&gt;Histograms&lt;/h3&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;df.asymmetry.plot.hist(title='',bins=n)&lt;/code&gt;plots a histogram of the list named x &lt;code class=&quot;highlighter-rouge&quot;&gt;plt.hist(x)&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&quot;2d-scatter&quot;&gt;2D scatter&lt;/h3&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;df.plot.scatter(x='',y='')&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&quot;3d-scatter-plot&quot;&gt;3D scatter plot&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;from mpl_toolkits.mplot3d import Axes3D`
+fig = plt.figure()
+ax = fig.add_subplot(111, projection='3d')
+ax.set_xlabel('Final Grade')
+ax.set_ylabel('First Grade')
+ax.set_zlabel('Daily Alcohol')
+ax.scatter(student_dataset.G1, student_dataset.G3,student_dataset['Dalc'], c='r', marker='.')
+plt.show()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;then if you want to spin 3D scatter plot,you can install pyqt5
+&lt;code class=&quot;highlighter-rouge&quot;&gt;pip install pyqt5&lt;/code&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;%matplotlib qt5&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;boxplot&quot;&gt;Boxplot&lt;/h3&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;plt.boxplot()&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;figure-and-subplot&quot;&gt;Figure AND subplot&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;create a new figure &lt;code class=&quot;highlighter-rouge&quot;&gt;fig = plt.figure()&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;add subplot &lt;code class=&quot;highlighter-rouge&quot;&gt;ax1 = fig.add_subplot(2,2,1)&lt;/code&gt;
+(2,2)means this figure is 2*2 and 1 is the first figure&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;customization&quot;&gt;Customization&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;plt.xlabel('')&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;plt.title('')&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;plt.ytick([0,2,4,6,8,10])&lt;/code&gt; means start from 0 up to 10
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pclass.set_xlabel('Pclass')
+pclass.set_title('population distribution of different class')
+pclass.set_xticks([1,2,3])
+pclass.set_xticklabels(['upper','middle','lower'])
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;fill_between() &lt;/code&gt;  build a line plot where the area under the graph is colored.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;plt.scatter(alpha = n, ,)&lt;/code&gt;. Alpha can be set from zero to one, where 0 totally transparant, and 1 is not transparant&lt;/li&gt;
+  &lt;li&gt;Add &lt;code class=&quot;highlighter-rouge&quot;&gt;plt.grid(True)&lt;/code&gt; after the &lt;code class=&quot;highlighter-rouge&quot;&gt;plt.text()&lt;/code&gt;calls so that gridlines are drawn on the plot.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;additional-reeding&quot;&gt;Additional reeding&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://matplotlib.org/1.5.1/gallery.html&quot;&gt;size image and source code&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">Basic Plots with Matplotlib The general syntax isimport package.subpackage as local_name.such as import matplotlib.pyplot as plt plt.plot(a, b) plt.xscale(log) on a logarithmic scale plt.show() to display the plot plt.clf() clean and start again Histograms df.asymmetry.plot.hist(title='',bins=n)plots a histogram of the list named x plt.hist(x) 2D scatter df.plot.scatter(x='',y='') 3D scatter plot from mpl_toolkits.mplot3d import Axes3D` fig = plt.figure() ax = fig.add_subplot(111, projection='3d') ax.set_xlabel('Final Grade') ax.set_ylabel('First Grade') ax.set_zlabel('Daily Alcohol') ax.scatter(student_dataset.G1, student_dataset.G3,student_dataset['Dalc'], c='r', marker='.') plt.show() then if you want to spin 3D scatter plot,you can install pyqt5 pip install pyqt5 %matplotlib qt5 Boxplot plt.boxplot() Figure AND subplot create a new figure fig = plt.figure() add subplot ax1 = fig.add_subplot(2,2,1) (2,2)means this figure is 2*2 and 1 is the first figure Customization plt.xlabel('') plt.title('') plt.ytick([0,2,4,6,8,10]) means start from 0 up to 10 pclass.set_xlabel('Pclass') pclass.set_title('population distribution of different class') pclass.set_xticks([1,2,3]) pclass.set_xticklabels(['upper','middle','lower']) fill_between() build a line plot where the area under the graph is colored. plt.scatter(alpha = n, ,). Alpha can be set from zero to one, where 0 totally transparant, and 1 is not transparant Add plt.grid(True) after the plt.text()calls so that gridlines are drawn on the plot. Additional reeding size image and source code</summary></entry><entry><title type="html">Numpy</title><link href="http://localhost:4000/jekyll/update/2018/01/24/Numpy.html" rel="alternate" type="text/html" title="Numpy" /><published>2018-01-24T18:43:31+08:00</published><updated>2018-01-24T18:43:31+08:00</updated><id>http://localhost:4000/jekyll/update/2018/01/24/Numpy</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2018/01/24/Numpy.html">&lt;p&gt;numpy is nD array structure&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;1.numpy array contain only one type,if contain different types,the boolean and the float were both convert to strings.&lt;code class=&quot;highlighter-rouge&quot;&gt;import array from numpy&lt;/code&gt; use &lt;code class=&quot;highlighter-rouge&quot;&gt;array()&lt;/code&gt;directly&lt;/li&gt;
+  &lt;li&gt;2.2D Numpy Arrays
+&lt;code class=&quot;highlighter-rouge&quot;&gt;shape&lt;/code&gt;show x row y column
+&lt;code class=&quot;highlighter-rouge&quot;&gt;[n,:]&lt;/code&gt; this will select n row completely&lt;/li&gt;
+  &lt;li&gt;3.Basic Statistics
+&lt;code class=&quot;highlighter-rouge&quot;&gt;mean()&lt;/code&gt; how to select column&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;median()&lt;/code&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;std()&lt;/code&gt;standand deviation
+&lt;code class=&quot;highlighter-rouge&quot;&gt;corrcoef&lt;/code&gt;check if x,y are correlated&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;4.&lt;a href=&quot;http://www.numpy.org/&quot;&gt;numpy&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;How to array two column
+&lt;code class=&quot;highlighter-rouge&quot;&gt;np.column_stack()&lt;/code&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">numpy is nD array structure 1.numpy array contain only one type,if contain different types,the boolean and the float were both convert to strings.import array from numpy use array()directly 2.2D Numpy Arrays shapeshow x row y column [n,:] this will select n row completely 3.Basic Statistics mean() how to select column median() std()standand deviation corrcoefcheck if x,y are correlated 4.numpy How to array two column np.column_stack()</summary></entry><entry><title type="html">Python</title><link href="http://localhost:4000/jekyll/update/2018/01/23/Python.html" rel="alternate" type="text/html" title="Python" /><published>2018-01-23T18:43:31+08:00</published><updated>2018-01-23T18:43:31+08:00</updated><id>http://localhost:4000/jekyll/update/2018/01/23/Python</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2018/01/23/Python.html">&lt;h3 id=&quot;python-basic&quot;&gt;Python Basic&lt;/h3&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;conda info --envs&lt;/code&gt; can list different python version
+&lt;code class=&quot;highlighter-rouge&quot;&gt;conda list&lt;/code&gt; ensure what package has been installed
+&lt;code class=&quot;highlighter-rouge&quot;&gt;source activate python35&lt;/code&gt; open python35 through cmd
+&lt;code class=&quot;highlighter-rouge&quot;&gt;ipython notebook&lt;/code&gt; open jupyter notebook
+&lt;code class=&quot;highlighter-rouge&quot;&gt;exit()&lt;/code&gt; exit the python&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;1.variable,type
+&lt;code class=&quot;highlighter-rouge&quot;&gt;**&lt;/code&gt; means square&lt;/li&gt;
+  &lt;li&gt;2.list
+don’t forget&lt;code class=&quot;highlighter-rouge&quot;&gt;,&lt;/code&gt;between two variables
+Subsetting list
+x[index],index=0,1,2….&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;manipulating-list&quot;&gt;Manipulating list&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;1.change List elements
+&lt;code class=&quot;highlighter-rouge&quot;&gt;x[n]=new elements&lt;/code&gt;
+ prevent changes in new List to also take effect in old list,  &lt;code class=&quot;highlighter-rouge&quot;&gt;list()&lt;/code&gt; or by using &lt;code class=&quot;highlighter-rouge&quot;&gt;[:]&lt;/code&gt;.also means do not copy the reference of the list x to y&lt;/li&gt;
+  &lt;li&gt;2.add List elements
+&lt;code class=&quot;highlighter-rouge&quot;&gt;x_ext=x+[y]&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;3.remove List elements
+&lt;code class=&quot;highlighter-rouge&quot;&gt;del(x[n])&lt;/code&gt;
+&lt;em&gt;list contain the refenrence not real elements&lt;/em&gt;
+&lt;a href=&quot;https://docs.python.org/3.5/tutorial/datastructures.html&quot;&gt;Data Structures&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;functions&quot;&gt;Functions&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;1.&lt;code class=&quot;highlighter-rouge&quot;&gt;type()&lt;/code&gt; return the type of a value&lt;/li&gt;
+  &lt;li&gt;2.&lt;code class=&quot;highlighter-rouge&quot;&gt;max()&lt;/code&gt; maximum of list&lt;/li&gt;
+  &lt;li&gt;3.&lt;code class=&quot;highlighter-rouge&quot;&gt;round(numbers,ndigits)&lt;/code&gt; ndigits means how many digits behind the decimal point&lt;/li&gt;
+  &lt;li&gt;4.&lt;code class=&quot;highlighter-rouge&quot;&gt;help(functions name)&lt;/code&gt; know how to use it&lt;/li&gt;
+  &lt;li&gt;5.&lt;code class=&quot;highlighter-rouge&quot;&gt; str(), int(), bool() , float() &lt;/code&gt; to switch between data type.&lt;/li&gt;
+  &lt;li&gt;6.&lt;code class=&quot;highlighter-rouge&quot;&gt;len()&lt;/code&gt; length of list or string&lt;/li&gt;
+  &lt;li&gt;7.&lt;code class=&quot;highlighter-rouge&quot;&gt;reverse()&lt;/code&gt; reverse the values of the list&lt;/li&gt;
+  &lt;li&gt;8.&lt;code class=&quot;highlighter-rouge&quot;&gt;value.counts&lt;/code&gt; count frequence of value &lt;code class=&quot;highlighter-rouge&quot;&gt;data_t.duplicated().value_counts()&lt;/code&gt;display duplicated value&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;sorted what means
+&lt;a href=&quot;http://www.tutorialspoint.com/python/python_functions.htm&quot;&gt;Python - Functions&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;method&quot;&gt;Method&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;1.everything=object,object have method associated,depending on type.
+call functions on object.&lt;/li&gt;
+  &lt;li&gt;2.&lt;code class=&quot;highlighter-rouge&quot;&gt;x.index(value)&lt;/code&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;x.append()&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;x.count(values)&lt;/code&gt;count the number of occurence of the value in x
+why some can not apply&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://jeffknupp.com/blog/2014/06/18/improve-your-python-python-classes-and-object-oriented-programming/&quot;&gt;Improve Your Python: Python Classes and Object Oriented Programming&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;packages&quot;&gt;Packages&lt;/h3&gt;
+&lt;p&gt;AS a directory of python script&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;1.numpy matplotlib
+&lt;code class=&quot;highlighter-rouge&quot;&gt;import Packages&lt;/code&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;import numpy as np&lt;/code&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt; from numpy import array&lt;/code&gt;
+&lt;a href=&quot;https://docs.python.org/3/tutorial/modules.html&quot;&gt;Modules&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;boolean-logic-and-control-flow&quot;&gt;Boolean Logic and Control Flow&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;https://docs.python.org/3/library/stdtypes.html#boolean-operations-and-or-not&quot;&gt;Boolean Operations&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;1.relational operators&lt;code class=&quot;highlighter-rouge&quot;&gt;!=&lt;/code&gt;not equal(notice 2 = not 1) &lt;code class=&quot;highlighter-rouge&quot;&gt;==&lt;/code&gt; equal &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;&lt;/code&gt; less than &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;gt;&lt;/code&gt; greater than&lt;/li&gt;
+  &lt;li&gt;2.logical operators &lt;code class=&quot;highlighter-rouge&quot;&gt;and&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;or&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;not&lt;/code&gt;
+Notice that &lt;code class=&quot;highlighter-rouge&quot;&gt;not&lt;/code&gt; has a higher priority than &lt;code class=&quot;highlighter-rouge&quot;&gt;and&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;or&lt;/code&gt;, it is executed first.&lt;/li&gt;
+  &lt;li&gt;3.conditional statements&lt;code class=&quot;highlighter-rouge&quot;&gt;if&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;else&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;elif&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;if condition :
+expression
+elif condition :
+expression
+else condition :
+expression
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;sort&quot;&gt;sort&lt;/h3&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;titanic.sort_values(by = 'Pclass', inplace=True)&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;for&quot;&gt;for&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Age = []
+Levels = titanic.Pclass.unique()
+for Pclass in Levels:
+    Age.append(titanic.loc[titanic.Pclass==Pclass,'Age'])&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://docs.python.org/3.5/tutorial/controlflow.html&quot;&gt;More Control Flow Tools&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">Python Basic conda info --envs can list different python version conda list ensure what package has been installed source activate python35 open python35 through cmd ipython notebook open jupyter notebook exit() exit the python 1.variable,type ** means square 2.list don’t forget,between two variables Subsetting list x[index],index=0,1,2…. Manipulating list 1.change List elements x[n]=new elements prevent changes in new List to also take effect in old list, list() or by using [:].also means do not copy the reference of the list x to y 2.add List elements x_ext=x+[y] 3.remove List elements del(x[n]) list contain the refenrence not real elements Data Structures Functions 1.type() return the type of a value 2.max() maximum of list 3.round(numbers,ndigits) ndigits means how many digits behind the decimal point 4.help(functions name) know how to use it 5. str(), int(), bool() , float() to switch between data type. 6.len() length of list or string 7.reverse() reverse the values of the list 8.value.counts count frequence of value data_t.duplicated().value_counts()display duplicated value sorted what means Python - Functions Method 1.everything=object,object have method associated,depending on type. call functions on object. 2.x.index(value)x.append() x.count(values)count the number of occurence of the value in x why some can not apply Improve Your Python: Python Classes and Object Oriented Programming Packages AS a directory of python script 1.numpy matplotlib import Packages import numpy as np from numpy import array Modules Boolean Logic and Control Flow Boolean Operations 1.relational operators!=not equal(notice 2 = not 1) == equal &amp;lt; less than &amp;gt; greater than 2.logical operators and or not Notice that not has a higher priority than and and or, it is executed first. 3.conditional statementsif else elif if condition : expression elif condition : expression else condition : expression sort titanic.sort_values(by = 'Pclass', inplace=True) for Age = [] Levels = titanic.Pclass.unique() for Pclass in Levels: Age.append(titanic.loc[titanic.Pclass==Pclass,'Age']) More Control Flow Tools</summary></entry><entry><title type="html">Statistics</title><link href="http://localhost:4000/jekyll/update/2018/01/22/Statistics.html" rel="alternate" type="text/html" title="Statistics" /><published>2018-01-22T18:43:31+08:00</published><updated>2018-01-22T18:43:31+08:00</updated><id>http://localhost:4000/jekyll/update/2018/01/22/Statistics</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2018/01/22/Statistics.html">&lt;p&gt;Used to make decisions&lt;/p&gt;
+&lt;h2 id=&quot;decriptive-statistics&quot;&gt;decriptive statistics&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;1.range,variance,standand deviation, standand error&lt;/li&gt;
+  &lt;li&gt;2.skewness positive numbers means it’s right skewed.
+  negative numbers means it’s left skewed&lt;/li&gt;
+  &lt;li&gt;
+    &lt;ol&gt;
+      &lt;li&gt;Histogram: look at the tail. If one tail is longer than another, the distribution is skewed. just need 1D data can contrive histogram because of y axis is becomes the count of data ,and bar chart need 2D data.&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;4.correlation
+ Correlation values may range from -1 to 1, where 1 would mean the two features are perfectly positively correlated and have identical slopes for all values. -1 would mean they are perfectly negatively correlated, and have a negative slope for one another, again being linear.
+mention spurious relationship&lt;/li&gt;
+  &lt;li&gt;4.p value&lt;/li&gt;
+  &lt;li&gt;5.T-test ;two-sample t-test;paired t-test&lt;/li&gt;
+  &lt;li&gt;6.analysis of variance(ANOVA)&lt;/li&gt;
+  &lt;li&gt;7.regression standandlise regression coeffient&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;basic-probability&quot;&gt;basic Probability&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;independent event : Two events A and B are independent if and only if Prob(A and B) = Prob(A) * Prob(B)&lt;/li&gt;
+  &lt;li&gt;mutually exclusive:A and B are mutually exclusive,We know Prob(A and B) = 0. For independence, we then need Prob(A)* Prob(B) = 0.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;table&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;Conditional Probability:P(A&lt;/td&gt;
+          &lt;td&gt;B)=P(A ∩ B) / P(B)&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;table&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;Law of Total Probability(find a chance of event by adding up all rhe mutually exclusive ways event can happen):P(A) = ∑ P(A&lt;/td&gt;
+          &lt;td&gt;Bi) * P(Bi)&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;hypothesis-testing&quot;&gt;hypothesis testing&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;state hypothesis
+H0 =null hypothesis H1= alternative hypothesis&lt;/li&gt;
+  &lt;li&gt;analysis plan
+T-test&lt;/li&gt;
+  &lt;li&gt;gather data&lt;/li&gt;
+  &lt;li&gt;analyze
+mean score ,T score&lt;/li&gt;
+  &lt;li&gt;interpret
+if the statistics Probability is less than the significance level ,the null hypothesis is rejected&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;problems&quot;&gt;problems:&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;1.right skewed&lt;/li&gt;
+  &lt;li&gt;2.liner regression&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;additional-reading&quot;&gt;Additional reading&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://prod-edxapp.edx-cdn.org/assets/courseware/v1/d2dce71b2552f8d45d47102929821e87/asset-v1:Microsoft+DAT222x+1T2018+type@asset+block/Statistics_Overview_for_Essentials_Course-Updated.pdf&quot;&gt;Statistics Primer : A Brief Overview of Basic Statistical and Probability Principles&lt;/a&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">Used to make decisions decriptive statistics 1.range,variance,standand deviation, standand error 2.skewness positive numbers means it’s right skewed. negative numbers means it’s left skewed Histogram: look at the tail. If one tail is longer than another, the distribution is skewed. just need 1D data can contrive histogram because of y axis is becomes the count of data ,and bar chart need 2D data. 4.correlation Correlation values may range from -1 to 1, where 1 would mean the two features are perfectly positively correlated and have identical slopes for all values. -1 would mean they are perfectly negatively correlated, and have a negative slope for one another, again being linear. mention spurious relationship 4.p value 5.T-test ;two-sample t-test;paired t-test 6.analysis of variance(ANOVA) 7.regression standandlise regression coeffient basic Probability independent event : Two events A and B are independent if and only if Prob(A and B) = Prob(A) * Prob(B) mutually exclusive:A and B are mutually exclusive,We know Prob(A and B) = 0. For independence, we then need Prob(A)* Prob(B) = 0. Conditional Probability:P(A B)=P(A ∩ B) / P(B) Law of Total Probability(find a chance of event by adding up all rhe mutually exclusive ways event can happen):P(A) = ∑ P(A Bi) * P(Bi) hypothesis testing state hypothesis H0 =null hypothesis H1= alternative hypothesis analysis plan T-test gather data analyze mean score ,T score interpret if the statistics Probability is less than the significance level ,the null hypothesis is rejected problems: 1.right skewed 2.liner regression Additional reading Statistics Primer : A Brief Overview of Basic Statistical and Probability Principles</summary></entry></feed>

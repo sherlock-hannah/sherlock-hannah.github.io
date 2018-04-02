@@ -24,6 +24,10 @@ misclassification error
 
 
 ### regression
+
 ### clustering
+
 ### Dimensionality Reduction
+Principal Component Analysis (PCA)
+
 ### Improving Machine Learning Models

@@ -1,0 +1,36 @@
+---
+layout: post
+title:  "titanic"
+date:   2018-03-29 18:43:31 +0800
+categories: jekyll update
+---
+## decription
+predict which passengers survived from the titanic sinking
+## data
+| variable     | description                    |  
+| :------------| :-------------                 |
+| PassengerId  | int64                          |
+| survived     | int64 Survival 0 = No, 1 = Yes |
+| Pclass       | 1(upper),2(middle),3(lower)    |
+| Name         | varchar                        |
+| Sex          | varchar male or female         |
+| Age          | float64                        |
+| SibSp        | int64 sibship numbers          |
+| Parch        | Parent Child                   |
+| Ticket       | varchar                        |
+| Fare         | float64 price of Ticket        |
+| Cabin        | varchar                        |
+| Embarked     | embarked	Portof Embarkation    |
+## goal
+For each PassengerId, predict a 0 or 1 value for the Survived variable.
+## Metric
+the percentage of passengers you correctly predict
+## analysis
+![pclass and age](pictures/pclass and age.png)
+age distribution of different class
+
+![age distribution](pictures/age distribution.png)
+
+how much people pay for Ticket
+
+![Fare distribution](pictures/Fare.png)

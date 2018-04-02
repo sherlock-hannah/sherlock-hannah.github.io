@@ -11,6 +11,5 @@ AB test cannot be used into some situation that needing long time and complex.
 initial hypothesis
 - choose a metric :such as click through Probability or click through rate
 - review  statistics
-
 - design
 - analyse
