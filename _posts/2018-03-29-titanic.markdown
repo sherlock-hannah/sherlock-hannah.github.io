@@ -7,6 +7,7 @@ categories: jekyll update
 ## decription
 predict which passengers survived from the titanic sinking
 ## data
+
 | variable     | description                    |  
 | :------------| :-------------                 |
 | PassengerId  | int64                          |
@@ -21,6 +22,7 @@ predict which passengers survived from the titanic sinking
 | Fare         | float64 price of Ticket        |
 | Cabin        | varchar                        |
 | Embarked     | embarked	Portof Embarkation    |
+
 ## goal58i
 For each PassengerId, predict a 0 or 1 value for the Survived variable.
 ## Metric
@@ -32,6 +34,7 @@ the percentage of passengers you correctly predict
 
 
 ![notalone](/pictures/notalone.png)
+
 ![survivedandfeatures](/pictures/survivedandfeature.png)
 ## model_selection
 1. linear regression
