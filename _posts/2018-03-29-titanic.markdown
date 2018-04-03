@@ -26,14 +26,13 @@ For each PassengerId, predict a 0 or 1 value for the Survived variable.
 ## Metric
 the percentage of passengers you correctly predict
 ## analysis
-![pclass and age](pictures/pclassandage.png)
-age distribution of different class
+![pclassandage](/pictures/pclassandage.png)
 
-![age distribution](pictures/agedistribution.png)
+![agedistribution](/pictures/agedistribution.png)
 
 
 ![notalone](/pictures/notalone.png)
-![survived and features](pictures/survivedandfeature.png)
+![survivedandfeatures](/pictures/survivedandfeature.png)
 ## model_selection
 1. linear regression
 
