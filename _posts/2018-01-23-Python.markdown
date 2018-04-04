@@ -89,8 +89,13 @@ Levels = titanic.Pclass.unique()
 for Pclass in Levels:
     Age.append(titanic.loc[titanic.Pclass==Pclass,'Age'])`
 
-
-
-
-
 [More Control Flow Tools](https://docs.python.org/3.5/tutorial/controlflow.html)
+
+### Class
+```
+class person:
+ def setname(self,name):
+    self.name = name
+ def
+ 
+```

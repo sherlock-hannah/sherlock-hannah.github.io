@@ -4,7 +4,7 @@ title:  "SQL"
 date:   2018-02-03 18:43:31 +0800
 categories: jekyll update
 ---
-## Tips
+### Tips
 - structure query language, GUI Tools:Navicat
 - RDBMS: Relational Database Management System.ER:entity relationship
 - Windows power shell:
@@ -16,6 +16,7 @@ categories: jekyll update
 - how to execute outside sql files
  `source d:/mmzm.sql`
 - `'string' as column_name`can use this string instead column
+
 ### DDL(data defination language)
 - CREATE DATABASE`CREATE DATABASE <DATABASE Name>`
 - DELETE table `DROP TABLE <tableNAME>;`
@@ -79,7 +80,7 @@ sort before limit
 ### DCL(data Control language)
 COMMIT ROLLBACK GRANT REVOKE
 
-### data type
+### Data type
 data type(https://www.w3schools.com/sql/sql_datatypes.asp)
 - null
 - int
@@ -115,7 +116,7 @@ char, varchar, text
 `collate utf8_bin`
 `collate ut8_general_ci`
 
-### functions
+### Functions
 `count()
 sum()
 avg()
@@ -132,7 +133,7 @@ min()`
 -`SELECT COALESCE(NULL, NULL, NULL, 'W3Schools.com', 'Example.com');`
 return the first non-null expression in a list
 
-### null
+### Null
 The result of any expression containing a NULL value is NULL
 `2 + NULL = NULL`
 - null functions: `IFNULL()`function lets you return an alternative value if an expression is NULL:
@@ -156,7 +157,7 @@ WHERE condition1 OR condition2 OR condition3 ...;`
 FROM table_name
 WHERE NOT condition;`
 
-## JOINS
+### Joins
 combine rows from multiple tables by specifying matching criteria,usually
 based on primary key -foreign key relationship
 
@@ -187,7 +188,7 @@ CROSS JOIN table2 as t2 `
 FROM table1 T1, table1 T2
 WHERE condition;`
 
-## union
+### Union
 - UNION(returns a result set of distinct rows)
 `SELECT column_name(s) FROM table1
 UNION
@@ -198,7 +199,7 @@ UNION ALL retains duplicates during query processing
 
 - except  (returns only distinct rows that appear in the first set but not the second)
 
-## loading data
+### Loading data
 ```
 load data local infile "C:/ProgramData/MySQL/MySQL Server 5.1/Data/Kaggle/test.csv"
 into table test
@@ -209,7 +210,7 @@ IGNORE 1 LINES
 (PassengerId,Pclass,Name,Sex,Age,SibSp,Parch,Ticket,Fare,Cabin,Embarked;)
 ```
 
-## problems
+### Problems
 - 1.when insert chinese character into table
 `ERROR 1366 (HY000): Incorrect string value: '\xD4\xF8\xBB\xAA' for column 'sname' at row 1`
 - 2.How to change the length of character
