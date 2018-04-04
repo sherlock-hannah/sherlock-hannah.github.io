@@ -5,11 +5,10 @@ date:   2018-02-23 18:43:31 +0800
 categories: jekyll update
 ---
 
-## machine learning
 supervised learning
 unsupervised learning
 
-### classification
+## Classification
 - loss functions
 - statistics learning theory
 - logistic regression
@@ -23,11 +22,14 @@ misclassification error
 - Creating a Classifier with Python
 
 
-### regression
+## Regression
+### LinearRegression
+- one of the performance Statistics used in adjust R
+- outlier
 
-### clustering
+## Clustering
 
-### Dimensionality Reduction
+## Dimensionality Reduction
 Principal Component Analysis (PCA)
 
-### Improving Machine Learning Models
+## Improving Machine Learning Models

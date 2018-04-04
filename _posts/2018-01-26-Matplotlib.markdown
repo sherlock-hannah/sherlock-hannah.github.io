@@ -34,6 +34,9 @@ then if you want to spin 3D scatter plot,you can install pyqt5
 ### Boxplot
 `plt.boxplot()`
 
+### Bar
+`df.plot(kind = 'bar' or 'barh',stacked = True or False )`
+
 ## Figure AND subplot
 - create a new figure `fig = plt.figure()`
 - add subplot `ax1 = fig.add_subplot(2,2,1)`
