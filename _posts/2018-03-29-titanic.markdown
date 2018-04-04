@@ -23,7 +23,7 @@ predict which passengers survived from the titanic sinking
 | Cabin        | varchar                        |
 | Embarked     | embarked	Portof Embarkation    |
 
-## goal58i
+## goal
 For each PassengerId, predict a 0 or 1 value for the Survived variable.
 ## Metric
 the percentage of passengers you correctly predict
