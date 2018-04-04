@@ -29,7 +29,7 @@ For each PassengerId, predict a 0 or 1 value for the Survived variable.
 the percentage of passengers you correctly predict
 ## analysis
 
-![pclassandage](../pictures/pclassandage.png)
+![pclassandage](/pictures/pclassandage.png)
 
 ![agedistribution](../pictures/agedistribution.png)
 
@@ -40,6 +40,7 @@ the percentage of passengers you correctly predict
 
 ## model_selection
 1. linear regression
+
 ```
 from sklearn.linear_model import LinearRegression
 from sklearn.cross_validation import KFold  
