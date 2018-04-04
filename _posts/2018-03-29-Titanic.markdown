@@ -31,15 +31,34 @@ the percentage of passengers you correctly predict
 
 ![pclassandage](../pictures/pclassandage.png)
 
-![agedistribution](/pictures/agedistribution.png)
+![agedistribution](../pictures/agedistribution.png)
 
 
-![notalone](/pictures/notalone.png)
+![notalone](../pictures/notalone.png)
 
-![survivedandfeatures](/pictures/survivedandfeature.png)
+![survivedandfeatures](../pictures/survivedandfeature.png)
 
 ## model_selection
 1. linear regression
+```
+from sklearn.linear_model import LinearRegression
+from sklearn.cross_validation import KFold  
+
+predictors = ['Pclass','Sex','Age','SibSp','Parch','Fare']  
+
+alg = LinearRegression()  
+
+kf = KFold(titanic.shape[0],n_folds=3,random_state=1)  
+
+predictions = []  
+
+for train, test in kf:  
+    train_predictors = (titanic[predictors].iloc[train,:])
+    train_target = titanic['Survived'].iloc[train]  
+    alg.fit(train_predictors,train_target)    
+    test_prediction = alg.predict(titanic[predictors].iloc[test,:])  
+    predictions.append(test_prediction)
+```
 cross_validation :first divide dataset into k subset,set k-1 subset as trainset,the least as testset,perform k train and test ,return the mean of result.
 
 
