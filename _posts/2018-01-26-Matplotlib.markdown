@@ -4,6 +4,7 @@ title:  "Matplotlib"
 date:   2018-01-26 18:43:31 +0800
 categories: jekyll update
 ---
+if you use python3 in ubuntun ,you should put`%matplotlib inline` ,then it could display figure.
 
 ## Basic Plots with Matplotlib
 - The general syntax is`import package.subpackage as local_name.`such as `import matplotlib.pyplot as plt `
@@ -33,11 +34,6 @@ then if you want to spin 3D scatter plot,you can install pyqt5
 ### Boxplot
 `plt.boxplot()`
 
-
-
-
-
-
 ## Figure AND subplot
 - create a new figure `fig = plt.figure()`
 - add subplot `ax1 = fig.add_subplot(2,2,1)`
@@ -56,7 +52,8 @@ pclass.set_xticklabels(['upper','middle','lower'])
 - `plt.scatter(alpha = n, ,)`. Alpha can be set from zero to one, where 0 totally transparant, and 1 is not transparant
 - Add `plt.grid(True)` after the `plt.text()`calls so that gridlines are drawn on the plot.
 
-
+## Seaborn
+[Seaborn](https://blog.csdn.net/cymy001/article/details/78423920)
 
 ## Additional reeding
 [size image and source code](https://matplotlib.org/1.5.1/gallery.html)
