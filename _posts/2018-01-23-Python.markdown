@@ -78,11 +78,11 @@ expression
 
 ```
 
-### sort
+### Sort
 `titanic.sort_values(by = 'Pclass', inplace=True)`
 
 
-### for
+### For
 [for-loop](http://www.runoob.com/python/python-for-loop.html)
 `Age = []
 Levels = titanic.Pclass.unique()

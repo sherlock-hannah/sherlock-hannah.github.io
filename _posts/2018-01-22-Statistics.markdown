@@ -5,7 +5,7 @@ date:   2018-01-22 18:43:31 +0800
 categories: jekyll update
 ---
 Used to make decisions
-## decriptive statistics
+## Decriptive statistics
 - 1.range,variance,standand deviation, standand error
 - 2.skewness positive numbers means it's right skewed.
     negative numbers means it's left skewed
@@ -18,13 +18,13 @@ mention spurious relationship
 - 6.analysis of variance(ANOVA)
 - 7.regression standandlise regression coeffient
 
-## basic Probability
+## Basic Probability
 - independent event : Two events A and B are independent if and only if Prob(A and B) = Prob(A) * Prob(B)
 - mutually exclusive:A and B are mutually exclusive,We know Prob(A and B) = 0. For independence, we then need Prob(A)* Prob(B) = 0.
 - Conditional Probability:P(A|B)=P(A ∩ B) / P(B)
 - Law of Total Probability(find a chance of event by adding up all rhe mutually exclusive ways event can happen):P(A) = ∑ P(A|Bi) * P(Bi)
 
-## hypothesis testing
+## Hypothesis testing
 1. state hypothesis
 H0 =null hypothesis H1= alternative hypothesis
 2. analysis plan

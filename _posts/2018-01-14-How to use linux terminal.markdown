@@ -24,10 +24,10 @@ u-owner g-group o-others
 - [linux terminal cheat sheet](https://files.fosswire.com/2007/08/fwunixref.pdf)
 - [explainshell commands](explainshell.com)
 
-- ### nano editor
+- nano editor
   `CTRL`+`O` write out `CTRL`+`X`exit
 
-- ### vim editor
+- vim editor
   - `ESC` + `:` + `q` exit
   - `i` before write
   - `ESC` + `:` + `Wq` save
