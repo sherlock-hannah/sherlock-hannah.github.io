@@ -11,7 +11,7 @@ unsupervised learning
 ## Classification
 - loss functions
 - statistics learning theory
-- logistic regression
+### logistic regression
 - maximum likelihood perspective
 - evaluation method for classifier
 confusion matrix
@@ -26,6 +26,8 @@ misclassification error
 ### LinearRegression
 - one of the performance Statistics used in adjust R
 - outlier
+y   =   w0  +  w1x1  +  w1x2  +  ...  +  wnxn
+
 
 ## Clustering
 

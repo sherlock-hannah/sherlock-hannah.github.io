@@ -4,9 +4,9 @@ title:  "Titanic"
 date:   2018-03-29 18:43:31 +0800
 categories: jekyll update
 ---
-## decription
+## Decription
 predict which passengers survived from the titanic sinking
-## data
+## Data
 
 | variable     | description                    |  
 | :------------| :-------------                 |
@@ -23,11 +23,11 @@ predict which passengers survived from the titanic sinking
 | Cabin        | varchar                        |
 | Embarked     | embarked	Portof Embarkation    |
 
-## goal
+## Goal
 For each PassengerId, predict a 0 or 1 value for the Survived variable.
 ## Metric
 the percentage of passengers you correctly predict
-## analysis
+## Analysis
 
 ![pclassandage](/pictures/pclassandage.png)
 
@@ -38,7 +38,7 @@ the percentage of passengers you correctly predict
 
 ![survivedandfeatures](../pictures/survivedandfeature.png)
 
-## model_selection
+## Model_selection
 1. linear regression
 
 ```
@@ -63,6 +63,6 @@ for train, test in kf:
 cross_validation :first divide dataset into k subset,set k-1 subset as trainset,the least as testset,perform k train and test ,return the mean of result.
 
 
-## problems
+## Problems
 1.when I use linux ,it couldn't show my drawings.so at first I should put `%matlotlib inline`
 2.deprecation warning when using sklearn 0.19 , the solution is using `from sklearn.model_selection import KFold` instead of `from sklearn.cross_validation import KFold`
