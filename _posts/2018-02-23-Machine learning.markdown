@@ -26,9 +26,8 @@ misclassification error
 ### LinearRegression
 - one of the performance Statistics used in adjust R
 - outlier
-y   =   w0  +  w1x1  +  w1x2  +  ...  +  wnxn
-
-
+y= w0+w1x1+w1x2+ ... + wnxn
+[sklearn.linear_model.LinearRegression](http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html)
 ## Clustering
 
 ## Dimensionality Reduction

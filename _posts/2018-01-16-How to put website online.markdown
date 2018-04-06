@@ -4,7 +4,6 @@ title:  "How to put website online"
 date:   2018-01-16 18:43:31 +0800
 categories: jekyll update
 ---
-
 ### How DNS works
 - [Inside the Domain Name System](https://www.youtube.com/watch?v=GlZC4Jwf3xQ)
 - [An Introduction to DNS Terminology, Components, and Concepts](https://www.digitalocean.com/community/tutorials/an-introduction-to-dns-terminology-components-and-concepts)

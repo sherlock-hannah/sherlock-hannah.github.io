@@ -37,6 +37,10 @@ then if you want to spin 3D scatter plot,you can install pyqt5
 ### Bar
 `df.plot(kind = 'bar' or 'barh',stacked = True or False )`
 
+`plt.bar(np.arrage(n),data,tick_label=[,])`
+
+[different type of bar](https://zhuanlan.zhihu.com/p/25128216)
+
 ## Figure AND subplot
 - create a new figure `fig = plt.figure()`
 - add subplot `ax1 = fig.add_subplot(2,2,1)`
@@ -60,3 +64,4 @@ pclass.set_xticklabels(['upper','middle','lower'])
 
 ## Additional reeding
 [size image and source code](https://matplotlib.org/1.5.1/gallery.html)
+[flowingdata](http://flowingdata.com/category/tutorials/)

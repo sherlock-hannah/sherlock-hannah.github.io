@@ -18,6 +18,7 @@ gpasswd -a demo sudo
 - [How To Configure Secure Updates and Installations in WordPress on Ubuntu](https://www.digitalocean.com/community/tutorials/how-to-configure-secure-updates-and-installations-in-wordpress-on-ubuntu)
 
 ## Problems and Solutions
+
 ### Public Key Authentication
 generate a key pair
 `local$ ssh-keygen`
@@ -32,11 +33,11 @@ chmod 600 .ssh/authorized_keys`
 
 [detail](https://github.com/zhenfisher/web/blob/master/_posts/2018-1-10-SSH.md)
 
-### Wordpress:unable to update and upload
+### Wordpress: unable to update and upload
 - Unable to create directory wp-content/uploads/2018/01. Is its parent directory writable by the server?
-- 1. Tips:![It is important that you request unique values each time. Do NOT copy the values shown below!](/imgs/tips.jpg)
-- 2.`chown -Rf www-data:www-data /var/www`
-- 3. `sudo nano /etc/php5/apache2/php.ini`
+- Tips:It is important that you request unique values each time. Do NOT copy the values shown below!
+- `chown -Rf www-data:www-data /var/www`
+- `sudo nano /etc/php5/apache2/php.ini`
 change `post_max_size` in php.ini
 
      ```

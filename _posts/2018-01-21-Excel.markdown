@@ -6,10 +6,10 @@ categories: jekyll update
 ---
 download excel 2016
 ## Functions
-- 1.TEXT(WEEKAND([DATE],"dddd"))   modify "date" format,
+- 1.`TEXT(WEEKAND([DATE],"dddd"))`   modify "date" format,
 `DATA`+FENLIE
-- 2.count sum, fliter,slicer
-- 3.histogram
+- 2.`FORMULATEXT` display formula of specify cells
+
 
 ## Tips
 - `ctrl + shift + down`
@@ -17,11 +17,11 @@ can select all on column datas
 `ctrl + shift + *` can select all table
 - F3 key lets you paste name in formula
 - `ctrl + 1` into format cells
--
 
 ## Use decriptive statistics
 1. skewness-1<x<1`skew()`kurtosis`Kurt()`
-2. mean`average()`,range,median`median()`,variance`var()`,standand deviation`stdev()`,mode`mode()`,standand error(most frequently occuring values)
+2. mean`average()`,range,median`median()`,variance`var()`,
+standand deviation`stdev()`,mode`mode()`,standand error(most frequently occuring values)
 3. 2nd highest value`large(values,2)`
 2nd lowest value `small(values,2)`
 rank `rank(cell,columnname,0 or 1)`
@@ -34,7 +34,7 @@ CAGR(compound annual growth rate)
 - box visually showing the range of the middle 50% of your data
 - The line in the box is the median. The X in the box is the mean
 
-## nominal data and ordinal data
+## Nominal data and ordinal data
 - inserting pivot table to count the number of each category
 - using `group` can divide data into some different scale
 
@@ -44,7 +44,11 @@ CAGR(compound annual growth rate)
 
 ## 80-20 rule and pareto charts
 
-## problem
+## Finding the Mean of a Discrete Random Variable
+- `=SUMPRODUCT(:,:)` return the result of different array times each other
+- Standard deviation `=SQRT(Variance)`
+
+## Problem
 1. how to compute the rate of return for stock
 2. tell the difference of nominal and ordinal,numerical and categorical.
 If they do have a natural ordering, they are called ordinal categorical features. Otherwise if there is no intrinsic ordering, they are called nominal categorical features.(not numeral)

@@ -8,7 +8,7 @@ first `conda list` to ensure if pandas package has been installed
 if not `pip install pandas`
 then `import Pandas as pd`
 two datastructures:series dataframe
-### loading data
+### Loading data
 1. Here are some methods for loading data:
 
 ```
@@ -29,8 +29,9 @@ pip install BeautifulSoup4
 ```
 2. out datas
 `df.to_csv('D:\data\out2.csv',index=False)`
+
 ### Slicing
--   column access`x[["column label","column_name2"]`
+1. column access`x[["column label","column_name2"]`
    raw access`x.loc[row label]`
    elements access `x[row,column]`
 -  `loc` also allows you to select both rows and columns from a DataFrame.
@@ -106,25 +107,24 @@ df.fillna(limit=5)
 
  `your_data_frame['your_column'].unique()` or equally, `your_data_frame.your_column.unique()` to see the unique values of each column and identify the rogue values.
 
-### combine dataset
+### Combine dataset
 - pandas.merge use key combine rows from different dataset
 
 ### Time series
 `train_user_df['time']=[datetime.strptime(x.split()[0],"%Y-%m-%d") for x in time_series]`
 convertion of time_series and string
 
-
 [pandas time_series](http://www.cnblogs.com/lemonbit/p/6896499.html)
-### group by
+### Group by
+`Survived_by_SibSp = data_t[['SibSp','Survived']].groupby('SibSp',as_index = False).mean().sort_values(by='Survived',ascending=False)`
 
-
-### tips
+### Tips
 `any(titanic.Age.isnull())`
 can detect if this column have null values
 
 
 
-### problems
+### Problems
 1. how to add columns
 2. [Get HTML table into pandas Dataframe, not list of dataframe objects
 ](https://stackoverflow.com/questions/38486477/get-html-table-into-pandas-dataframe-not-list-of-dataframe-objects)

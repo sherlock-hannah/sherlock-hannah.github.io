@@ -24,6 +24,12 @@ mention spurious relationship
 - Conditional Probability:P(A|B)=P(A ∩ B) / P(B)
 - Law of Total Probability(find a chance of event by adding up all rhe mutually exclusive ways event can happen):P(A) = ∑ P(A|Bi) * P(Bi)
 
+## Random variable
+- Discrete Random Variable
+- Continuous Random Variable
+is described by a probability density function (PDF)
+- Binomial Random Variable
+
 ## Hypothesis testing
 1. state hypothesis
 H0 =null hypothesis H1= alternative hypothesis
