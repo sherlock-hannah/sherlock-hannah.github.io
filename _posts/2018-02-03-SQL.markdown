@@ -50,16 +50,22 @@ query all columns: use `*` to replace ` <column name>`
 `select column_name1,column_name2 as alias from table_name`
 - removing duplicates
 `SELECT distinct `
+
 - WHERE(searsh condition,filters rows using a predicate)
 `WHERE search condition'`
 `WHERE like "k%"`
  to match any string of zero or more characters, use %
  to match characters that are not R, use [^R]
  to match a numeral, use [0-9]
+
 - GROUP BY (group by list,arrange rows by group)
 `GROUP BY listname`
+
+
 - HAVING(search condition,filters group using a predicate)
+ filter the groups
 `HAVING search condition`
+
 - ORDER BY
 `ORDER BY listname asc`
 upward `asc`
@@ -117,16 +123,23 @@ char, varchar, text
 `collate ut8_general_ci`
 
 ### Functions
-`count()
-sum()
-avg()
-max()
-min()`
-
+#### Aggregate functions
+`count(),sum(),avg(),max(),min()`
+Window functions
+Logical functions
+Scalar functions
+```
+upper()
+concat()
+year(),datename(mm,column_name),datename(dw,column_name)
+datediff()
+ROUND(, 0)
+```
 - `SELECT length(column_name) from table_name`Returns the length of the specified string (in bytes)
 - `CAST`Converts a value from one datatype to another datatype
 `CAST(column_name AS varchar)`
 - `CONVERT(data_type(length), expression, style)`Convert an expression from one datatype to another, or one character set to another
+
 -`STR(number, length, decimal_places)` return a string representation of a number
 - `CONCAT(string1, string2, ...., string_n)`Concatenate string together
 [Additional reading](https://www.w3schools.com/sql/sql_ref_mysql.asp)

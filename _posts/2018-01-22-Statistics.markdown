@@ -29,6 +29,18 @@ mention spurious relationship
 - Continuous Random Variable
 is described by a probability density function (PDF)
 - Binomial Random Variable
+Each trial has two outcomes:Success and Failure
+Outcomes of trials are independent
+`BINOM.DIST.RANGE(n,p,s1,s2)`
+Probability of between s1 and s2,successes (inclusive)
+
+- Possion Random Variable
+
+- Normal Random Variable
+
+## Central Limit Theorem
+
+
 
 ## Hypothesis testing
 1. state hypothesis

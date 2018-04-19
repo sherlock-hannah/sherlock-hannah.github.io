@@ -40,6 +40,9 @@ the percentage of passengers you correctly predict
 
 ![survivedandsib](../pictures/survivedandsib.png)
 
+## Regulation based on analysis
+
+
 ## Model_selection
 1. linear regression
 
@@ -64,6 +67,21 @@ for train, test in kf:
 ```
 cross_validation :first divide dataset into k subset,set k-1 subset as trainset,the least as testset,perform k train and test ,return the mean of result.
 
+
+2. logistic regression
+
+```
+from sklearn.linear_model import LogisticRegression
+from sklearn import cross_validation  
+
+LR = LogisticRegression(random_state=1)  
+scores = cross_validation.cross_val_score(LR, titanic[predictors],titanic['Survived'],cv=3)  
+print scores.mean()  
+plot_learning_curve(LR, u'learning_rate', titanic[predictors], titanic['Survived'])
+
+```
+
+3. RandomForest
 
 
 ## Problems

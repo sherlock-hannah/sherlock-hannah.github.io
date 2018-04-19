@@ -36,3 +36,8 @@ u-owner g-group o-others
   [markdown cheatsheet1](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 
   [markdown cheatsheet2](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf)
+
+## problems
+- when open my laptop ,it access to old system
+
+press shift before restart ,and UNIF to bios

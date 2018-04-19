@@ -47,6 +47,25 @@ CAGR(compound annual growth rate)
 ## Finding the Mean of a Discrete Random Variable
 - `=SUMPRODUCT(:,:)` return the result of different array times each other
 - Standard deviation `=SQRT(Variance)`
+- Binomial Random Variable
+`BINOM.DIST.RANGE(n,p,s1,s2)`
+Probability of between s1 and s2,successes (inclusive)
+- Possion Random Variable
+
+`POISSON.DIST(x,mean,0)`gives probability of exactly x events
+`POISSON.DIST(x,mean,1) `gives probability of <=x events.
+
+- Normal Random Variable
+
+mean µ,standard deviation sigma σ
+
+`NORM.DIST(x,µ,σ,True)`gives probability that a normal random variable with given mean and sigma is <=x or <x.
+Change True to False you get height of normal density at x.
+
+`NORM.INV(p,µ,σ)`gives value v  of a normal random variable with given mean and sigma such that Prob(Normal RV<=v) = p
+
+- Excel `STANDARDIZE` function can be used to compute Z scores
+
 
 ## Problem
 1. how to compute the rate of return for stock
