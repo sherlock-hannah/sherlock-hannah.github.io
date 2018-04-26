@@ -30,4 +30,5 @@ show and change my git username
 
 ## Problems
 1. can not git push
+`git push --force`
 [git  push  problems](http://www.cnblogs.com/renkangke/archive/2013/05/31/conquerAndroid.html)
