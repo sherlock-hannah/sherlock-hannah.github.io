@@ -24,6 +24,10 @@ show and change my git username
 
 [git cheat sheet](https://education.github.com/git-cheat-sheet-education.pdf)
 
-Additional reading
+## Additional reading
 - [How to upload local project to Github using linux](http://blog.51cto.com/1568397/1675493)
 - [How to configue ssh key to Github](https://www.jianshu.com/p/9317a927e844)
+
+## Problems
+1. can not git push
+[git  push  problems](http://www.cnblogs.com/renkangke/archive/2013/05/31/conquerAndroid.html)

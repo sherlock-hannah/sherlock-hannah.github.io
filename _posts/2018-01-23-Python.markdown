@@ -11,10 +11,18 @@ conda create -n py35 python=3.5 anaconda`
 
 ### Python Basic
 `conda info --envs` can list different python version
+
 `conda list` ensure what package has been installed
+
 `source activate python35` open python35 through cmd
+
 `ipython notebook` open jupyter notebook
-`exit()` exit the python       
+
+`exit()` exit the python
+
+` cd /mnt/c/Users/Administrator/Desktop/notebook` open
+some saving notebook 
+
 - 1.variable,type
 `**` means square
 - 2.list
@@ -97,5 +105,5 @@ class person:
  def setname(self,name):
     self.name = name
  def
- 
+
 ```

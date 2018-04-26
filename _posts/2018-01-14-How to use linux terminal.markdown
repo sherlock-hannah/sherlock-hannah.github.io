@@ -20,6 +20,7 @@ categories: jekyll update
 - chmod 1 execute only 2 write only 4 read only  ugo
 u-owner g-group o-others
 - chown an abbreviation of change owner
+- `less` can preview 
 [chown command](http://www.cnblogs.com/peida/archive/2012/12/04/2800684.html)
 - [linux terminal cheat sheet](https://files.fosswire.com/2007/08/fwunixref.pdf)
 - [explainshell commands](explainshell.com)

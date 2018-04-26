@@ -39,8 +39,47 @@ Probability of between s1 and s2,successes (inclusive)
 - Normal Random Variable
 
 ## Central Limit Theorem
+Add together 30 or more independent random variables, Even if none of the individual random variables are normal,the sum of the random variables will be normal.
 
+## Z Scores
+z  = (x-μ)/σ
+Any Z score >=+2 or <=-2 is an outlier
 
+## Samples and Sample Statistics
+Suppose a population has N individuals and we want to take a sample of size n. The sample is a simple random sample if each set of n individuals has the same chance of being chosen.
+
+bias
+- Selection bias occurs when each item in population does not have same chance of being chosen in sample
+- Publication Bias occurs because drug studies with positive results are more likely to be published than negative results.
+- Survivorship Bias occurs when part of a population disappears.
+- Response Bias occurs when a small fraction of those sampled respond and the respondents may not be representative of the population.
+
+sample mean
+- xbar=(x1+x2+….,xn)/n
+- The Standard Deviation of  Xbar is σ/sqrt(n)
+
+Standard Normal (often called Z)is a normal random variable with mean =0 and standard deviation=1
+
+## Confidence interval
+True Interpretation of 95% CI Take 100 samples compute 100 95% CI around 95 will contain the population mean.
+
+## Blyth Confidence Interval
+
+| Success    | Lower                |Upper
+| :--------- | :-------------       |
+| 0          | 0                    |1-alpha^(1/n)
+| 1          |1-(1-0.5*alpha)^(1/n) |1-(0.5*alpha)^(1/n)
+| N          |(alpha)^(1/n)         |1
+
+## Sample Size
+n = (1.96σ/E)^2
+Sample Size for Population Proportion E=.03
+n= 1.96^2/4E^2
+
+## Finite Correction Factor
+SQRT((N-n)/(N-1))
+In general a more accurate sample size formula
+N*N0/(N+N0-1)
 
 ## Hypothesis testing
 1. state hypothesis

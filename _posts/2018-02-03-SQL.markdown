@@ -20,10 +20,19 @@ categories: jekyll update
 ### DDL(data defination language)
 - CREATE DATABASE`CREATE DATABASE <DATABASE Name>`
 - DELETE table `DROP TABLE <tableNAME>;`
+
 - Update table
 `ALTER  <Tablename> ADD (<column name1>,<name2>,.....);`
 `UPDATE table_name SET column1 = value1, column2 = value2, ...
 WHERE condition;`
+- how to change column data_type
+`ALTER table TABLEname
+CHANGE column_name column_name datatype`
+- DROP COLUMN
+`ALTER TABLE table_name
+DROP COLUMN column_name;`
+
+
 - create table
  `create table tablename(columnname1 type primary key,columnname2 type,columnname3 type ) ;`
  ```
@@ -81,6 +90,7 @@ sort before limit
 - UPDATE statement is used to modify the existing records in a table
  `update table_name set column_name="value" where condition`
 - DELETE `DELETE FROM table_name WHERE condition;`
+delete all data in table ,but save the table Structures `TRUNCATE TABLE table1`
 - rename `RENAME TABLE newname to oldname;`
 
 ### DCL(data Control language)
@@ -146,6 +156,7 @@ ROUND(, 0)
 -`SELECT COALESCE(NULL, NULL, NULL, 'W3Schools.com', 'Example.com');`
 return the first non-null expression in a list
 
+- [MySQl time function conclusion](http://www.cnblogs.com/she27/articles/1377089.html)
 ### Null
 The result of any expression containing a NULL value is NULL
 `2 + NULL = NULL`
@@ -156,7 +167,10 @@ The result of any expression containing a NULL value is NULL
 - = < >
 - in a specified value matches any value in a subquery or a list
 - like
-- between  
+- between
+`SELECT column_name(s)
+FROM table_name
+WHERE column_name BETWEEN value1 AND value2;`
 - AND
 `SELECT column1, column2, ...
 FROM table_name
@@ -229,3 +243,8 @@ IGNORE 1 LINES
 - 2.How to change the length of character
 solution:`ALTER table table_name column_name varchar(30)`
 - 3.Notice `''` when you retrieve a value in string
+- 4.Which SQL statement is used to delete data from a database?
+- 5.With SQL, how do you select all the records from a table named "Persons" where the "LastName" is alphabetically between (and including) "Hansen" and "Pettersen"?
+- 6.How can you change "Hansen" into "Nilsen" in the "LastName" column in the Persons table?
+- 7. With SQL, how can you return the number of records in the "Persons" table?
+- 8.Which operator is used to select values within a range
