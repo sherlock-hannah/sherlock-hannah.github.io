@@ -42,7 +42,7 @@ Set a model and output a table(the prediction of users buying products in 18.Dec
 ## Metric
 ![F1](../pictures/F1.png)
 
-## Analysis
+## Analysis visualization
 
 ![behaviortype](../pictures/behaviortype.png)
 
