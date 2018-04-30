@@ -30,7 +30,18 @@ item id is the id of the item
 bought by the user from the merchant on the Double 11 day,
 
 ## Feature engnieering
-1. divide action into three parts:clicks/add to carts, purchases, add-to-favourite
+user-related features, merchant-related features
+and user-merchant interactive features
+1. divide action_type into three parts:clicks/add to carts, purchases, add-to-favourite
+groupby user_id and merchant_id
+and out into file
+2. use sql join train and
 
 
 ## Visualization
+
+
+## Model Training
+## Reference
+[Repeat Buyers Prediction after Sales Promotion for Tmall Platform
+](http://shichuan.org/doc/23.pdf)

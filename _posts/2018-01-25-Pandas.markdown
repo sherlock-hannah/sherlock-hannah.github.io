@@ -17,6 +17,7 @@ xls_dataframe   = pd.read_excel('my_dataset.xlsx', 'Sheet1', na_values=['NA', '?
 json_dataframe  = pd.read_json('my_dataset.json', orien t='columns')
 csv_dataframe   = pd.read_csv('my_dataset.csv', sep=',',names=['1','2'])
 table_dataframe = pd.read_html('http://page.com/with/table.html')[0]
+pd.read_table('/s/s.txt'，names = ['column','column1'])
 
 ```
 before you read html ,first install lxml,html5,beautifulsoup4
@@ -27,11 +28,16 @@ pip install html5lib
 pip install BeautifulSoup4
 
 ```
+[parameter](https://blog.csdn.net/HHTNAN/article/details/76019902)
+
+
+
+
 2. out datas
-`df.to_csv('D:\data\out2.csv',index=False)`
+`df.to_csv('D:\data\out2.csv',index=False,header =False)`
 
 ### Slicing
-1. column access`x[["column label","column_name2"]`
+1. column access`x[["column label","column_name2"]]`
    raw access`x.loc[row label]`
    elements access `x[row,column]`
 -  `loc` also allows you to select both rows and columns from a DataFrame.
@@ -56,8 +62,8 @@ combine different condition together
 `df['col2'] = df['col2'].astype('int')`change one column data_type
 - convert them to the desired type using the: `.to_datetime()`, `.to_numeric()`, and `.to_timedelta()` methods:
 ```
-df.Date = pd.to_datetime(df.Date, errors='coerce')
-df.Height = pd.to_numeric(df.Height, errors='coerce')
+df['Date'] = pd.to_datetime(df.Date, format= "%m%d",errors='coerce')
+df['Height'] = pd.to_numeric(df.Height, errors='coerce')
 ```
 
 
@@ -69,6 +75,7 @@ check if there duplicate or null
  test['Age'].isnull().value_counts()
  test.duplicated().value_counts()
  ```
+ of `df.info()`
 1. Dropping Data
 
 ```
@@ -92,7 +99,7 @@ df = df.dropna(axis=0, thresh=4)
 2. filling data
 replace NA with a scalar value
 ```
-df[my_feature].fillna( df[my_feature].mean())
+df[my_feature].fillna( df[my_feature].mean(),inplace = True)
 df[my_feature].fillna(df[my_feature].mode())
 df.fillna(0)
 ```

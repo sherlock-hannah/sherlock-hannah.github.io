@@ -34,7 +34,7 @@ the percentage of passengers you correctly predict
 ![agedistribution](../pictures/agedistribution.png)
 
 
-![notalone](../pictures/notalone.png)
+![notalone](/pictures/notalone.png)
 
 ![survivedandfeatures](../pictures/survivedandfeature.png)
 
