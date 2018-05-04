@@ -34,14 +34,17 @@ user-related features, merchant-related features
 and user-merchant interactive features
 1. divide action_type into three parts:clicks/add to carts, purchases, add-to-favourite
 groupby user_id and merchant_id
-and out into file
-2. use sql join train and
+and out into file user_action
+2. use sql join train and user_action on user_id
+3. extract the action_type when day == 1111
 
 
 ## Visualization
 
 
 ## Model Training
+
+
 ## Reference
 [Repeat Buyers Prediction after Sales Promotion for Tmall Platform
 ](http://shichuan.org/doc/23.pdf)

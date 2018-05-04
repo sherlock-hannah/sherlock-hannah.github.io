@@ -46,6 +46,16 @@ x[index],index=0,1,2....
 [Data Structures](https://docs.python.org/3.5/tutorial/datastructures.html)
 
 ### Functions
+```
+def myfunction(x,y,z=1.5):
+    if z>1:
+        return z*(x+y)
+    else:
+        return z/(x+y)
+```
+
+
+
 - 1.`type()` return the type of a value
 - 2.`max()` maximum of list
 - 3.`round(numbers,ndigits)` ndigits means how many digits behind the decimal point
@@ -104,6 +114,10 @@ for Pclass in Levels:
     Age.append(titanic.loc[titanic.Pclass==Pclass,'Age'])`
 
 [More Control Flow Tools](https://docs.python.org/3.5/tutorial/controlflow.html)
+
+
+
+
 
 ### Class
 ```
