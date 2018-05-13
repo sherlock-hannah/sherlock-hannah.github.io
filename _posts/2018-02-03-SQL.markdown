@@ -4,7 +4,7 @@ title:  "SQL"
 date:   2018-02-03 18:43:31 +0800
 categories: jekyll update
 ---
-### Tips
+## Tips
 - structure query language, GUI Tools:Navicat
 - RDBMS: Relational Database Management System.ER:entity relationship
 - Windows power shell:
@@ -17,11 +17,22 @@ categories: jekyll update
  `source d:/mmzm.sql`
 - `'string' as column_name`can use this string instead column
 
-### DDL(data defination language)
-- CREATE DATABASE`CREATE DATABASE <DATABASE Name>`
-- DELETE table `DROP TABLE <tableNAME>;`
+## PRIMARY KEY
+Primary keys must contain UNIQUE values, and cannot contain NULL values.
 
-- Update table
+A table can have only one primary key, which may consist of single or multiple fields
+
+-  if a column set primary key,there are not duplicated value `Alter table tableNAME drop primary key`
+- To create a PRIMARY KEY constraint on the "ID" column `ALTER TABLE Persons
+ADD PRIMARY KEY (ID);`
+
+## DDL(data defination language)
+- CREATE DATABASE `CREATE DATABASE <DATABASE Name>`
+- DELETE DATABASE `DROP DATABASE databasename;
+`
+- DELETE TABLE `DROP TABLE <tableNAME>;`
+
+- Update TABLE
 `ALTER  <Tablename> ADD (<column name1>,<name2>,.....);`
 `UPDATE table_name SET column1 = value1, column2 = value2, ...
 WHERE condition;`
@@ -33,7 +44,7 @@ CHANGE column_name column_name datatype`
 DROP COLUMN column_name;`
 
 
-- create table
+- create TABLE
  `create table tablename(columnname1 type primary key,columnname2 type,columnname3 type ) ;`
  ```
  Create table test(PassengerId      int(64) primary key,
@@ -50,7 +61,7 @@ Embarked        varchar);
 ```
 
 
-### DML(data Manipulation language)
+## DML(data Manipulation language)
 - SELECT(define which columns to return)
 `SELECT <Column name>,..,...
 FROM <TABLEname>;`
@@ -93,10 +104,10 @@ sort before limit
 delete all data in table ,but save the table Structures `TRUNCATE TABLE table1`
 - rename `RENAME TABLE newname to oldname;`
 
-### DCL(data Control language)
+## DCL(data Control language)
 COMMIT ROLLBACK GRANT REVOKE
 
-### Data type
+## Data type
 data type(https://www.w3schools.com/sql/sql_datatypes.asp)
 - null
 - int
@@ -113,7 +124,7 @@ uint16  Unsigned integer (0 to 65535)
 uint32  Unsigned integer (0 to 4294967295)
 uint64  Unsigned integer (0 to 18446744073709551615)
 - float
-float_  Shorthand for float64.
+float_  Shorthand for `float(64,d)`.
 float16 Half precision float: sign bit, 5 bits exponent, 10 bits mantissa
 float32 Single precision float: sign bit, 8 bits exponent, 23 bits mantissa
 float64 Double precision float: sign bit, 11 bits exponent, 52 bits mantissa
@@ -121,7 +132,7 @@ float64 Double precision float: sign bit, 11 bits exponent, 52 bits mantissa
  scale numbers`M` precision numbers`N`
 - date
 
-### Text datatype
+## Text datatype
 character type(repository of saving Text) :gbk (21000chinese character 2byte) , big5 ,gb2312 (6700 chinese character),utf8,unicode (alllanguage)
 - binary System(voice,image etc binary data)
 binary ,varbinary ,blob
@@ -132,19 +143,24 @@ char, varchar, text
 `collate utf8_bin`
 `collate ut8_general_ci`
 
-### Functions
-#### Aggregate functions
+## Functions
+### Aggregate functions
 `count(),sum(),avg(),max(),min()`
-Window functions
-Logical functions
-Scalar functions
+
 ```
-upper()
-concat()
-year(),datename(mm,column_name),datename(dw,column_name)
-datediff()
+upper(),lower() #use in letter
+concat(string1,)
+
 ROUND(, 0)
 ```
+
+- calculate functions
+`mod()`
+`abs()` absolute value
+`round(numbers,ndigits)`
+
+
+
 - `SELECT length(column_name) from table_name`Returns the length of the specified string (in bytes)
 - `CAST`Converts a value from one datatype to another datatype
 `CAST(column_name AS varchar)`
@@ -156,21 +172,71 @@ ROUND(, 0)
 -`SELECT COALESCE(NULL, NULL, NULL, 'W3Schools.com', 'Example.com');`
 return the first non-null expression in a list
 
-- [MySQl time function conclusion](http://www.cnblogs.com/she27/articles/1377089.html)
-### Null
+### Scala function
+- Date Functions
+[MySQl time function conclusion](http://www.cnblogs.com/she27/articles/1377089.html)
+
+`datediff(date1,date2)` Return the difference in days between two date values:
+`timediff(time1,time2)`the subtraction of two date
+
+`year(),day(),datename(mm,column_name),datename(dw,column_name)`
+
+
+
+### window function(online analytical processing)
+- `rank()`
+
+`danse rank()`
+
+Returns the rank of rows within the partition of a result set, without any gaps in the ranking.
+
+`row_number()`
+
+```
+select column_name,column_name1,
+    rank() over (pattern by columnname1 order by
+                    column_name2) as columnname3
+
+from tableNAME
+
+```                    
+pattern by set the object scale of ranking
+
+(just use in select sentence)
+
+- Aggregate functions as window function
+```
+sum(columnname1) over (order by column_name2)
+as columnname3
+```
+changing average
+
+```
+avg(columnname) over (order by columnname1 row 2 pre)
+```
+
+## Case
+```
+CASE WHEN <expression> THEN
+     WHEN <expression> THEN
+     ELSE<>
+END
+```
+
+
+
+## Null
 The result of any expression containing a NULL value is NULL
 `2 + NULL = NULL`
 - null functions: `IFNULL()`function lets you return an alternative value if an expression is NULL:
 
 
-### The predicates and NOT Operators
-- = < >
+## Operators
+- `=`
+` < >`
+ is exclusive of the range of value specified
+
 - in a specified value matches any value in a subquery or a list
-- like
-- between
-`SELECT column_name(s)
-FROM table_name
-WHERE column_name BETWEEN value1 AND value2;`
 - AND
 `SELECT column1, column2, ...
 FROM table_name
@@ -184,7 +250,33 @@ WHERE condition1 OR condition2 OR condition3 ...;`
 FROM table_name
 WHERE NOT condition;`
 
-### Joins
+## The predicates
+
+- like
+`WHERE column_name like  '%ddd%'`
+`WHERE column_name like 'ddd_' `
+- between
+`SELECT column_name(s)
+FROM table_name
+WHERE column_name BETWEEN value1 AND value2;`
+
+is inclusive of the range of the value specified
+
+
+- is NULL(extract some value is null)
+`WHERE column_name is NULL`
+
+- is not NULL(extract some value is not null)
+`WHERE column_name is not NULL`
+
+- in (simple use of or )
+`WHERE column_name (not) in (2,3,5) `
+
+- EXISTS
+
+
+
+## Joins
 combine rows from multiple tables by specifying matching criteria,usually
 based on primary key -foreign key relationship
 
@@ -215,7 +307,7 @@ CROSS JOIN table2 as t2 `
 FROM table1 T1, table1 T2
 WHERE condition;`
 
-### Union
+## Union
 - UNION(returns a result set of distinct rows)
 `SELECT column_name(s) FROM table1
 UNION
@@ -226,7 +318,7 @@ UNION ALL retains duplicates during query processing
 
 - except  (returns only distinct rows that appear in the first set but not the second)
 
-### Loading data
+## Loading data
 ```
 load data local infile "C:/ProgramData/MySQL/MySQL Server 5.1/Data/Kaggle/test.csv"
 into table test
@@ -235,9 +327,13 @@ ENCLOSED BY '"'
 LINES TERMINATED BY '\r\n'
 IGNORE 1 LINES
 (PassengerId,Pclass,Name,Sex,Age,SibSp,Parch,Ticket,Fare,Cabin,Embarked;)
+SET expired_date = STR_TO_DATE(@expired_date, '%m/%d/%Y');
+
 ```
 
-### Problems
+
+
+## Problems
 - 1.when insert chinese character into table
 `ERROR 1366 (HY000): Incorrect string value: '\xD4\xF8\xBB\xAA' for column 'sname' at row 1`
 - 2.How to change the length of character
@@ -248,3 +344,5 @@ solution:`ALTER table table_name column_name varchar(30)`
 - 6.How can you change "Hansen" into "Nilsen" in the "LastName" column in the Persons table?
 - 7. With SQL, how can you return the number of records in the "Persons" table?
 - 8.Which operator is used to select values within a range
+- 9.how to improve the speed of query
+solution:[add index](https://blog.csdn.net/qq_33556185/article/details/52192551)

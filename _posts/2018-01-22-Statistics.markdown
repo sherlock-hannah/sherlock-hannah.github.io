@@ -92,17 +92,50 @@ mean score ,T score
 5. interpret
 if the statistics Probability is less than the significance level ,the null hypothesis is rejected
 
+- Lower One-Sided Alternative:
+H0: µ = $79,263 or µ>=$79,263 Ha: µ<$79,263.
+- Upper One-Sided Alternative:
+H0: p <=.10 Ha: p >.10
+- Two-Tailed Alternative
+H0: Annual Variance Stock Returns = Annual Variance on Bond Returns.
+Ha: Annual Variance Stock Returns ≠ Annual Variance on Bond Returns.
+
+
+
+
+## Type 1 and type 2 errors
+1. Reject H0 given H0 True.
+ We let α= Probability of making a Type I Error. α is often called the level of significance of the test.;
+2. H0 is wrong ,but be accepted
+
+- Critical Region
+The critical region is the range of values for a sample statistic that results in rejection of H0
+
+## One Sample Z-Test
+One Sample Z-Test Test hypothesis about µ; Variance population  known Use when n>=30 because xbar will be normal by CLT.
+![ztest](../pictures/ztest.png)
+P Value<=α if and only if we reject H0.
+P-Value>α if and only if we accept H0.
+
+## T Random Variable
+If population is normal with mean µ and standard deviation is unknown then xbar-µ/(s/sqrt(n)).
+s= sample standard deviation
+n = sample size
+## Single Sample Test for Population Proportion
+## Testing Equality of Variances
+## Four Types of Tests
+- Two Sample Z-Test
+- Equal Variance T-Test
+- Unequal Variance T-Test
+- Idea of Pairing Samples
+- T-Test Paired Two Sample for Means
+## Contingency Table and Hypothesis of Independence
 
 
 
 
 
-
-
-
-
-
-## problems:
+## Problems:
 - 1.right skewed
 - 2.liner regression
 

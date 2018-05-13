@@ -17,6 +17,10 @@ numpy is nD array structure
 `median()`
 `std()`standand deviation
 `corrcoef`check if x,y are correlated
+`np.random.sample(Your_index)`random sample
+
+
+
 
 ### Problems
 1. How to array two column

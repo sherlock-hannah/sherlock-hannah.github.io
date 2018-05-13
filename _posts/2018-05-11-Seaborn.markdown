@@ -1,0 +1,41 @@
+---
+layout: post
+title:  "Seaborn"
+date:   2018-05-11 18:43:31 +0800
+categories: jekyll update
+---
+
+[Seaborn](https://blog.csdn.net/cymy001/article/details/78423920)
+[Example gallery](https://seaborn.pydata.org/examples/index.html)
+
+
+## Pearson Correlation Heatmap
+[Heatmap](https://seaborn.pydata.org/generated/seaborn.heatmap.html)
+[colorexamplecode](https://matplotlib.org/examples/color/colormaps_reference.html)
+```
+seaborn.heatmap(data, vmin=None, vmax=None, cmap=None, center=None, robust=False, annot=None, fmt='.2g', annot_kws=None, linewidths=0, linecolor='white', cbar=True, cbar_kws=None, cbar_ax=None, square=False, xticklabels='auto', yticklabels='auto', mask=None, ax=None, **kwargs)
+
+```
+annot:If True, write the data value in each cell
+cmap : matplotlib colormap name or object, or list of colors
+```
+plt.figure(figsize=(14,12))
+plt.title('Pearson Correlation of Features', y=1.05, size=15)
+colormap = plt.cm.RdBu
+sns.heatmap(train.astype(float).corr(),cmap=colormap,vmax=1.0,linewidths= 0.1,annot=True)
+```
+
+## Pairplot
+the diagonal subplots show the distribution of variable,
+the others show the relationship of two variable
+```
+seaborn.pairplot(data, hue=None, hue_order=None, palette=None, vars=None, x_vars=None, y_vars=None, kind='scatter', diag_kind='hist', markers=None, size=2.5, aspect=1, dropna=True, plot_kws=None, diag_kws=None, grid_kws=None)
+```
+hue : Variable in data to map plot aspects to different colors
+palette : Set of colors for mapping the hue variable. If a dict, keys should be values in the hue variable.
+size : Height (in inches) of each facet.
+diag_kind : Kind of plot for the diagonal subplots.
+ {‘hist’, ‘kde’}
+diag_kws:`diag_kws=dict(shade=True)`make the diagonal subplot have shade
+
+[Pairs Plots](https://www.jiqizhixin.com/articles/2018-05-06-2)

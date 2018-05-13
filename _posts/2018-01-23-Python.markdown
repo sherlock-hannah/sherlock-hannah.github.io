@@ -27,10 +27,12 @@ some saving notebook
 - 1.variable,type
 `**` means square
 - 2.list
+`x = [,]`
 don't forget`,`between two variables
 Subsetting list
 x[index],index=0,1,2....
 - 3.turple
+`tur = ()`
 - 4.dictionary
 
 
@@ -47,14 +49,13 @@ x[index],index=0,1,2....
 
 ### Functions
 ```
-def myfunction(x,y,z=1.5):
-    if z>1:
-        return z*(x+y)
-    else:
-        return z/(x+y)
+def my_function():
+ if  :
+  return
+else:
+  return
+
 ```
-
-
 
 - 1.`type()` return the type of a value
 - 2.`max()` maximum of list
@@ -66,15 +67,18 @@ def myfunction(x,y,z=1.5):
 - 8.`value.counts` count frequence of value `data_t.duplicated().value_counts()`display duplicated value
 - 9.`describe()`descriptive statistics
 - 10.`unique()` return array of unique values
-
+- 11.`isinstance(a,int)` if this object is this type
+- 12.`sample(n=20)`can random extract n values
 sorted what means
 [Python - Functions](http://www.tutorialspoint.com/python/python_functions.htm)
 
 ### Method
 - 1.everything=object,object have method associated,depending on type.
 call functions on object.
-- 2.`x.index(value)``x.append()` `x.count(values)`count the number of occurence of the value in x
-why some can not apply
+- 2.`x.index(value)`
+`x.append()`
+`x.count(values)`count the number of occurence of the value in x
+Q :why some can not apply
 
 [Improve Your Python: Python Classes and Object Oriented Programming](https://jeffknupp.com/blog/2014/06/18/improve-your-python-python-classes-and-object-oriented-programming/)
 
@@ -88,6 +92,7 @@ AS a directory of python script
 ### Boolean Logic and Control Flow
 [Boolean Operations](https://docs.python.org/3/library/stdtypes.html#boolean-operations-and-or-not)
 - 1.relational operators`!=`not equal(notice 2 = not 1) `==` equal `<` less than `>` greater than
+`/`divide `//`divide and ignore points
 - 2.logical operators `and` `or` `not`
 Notice that `not` has a higher priority than `and` and `or`, it is executed first.
 - 3.conditional statements`if` `else` `elif`
@@ -107,16 +112,31 @@ expression
 
 
 ### For
-[for-loop](http://www.runoob.com/python/python-for-loop.html)
-`Age = []
+[for-loop](http://www.runoob.com/python/python-for-loop.html)`for value in collection
+#do something to values`
+
+```
+Age = []
 Levels = titanic.Pclass.unique()
 for Pclass in Levels:
-    Age.append(titanic.loc[titanic.Pclass==Pclass,'Age'])`
+    Age.append(titanic.loc[titanic.Pclass==Pclass,'Age'])
+```
 
 [More Control Flow Tools](https://docs.python.org/3.5/tutorial/controlflow.html)
+`break`exit loop
+`continue`into next iterator early
+### while
+```
+while  :
+```
 
 
+### lambda
+```
+g = lambda x: x**2
+def f (x): return x**2
 
+```
 
 
 ### Class

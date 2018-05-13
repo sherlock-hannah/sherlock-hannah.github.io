@@ -118,10 +118,16 @@ df.fillna(limit=5)
 - pandas.merge use key combine rows from different dataset
 
 ### Time series
+data_type:1.date2.time3.datetime4.timedelta(the subtraction of two datetime)
+dateparse
 `train_user_df['time']=[datetime.strptime(x.split()[0],"%Y-%m-%d") for x in time_series]`
 convertion of time_series and string
 
+
 [pandas time_series](http://www.cnblogs.com/lemonbit/p/6896499.html)
+
+
+
 ### Group by
 `Survived_by_SibSp = data_t[['SibSp','Survived']].groupby('SibSp',as_index = False).mean().sort_values(by='Survived',ascending=False)`
 
@@ -129,7 +135,11 @@ convertion of time_series and string
 `any(titanic.Age.isnull())`
 can detect if this column have null values
 
+### Merge(like join in sql)
+ `pd.merge(left, right, on='key')`
 
+### index
+`df1.reindex(['a','b','c','d','e'],  inplace=Ture)`
 
 ### Problems
 1. how to add columns

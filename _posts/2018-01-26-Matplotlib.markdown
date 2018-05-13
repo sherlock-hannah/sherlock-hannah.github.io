@@ -16,6 +16,18 @@ if you use python3 in ubuntun ,you should put`%matplotlib inline` ,then it could
 `df.asymmetry.plot.hist(title='',bins=n)`plots a histogram of the list named x `plt.hist(x)`
 ### 2D scatter
 `df.plot.scatter(x='',y='')`
+```
+N = 50
+x = np.random.rand(N)
+y = np.random.rand(N)
+colors = np.random.rand(N)
+area = np.pi * (15 * np.random.rand(N))**2  # 0 to 15 point radii
+
+plt.scatter(x, y, s=area, c=colors, alpha=0.5)
+plt.show()
+
+```
+
 ### 3D scatter plot
 ```
 from mpl_toolkits.mplot3d import Axes3D`
@@ -41,8 +53,10 @@ then if you want to spin 3D scatter plot,you can install pyqt5
 
 [different type of bar](https://zhuanlan.zhihu.com/p/25128216)
 
+
+
 ## Figure AND subplot
-- create a new figure `fig = plt.figure()`
+- create a new figure `fig = plt.figure(figsize=(,))`
 - add subplot `ax1 = fig.add_subplot(2,2,1)`
 (2,2)means this figure is 2*2 and 1 is the first figure
 

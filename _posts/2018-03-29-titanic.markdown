@@ -34,11 +34,18 @@ the percentage of passengers you correctly predict
 ![agedistribution](../pictures/agedistribution.png)
 
 
-![notalone](/pictures/notalone.png)
+![notalone](../pictures/notalone.png)
 
 ![survivedandfeatures](../pictures/survivedandfeature.png)
 
 ![survivedandsib](../pictures/survivedandsib.png)
+
+![PearsonCorrelationHeatmap](../pictures/PearsonCorrelationHeatmap.png)
+some correlation plots of the features to see how related one feature is to the next.
+
+![randomitem](../pictures/randomitem.png)
+
+![pairplot](../pictures/pairplot.png)
 
 ## Regulation based on analysis
 
@@ -82,6 +89,12 @@ plot_learning_curve(LR, u'learning_rate', titanic[predictors], titanic['Survived
 ```
 
 3. RandomForest
+## Ensembling & Stacking models
+
+
+
+
+
 
 
 ## Problems

@@ -78,6 +78,10 @@ Set a model and output a table(the prediction of users buying products in 18.Dec
 
 ![CTR](../pictures/CTR.png)
 
+![user_behavior](../pictures/buser.jpg)
+
+![user_behaviorrandom](../pictures/buserrandom.png)
+
 ## Regulation based on analysis
 - 1.the product people add to shoppingcart last day have higher probability being purchased.
 
