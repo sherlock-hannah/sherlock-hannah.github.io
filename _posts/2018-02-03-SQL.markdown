@@ -62,7 +62,7 @@ Embarked        varchar);
 
 
 ## DML(data Manipulation language)
-- SELECT(define which columns to return)
+### SELECT(define which columns to return)
 `SELECT <Column name>,..,...
 FROM <TABLEname>;`
 query all columns: use `*` to replace ` <column name>`
@@ -71,26 +71,38 @@ query all columns: use `*` to replace ` <column name>`
 - removing duplicates
 `SELECT distinct `
 
-- WHERE(searsh condition,filters rows using a predicate)
+### WHERE(searsh condition,filters rows using a predicate)
 `WHERE search condition'`
 `WHERE like "k%"`
  to match any string of zero or more characters, use %
  to match characters that are not R, use [^R]
  to match a numeral, use [0-9]
 
-- GROUP BY (group by list,arrange rows by group)
-`GROUP BY listname`
+### GROUP BY
+`GROUP BY listname`group by list,arrange rows by group
+
+Grouping Operators
+- `GROUP BY year ASC WITH ROLLUP;` ROLLUP the query produces an extra super-aggregate summary row
+- `GROUPING()`
+return 1 when  super-aggregate summary row
+- `CUBE`
+- `GROUPING SET`
 
 
-- HAVING(search condition,filters group using a predicate)
+### HAVING(search condition,filters group using a predicate)
+specified group condition
  filter the groups
 `HAVING search condition`
+can't use `WHERE` because it run before `sum`and `group by`
 
-- ORDER BY
+### ORDER BY
 `ORDER BY listname asc`
 upward `asc`
 downward `desc`
 `offset x rows fetch next y rows only`
+
+
+### Other
 
 - limit
 `limit m,n`  m stands for starting from m-1 rows,n means n rows
@@ -111,25 +123,9 @@ COMMIT ROLLBACK GRANT REVOKE
 data type(https://www.w3schools.com/sql/sql_datatypes.asp)
 - null
 - int
- Adding the `UNSIGNED` attribute will move that range up so it starts at zero instead of a negative number.
-int_    Default integer type (same as C long; normally either int64 or int32)
-intc    Identical to C int (normally int32 or int64)
-intp    Integer used for indexing (same as C ssize_t; normally either int32 or int64)
-int8    Byte (-128 to 127)
-int16   Integer (-32768 to 32767)
-int32   Integer (-2147483648 to 2147483647)
-int64   Integer (-9223372036854775808 to 9223372036854775807)
-uint8   Unsigned integer (0 to 255)
-uint16  Unsigned integer (0 to 65535)
-uint32  Unsigned integer (0 to 4294967295)
-uint64  Unsigned integer (0 to 18446744073709551615)
 - float
-float_  Shorthand for `float(64,d)`.
-float16 Half precision float: sign bit, 5 bits exponent, 10 bits mantissa
-float32 Single precision float: sign bit, 8 bits exponent, 23 bits mantissa
-float64 Double precision float: sign bit, 11 bits exponent, 52 bits mantissa
-- decimal(M,N)
- scale numbers`M` precision numbers`N`
+`float(64,d)`.
+- decimal(M,N),scale numbers`M` precision numbers`N`
 - date
 
 ## Text datatype
@@ -144,53 +140,91 @@ char, varchar, text
 `collate ut8_general_ci`
 
 ## Functions
+
+[Functions](https://www.w3schools.com/sql/sql_ref_mysql.asp)
+
+
 ### Aggregate functions
+
 `count(),sum(),avg(),max(),min()`
 
-```
-upper(),lower() #use in letter
-concat(string1,)
+Statistical: `STDEV(),STDEVP(),VAR(),VARP()`
 
-ROUND(, 0)
-```
 
-- calculate functions
+### Calculate functions
 `mod()`
 `abs()` absolute value
 `round(numbers,ndigits)`
-
-
-
+`upper(),lower()` use in letter
 - `SELECT length(column_name) from table_name`Returns the length of the specified string (in bytes)
+- `SELECT COALESCE(NULL, NULL, NULL, 'W3Schools.com', 'Example.com');`
+return the first non-null expression in a list
+
+### Conversion function
+
 - `CAST`Converts a value from one datatype to another datatype
 `CAST(column_name AS varchar)`
 - `CONVERT(data_type(length), expression, style)`Convert an expression from one datatype to another, or one character set to another
+- `STR(number, length, decimal_places)` return a string representation of a number
 
--`STR(number, length, decimal_places)` return a string representation of a number
-- `CONCAT(string1, string2, ...., string_n)`Concatenate string together
-[Additional reading](https://www.w3schools.com/sql/sql_ref_mysql.asp)
--`SELECT COALESCE(NULL, NULL, NULL, 'W3Schools.com', 'Example.com');`
-return the first non-null expression in a list
+
+
+### Logical Functions
+SQL Server(MSSQL)
+
+- `ISNUMERIC(expression)`
+- `IIF(ProductCategoryID IN (5,6,7), 'Bike', 'Other')`
+'bike' is the true place ,'other' is the false place .
+
+
+
 
 ### Scala function
-- Date Functions
 [MySQl time function conclusion](http://www.cnblogs.com/she27/articles/1377089.html)
 
-`datediff(date1,date2)` Return the difference in days between two date values:
-`timediff(time1,time2)`the subtraction of two date
+Date Functions
+
+
+- `datediff(date1,date2)` Return the difference in days between two date values:
+
+- `getdate()`return the current date
+
+```
+datediff(yy,salestartdate,getdate())
+```
+
+- `timediff(time1,time2)`the subtraction of two date
 
 `year(),day(),datename(mm,column_name),datename(dw,column_name)`
 
+String Functions
+- `CONCAT(string1, string2, ...., string_n)`Concatenate string together
+- `LEFT(string, number_of_chars)`Extract a substring from a string (starting from left):
+- `SUBSTRING(string, start, length)`extracts a substring from a string (starting at any position).
+- `CHARINDEX(substring, string, start_pos)` returns the location of a substring in a string.
+- `REVERSE(string)`  reverses a string and returns the result
+- `SELECT length(column_name) from table_name`Returns the length of the specified string (in bytes)
+`len()` (sql Server)
+
+Conversion Functions
+
+- `CAST`Converts a value from one datatype to another datatype
+`CAST(column_name AS varchar)`
+- `CONVERT(data_type(length), expression, style)`Convert an expression from one datatype to another, or one character set to another
+- `STR(number, length, decimal_places)` return a string representation of a number
+- `SELECT COALESCE(NULL, NULL, NULL, 'W3Schools.com', 'Example.com');`
+return the first non-null expression in a list
 
 
-### window function(online analytical processing)
+### Window function(online analytical processing)
 - `rank()`
-
-`danse rank()`
+the same numeric value for ties (for example 1, 2, 2, 4, 5)
+- `danse rank()`
 
 Returns the rank of rows within the partition of a result set, without any gaps in the ranking.
 
-`row_number()`
+- `row_number()`
+numbers all rows sequentially (for example 1, 2, 3, 4, 5).
 
 ```
 select column_name,column_name1,
@@ -205,15 +239,17 @@ pattern by set the object scale of ranking
 (just use in select sentence)
 
 - Aggregate functions as window function
+
 ```
 sum(columnname1) over (order by column_name2)
 as columnname3
 ```
-changing average
+- moving average
 
 ```
-avg(columnname) over (order by columnname1 row 2 pre)
+avg(columnname) over (order by columnname1 row 2 preceding)
 ```
+`preceding` means n rows before current row,`following`means n rows after current row.
 
 ## Case
 ```
@@ -228,8 +264,14 @@ END
 ## Null
 The result of any expression containing a NULL value is NULL
 `2 + NULL = NULL`
+
 - null functions: `IFNULL()`function lets you return an alternative value if an expression is NULL:
 
+sql Server
+- `ISNULL(expression, alt_value)`
+
+The ISNULL() function returns the alt_value, if the expression is a NULL;
+The ISNULL() function returns the expression, if the expression is NOT NULL
 
 ## Operators
 - `=`
@@ -310,7 +352,7 @@ WHERE condition;`
 ## Union
 - UNION(returns a result set of distinct rows)
 `SELECT column_name(s) FROM table1
-UNION
+UNION (ALL)
 SELECT column_name(s) FROM table2;`
 UNION ALL retains duplicates during query processing
 - intersect(returns only distinct rows that appear in both result set )
@@ -319,6 +361,8 @@ UNION ALL retains duplicates during query processing
 - except  (returns only distinct rows that appear in the first set but not the second)
 
 ## Loading data
+MySQL:
+
 ```
 load data local infile "C:/ProgramData/MySQL/MySQL Server 5.1/Data/Kaggle/test.csv"
 into table test
@@ -330,8 +374,105 @@ IGNORE 1 LINES
 SET expired_date = STR_TO_DATE(@expired_date, '%m/%d/%Y');
 
 ```
+SQL Server:
+```
+BULK INSERT RBP.dbo.user_log
+FROM 'D:\Repeat Buyers Prediction\data_format1\user_log_format1.csv'
+WITH(
+	FIELDTERMINATOR = ',',
+	ROWTERMINATOR = '0x0a',
+	 firstrow = 2);
+```
+
+## Export
+```
+select
+from test
+into outfile "c:/Users/Administrator/Desktop/Repeat Buyers Prediction/feature/expandedtest.csv"
+FIELDS TERMINATED BY ','
+OPTIONALLY ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+```
+
+## Views
+a view is a virtual table based on the result-set of an SQL statement.
+- CREATE VIEW Examples
+
+```
+CREATE OR REPLACE VIEW [view_name] AS
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition;
+```
+example
+```
+CREATE VIEW [Products Above Average Price] AS
+SELECT ProductName, UnitPrice
+FROM Products
+WHERE UnitPrice > (SELECT AVG(UnitPrice) FROM Products);
+```
+- query the view
+`select * from [view_name]`
+- DROP VIEW`DROP VIEW view_name;`
+-  cannot use `order by`
+-  if you want to `update` `insert` `delete` , the view should satisfy those requirement
+1. not use `distinct` `having` `group by`
+2. just one table
 
 
+
+## Subqueries
+Results of inner query passed to outer query
+
+
+### Scalar subquery
+returns single value to outer query
+### Multi-valued subquery
+Used with IN predicate
+### self-contained
+have no connection with the outer query other than passing it results
+### Correlated
+- Dependent on outer query, cannot be executed separately
+- Behaves as if inner query is executed once per outer row
+
+```
+SELECT orderid, empid, orderdate
+FROM Sales.Orders AS O1
+WHERE orderdate = (SELECT MAX(orderdate)
+	                          FROM Sales.Orders AS O2
+	                          WHERE O2.empid = O1.empid)
+ORDER BY empid, orderdate;
+```
+??
+
+## Apply
+- cross apply conceptually similar to cross join
+- outer apply conceptually similae to left join
+```
+SELECT S.supplierid, s.companyname, P.productid, 	P.productname, P.unitprice
+FROM Production.Suppliers AS S
+CROSS APPLY dbo.fn_TopProductsByShipper(S.supplierid) AS P
+```
+
+
+
+## Table Expressions
+
+## Execute sequence
+(1)from
+(3) join
+(2) on
+(4) where
+(5)group by(use alias)
+(6) avg,sum....
+(7)having
+(8) select
+(9) distinct
+(10) order by
+## Another reading
+[Documentayion](https://dev.mysql.com/doc/)
+[tutorial](https://www.w3schools.com/sql/default.asp)
+SQL Server :logfile - `.ldf`,main data file `.mdf`
 
 ## Problems
 - 1.when insert chinese character into table
@@ -343,6 +484,16 @@ solution:`ALTER table table_name column_name varchar(30)`
 - 5.With SQL, how do you select all the records from a table named "Persons" where the "LastName" is alphabetically between (and including) "Hansen" and "Pettersen"?
 - 6.How can you change "Hansen" into "Nilsen" in the "LastName" column in the Persons table?
 - 7. With SQL, how can you return the number of records in the "Persons" table?
-- 8.Which operator is used to select values within a range
+- 8.The error 26 when install mssql,and can not connect engine
+
+
 - 9.how to improve the speed of query
 solution:[add index](https://blog.csdn.net/qq_33556185/article/details/52192551)
+
+
+
+- 10. use T-sql create database ,but can find in database
+
+
+- 10.install problems:maybe compatibility errors
+solution: uninstall old edition and update

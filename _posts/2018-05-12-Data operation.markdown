@@ -15,4 +15,10 @@ probability
 
 means:
 1. PCA
-2. standandlise data 
+2. standandlise data
+
+## Path Analysis
+
+## Cross-Selling
+1. association analysis
+2. sequence analysis

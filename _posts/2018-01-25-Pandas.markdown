@@ -55,11 +55,12 @@ combine different condition together
 7. Print the entire dataframe, using `print dataframe_name`
 8. `my_dataframe.columns = ['new', 'column', 'header', 'labels']` can rename column title
 9. `.dtypes`can view columns datatypes
+10. `pandas.qcut(x, q, labels=None, retbins=False, precision=3)`q : integer or array of quantiles
 
 
 ### textual data
 - using `astype` converta textual data to categorical
-`df['col2'] = df['col2'].astype('int')`change one column data_type
+`df['col2'] = df['col2'].astype(int)`change one column data_type
 - convert them to the desired type using the: `.to_datetime()`, `.to_numeric()`, and `.to_timedelta()` methods:
 ```
 df['Date'] = pd.to_datetime(df.Date, format= "%m%d",errors='coerce')
@@ -113,6 +114,10 @@ df.fillna(limit=5)
 3. unique data in a column
 
  `your_data_frame['your_column'].unique()` or equally, `your_data_frame.your_column.unique()` to see the unique values of each column and identify the rogue values.
+### qcut and cut
+`pd.qcut(factors, 5)`
+- `qcut`, the bins will be chosen so that you have the same number of records in each bin.
+- `cut` will choose the bins to be evenly spaced according to the values themselves and not the frequency of those values
 
 ### Combine dataset
 - pandas.merge use key combine rows from different dataset
@@ -134,6 +139,26 @@ convertion of time_series and string
 ### Tips
 `any(titanic.Age.isnull())`
 can detect if this column have null values
+### Series
+- `Series.map(arg, na_action=None)`
+arg : function, dict, or Series
+eg:
+```
+dataset['Sex'] = dataset['Sex'].map({'male':1,'female':0})
+
+titanic.loc[titanic["Sex"] == "male", "Sex"] = 0
+titanic.loc[titanic["Sex"] == "female", "Sex"] = 1
+```
+[pandas.Series.map](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.map.html)
+
+### DataFrame
+- `.replace(to_replace=None, value=None, inplace=False, limit=None, regex=False, method='pad', axis=None)`
+Replace values given in ‘to_replace’ with ‘value’
+eg:`dataset['Title'] = dataset['Title'].replace('Mlle', 'Miss')`
+- `DataFrame.apply(func, axis=0, broadcast=False, raw=False, reduce=None, args=(), **kwds)`
+Applies function along input axis of DataFrame.
+- `DataFrame.corr(method='pearson', min_periods=1)`
+Compute pairwise correlation of columns, excluding NA/null values
 
 ### Merge(like join in sql)
  `pd.merge(left, right, on='key')`

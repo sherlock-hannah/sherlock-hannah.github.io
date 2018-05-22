@@ -61,7 +61,11 @@ Set a model and output a table(the prediction of users buying products in 18.Dec
    x1 did user add this product to shoppingcart
    x2 did user buy this product within one week
 
-4.
+4. the latest day users action
+
+5. the time interval between other action_type and purchase
+
+6. the relationship between the times of other action_type and purchase of different item 
 
 
 
