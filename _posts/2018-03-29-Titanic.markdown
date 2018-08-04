@@ -38,7 +38,7 @@ TRUE positive/sum of test id
 ![agedistribution](/pictures/agedistribution.png)
 
 
-![notalone](../pictures/notalone.png)
+![notalone](/pictures/notalone.png)
 
 ![survivedandfeatures](../pictures/survivedandfeature.png)
 

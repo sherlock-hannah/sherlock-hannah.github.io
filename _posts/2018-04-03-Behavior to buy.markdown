@@ -61,7 +61,7 @@ different behavior add by timing different value group by user or item
 
 
 details:
-![BTB](../pictures/BTBfe1.png)
+![BTB](/pictures/BTBfe1.png)
 ![BTB](../pictures/BTBfe2.png)
 ![BTB](../pictures/BTBfe3.png)
 
