@@ -10,12 +10,12 @@ categories: jekyll update
 probability
 
 ## the defination of active level of operation group
-1. critical behaviortype of user in Business scene
+1. critical behavior type of user in Business scene
 2. answer the Business requirement
 
 means:
 1. PCA
-2. standandlise data
+2. standandlize data
 
 ## Path Analysis
 

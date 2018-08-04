@@ -6,14 +6,36 @@ categories: jekyll update
 ---
 if you use python3 in ubuntun ,you should put`%matplotlib inline` ,then it could display figure.
 
+
 ## Basic Plots with Matplotlib
 - The general syntax is`import package.subpackage as local_name.`such as `import matplotlib.pyplot as plt `
 - `plt.plot(a, b)`  `plt.xscale(log)` on a logarithmic scale
 - `plt.show()` to display the plot
 - `plt.clf()` clean and start again
 
+### series.plot
+`series.plot(kind='line',xlim=[0,10])`
+
+xlim : limit of x axis
+ylim: limit of y axis
+
 ### Histograms
 `df.asymmetry.plot.hist(title='',bins=n)`plots a histogram of the list named x `plt.hist(x)`
+
+add subplot
+```
+train1 = train.drop(['id'],axis =1)
+trainpair = train1.fillna(-1)
+fig = plt.figure(figsize=(14,14))
+for i in range(1,101):
+    axi = fig.add_subplot(10,10,i)
+    trainpairi = trainpair.iloc[:,i]
+    axi.hist(trainpairi)
+
+```
+
+
+
 ### 2D scatter
 `df.plot.scatter(x='',y='')`
 ```
@@ -52,8 +74,19 @@ then if you want to spin 3D scatter plot,you can install pyqt5
 `plt.bar(np.arrage(n),data,tick_label=[,])`
 
 [different type of bar](https://zhuanlan.zhihu.com/p/25128216)
+ex:
+```
+plt.figure(figsize=(20,14))
+plt.bar(range(len(df.index)), df.iloc[:,0], label='isnull',fc = 'b')
+plt.bar(range(len(df.index)), df.iloc[:,1], label='null',tick_label = df.index,fc = 'r')
+plt.legend()
+plt.show()
+```
 
-
+### Treemap
+`import squarify`
+`squarify.plot(sizes=data, label=data.index,color=colors)`
+[Treemap](https://python-graph-gallery.com/202-treemap-with-colors-mapped-on-values/)
 
 ## Figure AND subplot
 - create a new figure `fig = plt.figure(figsize=(,))`
@@ -73,9 +106,22 @@ pclass.set_xticklabels(['upper','middle','lower'])
 - `plt.scatter(alpha = n, ,)`. Alpha can be set from zero to one, where 0 totally transparant, and 1 is not transparant
 - Add `plt.grid(True)` after the `plt.text()`calls so that gridlines are drawn on the plot.
 
-## Seaborn
-[Seaborn](https://blog.csdn.net/cymy001/article/details/78423920)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Additional reeding
-[size image and source code](https://matplotlib.org/1.5.1/gallery.html)
-[flowingdata](http://flowingdata.com/category/tutorials/)
+- [size image and source code](https://matplotlib.org/1.5.1/gallery.html)
+- [flowingdata](http://flowingdata.com/category/tutorials/)
+- [python-graph-gallery](https://python-graph-gallery.com/)

@@ -6,25 +6,53 @@ categories: jekyll update
 ---
 numpy is nD array structure
 `import numpy as np`
-### Basic
-- 0.`np.array(data)` it can converts data(list,tuple) to ndarray,`np.arange(n)`it can return ndarray from 0 to n ,such as array([0,1,n])
+## Basic
+ 0.`np.array(data)` it can converts data(list,tuple) to ndarray,`np.arange(n)`it can return ndarray from 0 to n ,such as array([0,1,n])
 - 1.numpy array contain only one type,if contain different types,the boolean and the float were both convert to strings.
 - 2.2D Numpy Arrays
 `shape`show x row y column
 `[n,:]` this will select n row completely
-- 3.Basic Statistics
-`mean()` how to select column
+
+## Basic Statistics
+
+`mean()`
 `median()`
+
 `std()`standand deviation
+
 `corrcoef`check if x,y are correlated
+
 `np.random.sample(Your_index)`random sample
 
+`numpy.argsort(a, axis=-1, kind='quicksort', order=None)`
+
+## numpy.random
+`numpy.random.randint(low,high=None,size=None,dtype)`
+
+generate discrete distribution values in [low,high);
+
+if high=None，then taking value interval is [0,low).
+
+
+`np.random.rand(n)` generate uniform distribution float values in [0,1]
+
+`np.random.randn(n)` generate normal distribution float values in [0,1]
+
+
+## numpy.isnan
+- `numpy.isnan(x, /, out=None, *, where=True, casting='same_kind', order='K', dtype=None, subok=True[, signature, extobj]) `
+[numpy.isnan](https://docs.scipy.org/doc/numpy-1.14.0/reference/generated/numpy.isnan.html)
+
+- `np.inf` is when value divide 0
+
+## numpy.absolute
+Calculate the absolute value element-wise.
 
 
 
-### Problems
+## Problems
 1. How to array two column
 `np.column_stack()`
 
-### Additional reading
+## Additional reading
 [numpy](http://www.numpy.org/)

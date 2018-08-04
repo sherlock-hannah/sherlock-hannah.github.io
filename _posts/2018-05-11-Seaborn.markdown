@@ -6,18 +6,36 @@ categories: jekyll update
 ---
 
 [Seaborn](https://blog.csdn.net/cymy001/article/details/78423920)
+
 [Example gallery](https://seaborn.pydata.org/examples/index.html)
+
+## Customization
+`f, ax = plt.subplots(1, 2, figsize=(18 ,8))`
+add subplot
+
 
 
 ## Pearson Correlation Heatmap
 [Heatmap](https://seaborn.pydata.org/generated/seaborn.heatmap.html)
+
 [colorexamplecode](https://matplotlib.org/examples/color/colormaps_reference.html)
-```
-seaborn.heatmap(data, vmin=None, vmax=None, cmap=None, center=None, robust=False, annot=None, fmt='.2g', annot_kws=None, linewidths=0, linecolor='white', cbar=True, cbar_kws=None, cbar_ax=None, square=False, xticklabels='auto', yticklabels='auto', mask=None, ax=None, **kwargs)
 
 ```
-annot:If True, write the data value in each cell
-cmap : matplotlib colormap name or object, or list of colors
+seaborn.heatmap
+(data, vmin=None, vmax=None, cmap=None, center=None, robust=False, annot=None, fmt='.2g', annot_kws=None, linewidths=0, linecolor='white', cbar=True, cbar_kws=None, cbar_ax=None, square=False, xticklabels='auto', yticklabels='auto', mask=None, ax=None, **kwargs)
+
+```
+
+- annot:If True, write the data value in each cell
+- cmap : matplotlib colormap name or object, or list of colors
+`plt.cm.RdYlBu_r` from red to blue
+- vmax: maximum value of Index
+- vmin: minimize value of index
+
+
+
+
+
 ```
 plt.figure(figsize=(14,12))
 plt.title('Pearson Correlation of Features', y=1.05, size=15)
@@ -31,11 +49,58 @@ the others show the relationship of two variable
 ```
 seaborn.pairplot(data, hue=None, hue_order=None, palette=None, vars=None, x_vars=None, y_vars=None, kind='scatter', diag_kind='hist', markers=None, size=2.5, aspect=1, dropna=True, plot_kws=None, diag_kws=None, grid_kws=None)
 ```
-hue : Variable in data to map plot aspects to different colors
-palette : Set of colors for mapping the hue variable. If a dict, keys should be values in the hue variable.
-size : Height (in inches) of each facet.
+- hue : Variable in data to map plot aspects to different colors
+- palette : Set of colors for mapping the hue variable. If a dict, keys should be values in the hue variable.
+- size : Height (in inches) of each facet.
 diag_kind : Kind of plot for the diagonal subplots.
  {‘hist’, ‘kde’}
-diag_kws:`diag_kws=dict(shade=True)`make the diagonal subplot have shade
+- diag_kws:`diag_kws=dict(shade=True)`make the diagonal subplot have shade
 
 [Pairs Plots](https://www.jiqizhixin.com/articles/2018-05-06-2)
+
+
+## facetgrid
+Correlating numerical features
+`seaborn.FacetGrid(data, row=None, col=None, hue=None)`
+
+eg:
+```
+grid = sns.FacetGrid(tips, col="time",  hue="smoker")
+grid.map(plt.scatter, "total_bill", "tip", edgecolor="w")
+grid..add_legend())
+```
+## countplot
+```
+fig,ax = plt.subplots()
+sns.countplot('Survived', hue='',data=train)
+ax.set_title('Survived')
+
+plt.show()
+```
+
+
+## violinplot
+
+```
+f, ax = plt.subplots(1, 2, figsize=(18 ,8))
+sns.violinplot("Pclass","Age", hue="Survived", data=train, split=True, ax=ax[0])
+ax[0].set_title('Pclass and Age vs Survived')
+ax[0].set_yticks(range(0, 110, 10))
+sns.violinplot("Sex","Age", hue="Survived", data=train, split=True, ax=ax[1])
+ax[1].set_title('Sex and Age vs Survived')
+ax[1].set_yticks(range(0, 110, 10))
+plt.show()
+
+```
+
+
+## kdeplot
+
+```
+for col in cols:
+    fig,ax =plt.subplots(1,2,figsize=(16,8))
+    sns.kdeplot(train[col],color='r',ax=ax[0])
+    sns.kdeplot(test[col],color='b',ax=ax[1])
+    plt.show()
+
+```

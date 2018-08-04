@@ -24,6 +24,16 @@ show and change my git username
 
 [git cheat sheet](https://education.github.com/git-cheat-sheet-education.pdf)
 
+## How to download a repository
+1. create a file and `cd` to the directory
+2. `git init`
+3. copy the repository url
+4. `git clone url`
+
+
+
+
+
 ## Additional reading
 - [How to upload local project to Github using linux](http://blog.51cto.com/1568397/1675493)
 - [How to configue ssh key to Github](https://www.jianshu.com/p/9317a927e844)

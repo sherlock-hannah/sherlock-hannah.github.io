@@ -4,6 +4,18 @@ title:  "SQL"
 date:   2018-02-03 18:43:31 +0800
 categories: jekyll update
 ---
+## Execute sequence
+(1)from
+(3) join
+(2) on
+(4) where
+(5)group by(use alias)
+(6) avg,sum....
+(7)having
+(8) select
+(9) distinct
+(10) order by
+
 ## Tips
 - structure query language, GUI Tools:Navicat
 - RDBMS: Relational Database Management System.ER:entity relationship
@@ -13,9 +25,44 @@ categories: jekyll update
 - create sql user:
  `grant all on databases_name.* to "username"@"localhost" identified by "password"`
 - show the structure of tables:`desc tablename;`
-- how to execute outside sql files
- `source d:/mmzm.sql`
 - `'string' as column_name`can use this string instead column
+
+## Loading data
+MySQL:
+
+```
+load data local infile "C:/ProgramData/MySQL/MySQL Server 5.1/Data/Kaggle/test.csv"
+into table test
+FIELDS TERMINATED BY ','
+ENCLOSED BY '"'
+LINES TERMINATED BY '\r\n'
+IGNORE 1 LINES
+(PassengerId,Pclass,Name,Sex,Age,SibSp,Parch,Ticket,Fare,Cabin,Embarked;)
+SET expired_date = STR_TO_DATE(@expired_date, '%m/%d/%Y');
+
+```
+SQL Server:
+```
+BULK INSERT RBP.dbo.user_log
+FROM 'D:\Repeat Buyers Prediction\data_format1\user_log_format1.csv'
+WITH(
+	FIELDTERMINATOR = ',',
+	ROWTERMINATOR = '0x0a',
+	 firstrow = 2);
+```
+- .bak is backup database [import](http://www.cnblogs.com/OnlyYou/archive/2011/11/28/2265731.html)
+- .mdf .ldf
+- .sql `source xxx.sql`import outside sql files
+
+## Export
+```
+select
+from test
+into outfile "c:/Users/Administrator/Desktop/Repeat Buyers Prediction/feature/expandedtest.csv"
+FIELDS TERMINATED BY ','
+OPTIONALLY ENCLOSED BY '"'
+LINES TERMINATED BY '\n'
+```
 
 ## PRIMARY KEY
 Primary keys must contain UNIQUE values, and cannot contain NULL values.
@@ -31,6 +78,14 @@ ADD PRIMARY KEY (ID);`
 - DELETE DATABASE `DROP DATABASE databasename;
 `
 - DELETE TABLE `DROP TABLE <tableNAME>;`
+```
+DELETE FROM USER_action
+WHERE a_date
+BETWEEN '2017-06-01 00:00:00' AND '2017-06-20 00:00:00'
+```
+
+
+
 
 - Update TABLE
 `ALTER  <Tablename> ADD (<column name1>,<name2>,.....);`
@@ -60,6 +115,7 @@ Cabin           varchar,
 Embarked        varchar);
 ```
 
+- rename `RENAME TABLE newname to oldname;`
 
 ## DML(data Manipulation language)
 ### SELECT(define which columns to return)
@@ -70,6 +126,10 @@ query all columns: use `*` to replace ` <column name>`
 `select column_name1,column_name2 as alias from table_name`
 - removing duplicates
 `SELECT distinct `
+
+notice if you `SELECT distinct columnname1,column2`,
+it will delete row when both columnname1 and column2 are repetated
+
 
 ### WHERE(searsh condition,filters rows using a predicate)
 `WHERE search condition'`
@@ -101,20 +161,20 @@ upward `asc`
 downward `desc`
 `offset x rows fetch next y rows only`
 
-
-### Other
-
 - limit
 `limit m,n`  m stands for starting from m-1 rows,n means n rows
 sort before limit
 
-- INSERT
+### INSERT
 `insert into table_name (column_name) value()`
-- UPDATE statement is used to modify the existing records in a table
+### UPDATE
+statement is used to modify the existing records in a table
  `update table_name set column_name="value" where condition`
-- DELETE `DELETE FROM table_name WHERE condition;`
+### DELETE `DELETE FROM table_name WHERE condition;`
 delete all data in table ,but save the table Structures `TRUNCATE TABLE table1`
-- rename `RENAME TABLE newname to oldname;`
+
+
+
 
 ## DCL(data Control language)
 COMMIT ROLLBACK GRANT REVOKE
@@ -172,7 +232,7 @@ return the first non-null expression in a list
 ### Logical Functions
 SQL Server(MSSQL)
 
-- `ISNUMERIC(expression)`
+- `ISNUMERIC(expression)` if the expression is number ,then return 1 else 0.
 - `IIF(ProductCategoryID IN (5,6,7), 'Bike', 'Other')`
 'bike' is the true place ,'other' is the false place .
 
@@ -185,7 +245,7 @@ SQL Server(MSSQL)
 Date Functions
 
 
-- `datediff(date1,date2)` Return the difference in days between two date values:
+- `datediff(interval,date1,date2)` Return the difference in days between two date values:
 
 - `getdate()`return the current date
 
@@ -197,20 +257,45 @@ datediff(yy,salestartdate,getdate())
 
 `year(),day(),datename(mm,column_name),datename(dw,column_name)`
 
+
+```
+SELECT DATENAME(year,o_date) as year,
+DATENAME(month,o_date) as month,
+count(distinct [user_id]) as numofuser,
+count([user_id]) as numoforder
+FROM [jingdong].[dbo].[USER_order]
+GROUP BY DATENAME(year,o_date),DATENAME(month,o_date)
+ORDER BY CONVERT(INT,DATENAME(month,o_date)
+```
+aggregate by month
+
+
+
+
+
 String Functions
 - `CONCAT(string1, string2, ...., string_n)`Concatenate string together
 - `LEFT(string, number_of_chars)`Extract a substring from a string (starting from left):
-- `SUBSTRING(string, start, length)`extracts a substring from a string (starting at any position).
+
+- sql_server:`SUBSTRING(string, start, length)`extracts a substring from a string (starting at any position).
+mysql:`SUBSTR(string, start, length)`
 - `CHARINDEX(substring, string, start_pos)` returns the location of a substring in a string.
 - `REVERSE(string)`  reverses a string and returns the result
 - `SELECT length(column_name) from table_name`Returns the length of the specified string (in bytes)
 `len()` (sql Server)
+
+- mysql: `week()`,`weekday()`
+sql-server :`DATEPART(week,time)`, `DATEPART(weekday,time)`
+
+
 
 Conversion Functions
 
 - `CAST`Converts a value from one datatype to another datatype
 `CAST(column_name AS varchar)`
 - `CONVERT(data_type(length), expression, style)`Convert an expression from one datatype to another, or one character set to another
+`convert(DATE,Birthday,112)`
+
 - `STR(number, length, decimal_places)` return a string representation of a number
 - `SELECT COALESCE(NULL, NULL, NULL, 'W3Schools.com', 'Example.com');`
 return the first non-null expression in a list
@@ -219,22 +304,26 @@ return the first non-null expression in a list
 ### Window function(online analytical processing)
 - `rank()`
 the same numeric value for ties (for example 1, 2, 2, 4, 5)
+
 - `danse rank()`
 
-Returns the rank of rows within the partition of a result set, without any gaps in the ranking.
+ Returns the rank of rows within the partition of a result set, without any gaps in the ranking.
 
 - `row_number()`
 numbers all rows sequentially (for example 1, 2, 3, 4, 5).
 
+
+EG:
+
 ```
 select column_name,column_name1,
-    rank() over (pattern by columnname1 order by
+    rank() over (partition by columnname1 order by
                     column_name2) as columnname3
 
 from tableNAME
 
 ```                    
-pattern by set the object scale of ranking
+`partition by `set the object scale of ranking
 
 (just use in select sentence)
 
@@ -246,10 +335,73 @@ as columnname3
 ```
 - moving average
 
-```
-avg(columnname) over (order by columnname1 row 2 preceding)
-```
+`avg(columnname) over (pattern by column_name order by columnname1 rows 2 preceding)  as new_column `
+
 `preceding` means n rows before current row,`following`means n rows after current row.
+
+
+## Grouping Sets and Pivoting Data
+### Grouping Sets
+GROUPING SETS subclause builds on GROUP BY clause
+```
+SELECT <column list with aggregate(s)>
+FROM <source>
+GROUP BY
+GROUPING SETS
+(
+	<column_name>,--one or more columns
+	<column_name>,--one or more columns
+	() -- empty parentheses if aggregating all rows
+);
+```
+
+1. group by (column_name1)
+2. group by (column_name2)
+
+
+### ROLLUP and CUBE
+ROLLUP provides shortcut for defining grouping sets with combinations that assume input columns form a hierarchy
+```
+SELECT StateProvince, City, COUNT(CustomerID) AS Customers
+FROM Sales.vCustomerDetails
+GROUP BY ROLLUP(StateProvince, City)
+ORDER BY StateProvince, City;
+```
+1. group by()
+2. group by (StateProvince)
+3. group by (StateProvince, City)
+
+CUBE provides shortcut for defining grouping sets in which all possible combinations of grouping sets created
+```
+SELECT SalesPersonName, CustomerName, SUM(Amount) AS TotalAmount
+FROM Sales.vSalesOrders
+GROUP BY CUBE(SalesPersonName, CustomerName)
+ORDER BY SalesPersonName, CustomerName;
+```
+1. group by()
+2. group by (StateProvince)
+3. group by (city)
+3. group by (StateProvince, City)
+
+
+### Identifying Groupings in Results
+`GROUPING()`
+return 1 when  super-aggregate summary row
+### Pivoting Data
+Pivoting data is rotating data from a rows-based orientation to a columns-based orientation
+```
+SELECT OrderID, Bikes, Accessories, Clothing
+FROM
+(SELECT OrderID, Category, Revenue FROM Sales.SalesDetails) AS sales
+PIVOT (SUM(Revenue) FOR Category IN([Bikes], [Accessories], [Clothing])) AS pvt
+```
+### Using PIVOT and UNPIVOT
+
+UNPIVOT ()
+
+
+
+
 
 ## Case
 ```
@@ -292,6 +444,8 @@ WHERE condition1 OR condition2 OR condition3 ...;`
 FROM table_name
 WHERE NOT condition;`
 
+
+
 ## The predicates
 
 - like
@@ -315,86 +469,88 @@ is inclusive of the range of the value specified
 `WHERE column_name (not) in (2,3,5) `
 
 - EXISTS
+`select *
+from user_info as I
+where exists
+(select * from train as T
+	where I.user_id = T.user_id)`
 
+
+or
+
+  `not exist`
 
 
 ## Joins
 combine rows from multiple tables by specifying matching criteria,usually
 based on primary key -foreign key relationship
 
+![sqljoin](../pictures/sqljoin.JPG)
 - inner joins
-`SELECT column_name(s)
+
+```
+SELECT column_name(s)
 FROM table1
-INNER JOIN table2 ON table1.column_name = table2.column_name;`
+INNER JOIN table2 ON table1.column_name = table2.column_name;
+```
 Inner joins return only rows where a match can be found in both tables.
 
 - outer JOINS(designated with left,right,full keyword)
-Use a Left Outer Join to include all rows from the first table and values from matched rows in the second table. Columns in the second table for which no matching rows exist are populated with NULLs.
-`SELECT column_name(s)
+
+Use a Left Outer Join to include all rows from the first table and values from matched rows in the second table.
+
+ Columns in the second table for which no matching rows exist are populated with NULLs.
+```
+SELECT column_name(s)
 FROM table1
-LEFT JOIN table2 ON table1.column_name = table2.column_name;`
+LEFT JOIN table2 ON table1.column_name = table2.column_name;
+```
 full
-`SELECT column_name(s)
+```
+SELECT column_name(s)
 FROM table1
-FULL OUTER JOIN table2 ON table1.column_name = table2.column_name;`
+FULL OUTER JOIN table2 ON table1.column_name = table2.column_name;
+```
 
 - cross JOINS
+
 combine each row from first table with each row from second table
-`select column_name1,column_name2
+![crossjoin](../pictures/crossjoin.png)
+
+```
+select column_name1,column_name2
 FROM table1 as t1
-CROSS JOIN table2 as t2 `
+CROSS JOIN table2 as t2
+```
 
 - self JOINS
-`SELECT column_name(s)
+
+```
+SELECT column_name(s)
 FROM table1 T1, table1 T2
-WHERE condition;`
+WHERE condition;
+```
 
 ## Union
 - UNION(returns a result set of distinct rows)
-`SELECT column_name(s) FROM table1
+
+```
+SELECT column_name(s) FROM table1
 UNION (ALL)
-SELECT column_name(s) FROM table2;`
+SELECT column_name(s) FROM table2;
+```
 UNION ALL retains duplicates during query processing
 - intersect(returns only distinct rows that appear in both result set )
 
 
 - except  (returns only distinct rows that appear in the first set but not the second)
 
-## Loading data
-MySQL:
 
-```
-load data local infile "C:/ProgramData/MySQL/MySQL Server 5.1/Data/Kaggle/test.csv"
-into table test
-FIELDS TERMINATED BY ','
-ENCLOSED BY '"'
-LINES TERMINATED BY '\r\n'
-IGNORE 1 LINES
-(PassengerId,Pclass,Name,Sex,Age,SibSp,Parch,Ticket,Fare,Cabin,Embarked;)
-SET expired_date = STR_TO_DATE(@expired_date, '%m/%d/%Y');
 
-```
-SQL Server:
-```
-BULK INSERT RBP.dbo.user_log
-FROM 'D:\Repeat Buyers Prediction\data_format1\user_log_format1.csv'
-WITH(
-	FIELDTERMINATOR = ',',
-	ROWTERMINATOR = '0x0a',
-	 firstrow = 2);
-```
 
-## Export
-```
-select
-from test
-into outfile "c:/Users/Administrator/Desktop/Repeat Buyers Prediction/feature/expandedtest.csv"
-FIELDS TERMINATED BY ','
-OPTIONALLY ENCLOSED BY '"'
-LINES TERMINATED BY '\n'
-```
+## Table Expressions
 
-## Views
+### Views
 a view is a virtual table based on the result-set of an SQL statement.
 - CREATE VIEW Examples
 
@@ -418,6 +574,74 @@ WHERE UnitPrice > (SELECT AVG(UnitPrice) FROM Products);
 -  if you want to `update` `insert` `delete` , the view should satisfy those requirement
 1. not use `distinct` `having` `group by`
 2. just one table
+
+### Temporary Tables
+Temporary tables are used to hold temporary result sets within a user’s session
+```
+CREATE TABLE #tmpProducts
+(ProductID INTEGER,
+ ProductName varchar(50));
+GO
+…
+SELECT * FROM #tmpProducts;
+```
+### Table Variables
+```
+DECLARE @varProducts table
+(ProductID INTEGER,
+ ProductName varchar(50));
+…
+SELECT * FROM @varProducts
+```
+Use only on very small datasets
+
+### Table-Valued Functions
+```
+CREATE FUNCTION Sales.fn_GetOrderItems (@OrderID AS Integer)
+RETURNS TABLE
+AS
+RETURN
+(SELECT ProductID, UnitPrice, Quantity
+FROM Sales.OrderDetails
+WHERE OrderID = @OrderID);
+…
+SELECT * FROM Sales.fn_GetOrderItems (1025) AS LineItems;
+```
+TVFs are named objects with definitions stored in a database
+Table-Valued Functions (TVFs) are functions that return a rowset.
+
+### Derived Tables
+Derived table are named query expression created within an outer select query.
+```
+SELECT orderyear, COUNT(DISTINCT custid) AS cust_count
+FROM
+	(SELECT YEAR(orderdate) AS orderyear, custid
+	FROM Sales.Orders) AS derived_year
+GROUP BY orderyear;
+```
+
+### Common Table Expressions
+```
+WITH OrgReport (ManagerID, EmployeeID, EmployeeName, Level)
+AS
+(
+	SELECT e.ManagerID, e.EmployeeID, EmployeeName, 0
+	FROM HR.Employee AS e
+	WHERE ManagerID IS NULL
+	UNION ALL
+	SELECT e.ManagerID, e.EmployeeID, e.EmployeeName, Level + 1
+	FROM HR.Employee AS e
+	INNER JOIN OrgReport AS o ON e.ManagerID = o.EmployeeID
+)
+SELECT * FROM OrgReport
+OPTION (MAXRECURSION 3);
+```
+
+
+
+
+
+
 
 
 
@@ -456,19 +680,8 @@ CROSS APPLY dbo.fn_TopProductsByShipper(S.supplierid) AS P
 
 
 
-## Table Expressions
 
-## Execute sequence
-(1)from
-(3) join
-(2) on
-(4) where
-(5)group by(use alias)
-(6) avg,sum....
-(7)having
-(8) select
-(9) distinct
-(10) order by
+
 ## Another reading
 [Documentayion](https://dev.mysql.com/doc/)
 [tutorial](https://www.w3schools.com/sql/default.asp)
@@ -495,5 +708,14 @@ solution:[add index](https://blog.csdn.net/qq_33556185/article/details/52192551)
 - 10. use T-sql create database ,but can find in database
 
 
-- 10.install problems:maybe compatibility errors
+- 11.install problems:maybe compatibility errors
 solution: uninstall old edition and update
+- 12. table-valued user-defined function named dbo.ufnGetCustomerInformation???
+
+- 13. ERROR 1290 (HY000): ERROR 1290 (HY000):.. MySQL server running with –secure-file-priv option
+
+solution :
+- `SELECT @@GLOBAL.secure_file_priv;`
+
+- `SELECT * FROM train INTO OUTFILE '/var/lib/mysql-files/test.csv' FIELDS TERMINATED BY ',';
+`

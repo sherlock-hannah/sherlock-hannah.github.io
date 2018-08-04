@@ -5,10 +5,24 @@ date:   2018-01-30 18:43:31 +0800
 categories: jekyll update
 ---
 first `conda list` to ensure if pandas package has been installed
+
 if not `pip install pandas`
+
 then `import Pandas as pd`
+
 two datastructures:series dataframe
-### Loading data
+
+### Tips
+`any(titanic.Age.isnull())`
+can detect if this column have null values
+`pd.options.display.max_columns = n`
+can display n columns
+
+
+
+
+
+## Loading data
 1. Here are some methods for loading data:
 
 ```
@@ -36,13 +50,20 @@ pip install BeautifulSoup4
 2. out datas
 `df.to_csv('D:\data\out2.csv',index=False,header =False)`
 
-### Slicing
+## Slicing
 1. column access`x[["column label","column_name2"]]`
    raw access`x.loc[row label]`
    elements access `x[row,column]`
 -  `loc` also allows you to select both rows and columns from a DataFrame.
    `df.loc[number1:number2,['column_name','column_name1']]`used to slicing data ,.loc[] method selects by column label
 -  `df.iloc[:, [0]]`.iloc[] selects by column index
+
+```
+df.iloc[1,1]  
+df.iloc[0:3, [0,1]]  
+df.iloc[[0, 3, 5], 0:2]  
+```
+
 -  `.iloc[]`is non-inclusive. `.loc[] `is inclusive of the range of values specified
 -  `df.loc[df['column_name'] == some_value]`can select rows when column_value is equal to some value
 -  `df.loc[(df['column_name'] == some_value) & df['other_column'].isin(some_values)]`
@@ -58,19 +79,29 @@ combine different condition together
 10. `pandas.qcut(x, q, labels=None, retbins=False, precision=3)`q : integer or array of quantiles
 
 
-### textual data
-- using `astype` converta textual data to categorical
+## Converte data type
+- using `astype` converte textual data to categorical
 `df['col2'] = df['col2'].astype(int)`change one column data_type
+
 - convert them to the desired type using the: `.to_datetime()`, `.to_numeric()`, and `.to_timedelta()` methods:
+
 ```
-df['Date'] = pd.to_datetime(df.Date, format= "%m%d",errors='coerce')
+df['Date'] = pd.to_datetime(df.Date, format= "%m%d"*,errors='coerce')
 df['Height'] = pd.to_numeric(df.Height, errors='coerce')
 ```
 
 
+errors: If ‘coerce’, then invalid parsing will be set as NaT
+[pandas.to_datetime](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.to_datetime.html)
+
+- convert DataFrame to ndarray
+
+[pandas.DataFrame.values](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.values.html#pandas.DataFrame.values)
 
 
-### Wrangling Your Data
+
+
+## Wrangling Your Data
 check if there duplicate or null
  ```
  test['Age'].isnull().value_counts()
@@ -96,9 +127,12 @@ df = df.dropna(axis=0, thresh=4)
  `df.dropna(subset=['column_name'], inplace=True)`
  - reindex your dataframe
 `df = df.reset_index(drop=True)`
+ - drop duplicates
+`reference = reference.drop_duplicates(['user_id', 'item_id'])`
 
 2. filling data
 replace NA with a scalar value
+
 ```
 df[my_feature].fillna( df[my_feature].mean(),inplace = True)
 df[my_feature].fillna(df[my_feature].mode())
@@ -114,63 +148,261 @@ df.fillna(limit=5)
 3. unique data in a column
 
  `your_data_frame['your_column'].unique()` or equally, `your_data_frame.your_column.unique()` to see the unique values of each column and identify the rogue values.
-### qcut and cut
+
+4. number of unique classes in each object column
+
+`app_train.select_dtypes('object').apply(pd.Series.nunique, axis = 0)
+`
+
+### Qcut and cut
 `pd.qcut(factors, 5)`
 - `qcut`, the bins will be chosen so that you have the same number of records in each bin.
 - `cut` will choose the bins to be evenly spaced according to the values themselves and not the frequency of those values
 
-### Combine dataset
-- pandas.merge use key combine rows from different dataset
+
 
 ### Time series
-data_type:1.date2.time3.datetime4.timedelta(the subtraction of two datetime)
-dateparse
-`train_user_df['time']=[datetime.strptime(x.split()[0],"%Y-%m-%d") for x in time_series]`
-convertion of time_series and string
+data_type:
+1. date
+2. time
+3. datetime
+4. timedelta(the subtraction of two datetime)
 
+dateparse:
+convert value 'xxxx-xx-xx' into datetime.datetime(xxxx,x,x,x,x)
+
+- `train_user_df['time']=[datetime.strptime(x.split()[0],"%Y-%m-%d") for x in time_series]`
+
+- `datetime.striptime(value,'%Y-%m-%d')`
+
+- eg:`Data['days'].map(lambda x: time.strptime(x, "%Y-%m-%d"))`
+
+
+set date index
+
+```          
+df['date'] = pd.to_datetime(df['date'])
+df = df.set_index('date')
+```
+
+
+slice data
+- `series['2011']`
+
+- `df.ix['5-2011']`
+
+
+time plot
+
+- `time.ix['01-2011':'02-2011'].plot()`
+
+time resample
+
+- `series.resample('M',how='sum',closed='left',label ='left')`
+
+- label : aggregate value labels
+
+- closed: means left or right end is inclusive
+
+moving window functions
+- `rolling_sum(data,n)`
+- `rolling_mean(data,n)`
+
+calculate time interval
+
+- first split datetime column into two column
+
+```
+data = data.sort(['id', 'date'], ascending=[1, 1])
+rnColumn = data.groupby('id').rank(method='min')
+data['rn'] = rnColumn
+data['rn_1'] = rnColumn-1
+data.merge(data, how='left', left_on=['id', 'rn'], right_on=['id', 'rn_1'])
+```
+
+- n : specified numbers of no-NA value
 
 [pandas time_series](http://www.cnblogs.com/lemonbit/p/6896499.html)
 
 
 
 ### Group by
-`Survived_by_SibSp = data_t[['SibSp','Survived']].groupby('SibSp',as_index = False).mean().sort_values(by='Survived',ascending=False)`
+- `Survived_by_SibSp = data_t[['SibSp','Survived']].groupby('SibSp',as_index = False).mean().sort_values(by='Survived',ascending=False)`
 
-### Tips
-`any(titanic.Age.isnull())`
-can detect if this column have null values
-### Series
+- eg:`USER_order['o_sku_num'].groupby(USER_order['user_id']).sum()`
+
+- `DataFrameGroupBy.agg(arg, *args, **kwargs)`
+ - func : callable, string, dictionary, or list of string/callables
+ - `df.groupby('A').B.agg(['min', 'max'])`
+ - `df.groupby('A').agg({'B': ['min', 'max'], 'C': 'sum'})`
+
+
+
+### Crosstab
+`pandas.crosstab(index, columns, rownames=None, colnames=None, aggfunc=None)`
+
+count the length of value in different groups
+
+### Pivot Table
+`df.pivot_table(['column1','column2'],index = ['column1','column2'],columns='column',aggfunc= len,margins=True)`
+
+aggfunc:default is mean
+margins: total count of rows values
+
+## Series
+value on the right ,index on the left
+can be created through
+`series([value],index=['index'])`
+or `a = {'a':value,'b':'value'} series(a)`
+
+### Series method
 - `Series.map(arg, na_action=None)`
 arg : function, dict, or Series
 eg:
+
 ```
 dataset['Sex'] = dataset['Sex'].map({'male':1,'female':0})
 
 titanic.loc[titanic["Sex"] == "male", "Sex"] = 0
 titanic.loc[titanic["Sex"] == "female", "Sex"] = 1
 ```
+
 [pandas.Series.map](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.map.html)
 
 ### DataFrame
+`DataFrame(data,columns=[])`
+
+`data={'key':[1,2,3],'key2':[1,2,3]}
+dataframe(data)`
+
+### DataFrame method
 - `.replace(to_replace=None, value=None, inplace=False, limit=None, regex=False, method='pad', axis=None)`
+
 Replace values given in ‘to_replace’ with ‘value’
+
 eg:`dataset['Title'] = dataset['Title'].replace('Mlle', 'Miss')`
 - `DataFrame.apply(func, axis=0, broadcast=False, raw=False, reduce=None, args=(), **kwds)`
+
 Applies function along input axis of DataFrame.
 - `DataFrame.corr(method='pearson', min_periods=1)`
-Compute pairwise correlation of columns, excluding NA/null values
 
-### Merge(like join in sql)
+Compute pairwise correlation of columns, excluding NA/null values
+- `df.unstack()`
+
+ change the structure of dataframe
+
+- `DataFrame.isin(values)`
+[pandas.DataFrame.isin](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.isin.html)
+
+- `DataFrame.rank(axis=0, method='average', numeric_only=None, na_option='keep', ascending=True, pct=False)`
+
+
+ method:
+
+min: lowest rank in group
+
+max: highest rank in group
+
+
+- random sample
+`DataFrame.sample(n=None, frac=None, replace=False, weights=None, random_state=None, axis=None)`
+
+[DataFrame.rank](http://pandas.pydata.org/pandas-docs/version/0.22/generated/pandas.DataFrame.rank.html
+)
+
+
+-  `DataFrame.nunique(axis=0, dropna=True)`
+
+    Return Series with number of distinct observations over requested axis.
+
+- `df.count(axis=1) ` count not null value each row
+
+- row to column
+```
+   fd1=fd.stack() #set column to hierarchical index
+   fd1.unstack(0) #set first hierarchical index to column
+   ```
+- add row to dataframe, as same as union in sql
+` df_s=df_s.append(df_si)`
+
+
+- `pd.get_dummies(features_raw)`
+create new feature through converting categorical variable into dummy/indicator variables
+
+[pandas.get_dummies](https://pandas.pydata.org/pandas-docs/version/0.22/generated/pandas.get_dummies.html)
+
+
+- `df.rename(index=str, columns={"A": "a", "B": "c"})`
+[rename](https://pandas.pydata.org/pandas-docs/version/0.22/generated/pandas.DataFrame.rename.html)
+
+## Merge(like join in sql)
+Combine dataset
+- pandas.merge use key combine rows from different dataset
  `pd.merge(left, right, on='key')`
 
-### index
-`df1.reindex(['a','b','c','d','e'],  inplace=Ture)`
+- how : {‘left’, ‘right’, ‘outer’, ‘inner’}, default ‘inner’
 
-### Problems
+ eg:
+
+```
+union = USER_order.\
+merge(USER_comment,on = ['user_id','o_id'],how = 'left').\
+merge(USERINFO,on='user_id',how='left')
+```
+
+##  Concat
+
+`submit1 = pd.concat([test,submit],axis=1)`
+
+
+
+
+## Index
+- `df1.reindex(['a','b','c','d','e'],  inplace=Ture)`
+
+- `.reset_index()`will use groupby key as new index
+
+## Problems
 1. how to add columns
 2. [Get HTML table into pandas Dataframe, not list of dataframe objects
 ](https://stackoverflow.com/questions/38486477/get-html-table-into-pandas-dataframe-not-list-of-dataframe-objects)
+3. when
+`rank = USERcate['o_date'].groupby(USERcate['user_id']).rank(method='min')`
 
+return :
+'NoneType' object is not callable
+
+solution:`USERcate['o_date'] = pd.to_datetime(USERcate['o_date']) `
+
+4. error: 'Series' object has no attribute 'reshape'
+
+solution : pandas.Series doesn't have a built-in `reshape` method, but you can use `.values` to access the underlying numpy array object and call reshape on it:` .values.reshape`
 
 [Additional reading](http://pandas.pydata.org/)
 [Further Reading](https://courses.edx.org/courses/course-v1:Microsoft+DAT210x+1T2018/courseware/b7aa9093-0ee1-9e62-4188-6f9d25a2ce85/7fc08411-6ab9-100a-b198-91b8ac2dc84a/?child=first)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+member_sum double,
+member_median double,
+member_mode double,
+member_var double,
+member_min double,
+member_max double

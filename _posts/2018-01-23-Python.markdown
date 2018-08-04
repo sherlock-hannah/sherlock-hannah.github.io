@@ -8,6 +8,7 @@ categories: jekyll update
 `conda update conda
 conda create -n py35 python=3.5 anaconda`
 [tutorial](https://www.jianshu.com/p/d2e15200ee9b)
+[condacheatsheet](https://conda.io/docs/_downloads/conda-cheatsheet.pdf)
 
 ### Python Basic
 `conda info --envs` can list different python version
@@ -23,7 +24,21 @@ conda create -n py35 python=3.5 anaconda`
 ` cd /mnt/c/Users/Administrator/Desktop/notebook` open
 some saving notebook
 
-### data type
+- `python -m SimpleHTTPServer `
+
+just use in python2
+
+- `reset`
+can release memory
+
+- `time python`
+count run time
+
+- `pip install --upgrade setuptools`
+upgrade package
+
+
+### Data type
 - 1.variable,type
 `**` means square
 - 2.list
@@ -34,6 +49,7 @@ x[index],index=0,1,2....
 - 3.turple
 `tur = ()`
 - 4.dictionary
+`phonebook={'key':'value',}`
 
 
 ### Manipulating list
@@ -44,6 +60,13 @@ x[index],index=0,1,2....
 `x_ext=x+[y]`
 - 3.remove List elements
 `del(x[n])`
+
+`list('abcd')`will returm ['a','b','c','d'] because given value is slice assignment
+- 4.generate list numerber
+`numbers = list(range(1, 1000))`
+
+
+
 *list contain the refenrence not real elements*
 [Data Structures](https://docs.python.org/3.5/tutorial/datastructures.html)
 
@@ -70,14 +93,53 @@ else:
 - 11.`isinstance(a,int)` if this object is this type
 - 12.`sample(n=20)`can random extract n values
 sorted what means
+
+- 13.`Print()`
+The special operator % lets you create formatted output.
+- 14.`enumerate`
+
+- 14.`eval('x + 1')` The eval function lets a Python program run Python code within itself.
+
+- 15.[copy — Shallow and deep copy operations](https://docs.python.org/2/library/copy.html)
+ - `copy.copy(x)` Assignment statements in Python do not copy objects, they create bindings between a target and an object.
+
+
 [Python - Functions](http://www.tutorialspoint.com/python/python_functions.htm)
 
 ### Method
 - 1.everything=object,object have method associated,depending on type.
 call functions on object.
-- 2.`x.index(value)`
-`x.append()`
-`x.count(values)`count the number of occurence of the value in x
+
+- 2.list method: `x.index(value)`,
+ - `x.append()`add value in the end of list ,
+ - `x.count(values)`count the number of occurence of the value in x,
+ - `.pop()` remove value in the end of list ,
+ - `.remove('value')`remove specified value,
+ - `.reverse()`change the rank of value in the List
+
+
+- 3.string method :
+
+ - `'/'.join(dirs)`
+ - `lower()`
+ - `replace()`
+ - `.strip()`
+ - `.translate()`
+
+ - ` { } .format(value)`   str.format() [format() function](https://www.geeksforgeeks.org/python-format-function/)
+
+ - split sring by different mark
+
+```
+
+'1+2'.split('+')
+
+user_table['days'] = user_table['time'].map(lambda x:x.split(' ')[0])
+
+```
+
+
+
 Q :why some can not apply
 
 [Improve Your Python: Python Classes and Object Oriented Programming](https://jeffknupp.com/blog/2014/06/18/improve-your-python-python-classes-and-object-oriented-programming/)
@@ -93,8 +155,13 @@ AS a directory of python script
 [Boolean Operations](https://docs.python.org/3/library/stdtypes.html#boolean-operations-and-or-not)
 - 1.relational operators`!=`not equal(notice 2 = not 1) `==` equal `<` less than `>` greater than
 `/`divide `//`divide and ignore points
+
 - 2.logical operators `and` `or` `not`
 Notice that `not` has a higher priority than `and` and `or`, it is executed first.
+
+Bitwise Operators
+`|` - or
+
 - 3.conditional statements`if` `else` `elif`
 
 ```
@@ -109,7 +176,7 @@ expression
 
 ### Sort
 `titanic.sort_values(by = 'Pclass', inplace=True)`
-
+rank value
 
 ### For
 [for-loop](http://www.runoob.com/python/python-for-loop.html)`for value in collection
@@ -125,6 +192,7 @@ for Pclass in Levels:
 [More Control Flow Tools](https://docs.python.org/3.5/tutorial/controlflow.html)
 `break`exit loop
 `continue`into next iterator early
+
 ### while
 ```
 while  :
@@ -137,13 +205,75 @@ g = lambda x: x**2
 def f (x): return x**2
 
 ```
+application:
+`train['Has_Cabin'] = train["Cabin"].apply(lambda x: 0 if type(x) == float else 1)
+`
 
 
 ### Class
 ```
 class person:
+ def __init__(self, ):
+
  def setname(self,name):
     self.name = name
  def
 
 ```
+The name `__init__()` is used for the "constructor method" for the class
+
+
+
+
+
+
+
+
+
+
+
+### Regular expression
+- `import re`
+- `re.search(pattern, string, flags=0)`
+`re.search('([A-Za-z]+)\.',name)`
+- `\.`trans . as .
+`[A-Za-z]` match any letter
+`group([group1])`get the matching string of given pattern
+[tutorial](https://zhuanlan.zhihu.com/p/21341872)
+[regular expression](http://www.runoob.com/regexp/regexp-syntax.html)
+
+
+
+### os(Miscellaneous operating system interfaces)
+- `import os`
+- `print(os.listdir("../input/"))`
+List files available
+
+
+### tqdm
+
+Instantly make your loops show a smart progress meter
+
+- `from tqdm import tqdm_notebook as tqdm`
+
+- `from tqdm import tqdm
+for i in tqdm(range(10000)):`
+
+
+### gc
+- `import gc`
+- `gc.collect()` avoid fragmenting memory
+- [Garbage Collector interface](https://docs.python.org/2/library/gc.html)
+
+
+
+
+
+
+
+### functools
+
+`functools.partial(func[,*args][, **keywords])`
+
+
+[partial](https://docs.python.org/2/library/functools.html)

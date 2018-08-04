@@ -16,9 +16,10 @@ TABLE1. statistics of training and testing data
 
 Table 2: Statistics of log activity data
 
-|rows |users |merchants |items |categories |brands|
-| :--- | :---- |:----    |:---- |:----         |:----    |
-|54925330 |424170| 4995 |1090390| 1658 |8444|
+|rows|users|merchants|items|categories|brands|
+| :---| :---- |:----|:---- |:----|:----|
+|54925330 |424170| 4995 |1090390| 1658|8444|
+
 
 Table 3: Statistics of action types
 
@@ -32,6 +33,10 @@ bought by the user from the merchant on the Double 11 day,
 ## Feature engnieering
 user-related features, merchant-related features
 and user-merchant interactive features
+
+
+
+
 1. divide action_type into three parts:clicks/add to carts, purchases, add-to-favourite
 groupby user_id and merchant_id
 and out into file user_action
@@ -42,7 +47,11 @@ and out into file user_action
 ## Visualization
 
 
+
+
 ## Model Training
+
+
 
 
 ## Reference

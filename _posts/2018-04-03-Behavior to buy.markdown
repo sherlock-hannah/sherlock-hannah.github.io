@@ -42,19 +42,42 @@ Set a model and output a table(the prediction of users buying products in 18.Dec
 ## Metric
 ![F1](../pictures/F1.png)
 
-## Analysis visualization
+## Feature engnieering
+1. user feature
+2. item feature
+3. Category feature
+4. user-item
+5. item-category
+6. user-cstegory
 
-![behaviortype](../pictures/behaviortype.png)
+Cross feature
 
-![behaviortypeday](../pictures/behaviortypeday.png)
+![BTB](../pictures/BTBfeature.JPG)
 
-![CTR](../pictures/CTR.png)
+time series cut:
 
+
+different behavior add by timing different value group by user or item
+
+
+details:
+![BTB](../pictures/BTBfe1.png)
+![BTB](../pictures/BTBfe2.png)
+![BTB](../pictures/BTBfe3.png)
+
+
+
+
+
+## Sampling
+using user interactive data which date is the day before predictted day.
 
 ## Transformation
 
 1. divide behaviortype into 4 parts and group by user_id or item_id
 
+`user_item_count = pd.crosstab([data.user_id,data.item_id],data.behavior_type)
+`
 2. the relationship between when user add product to shoppingcart and purchasedd
 
 3. x0 how many times user click this product
@@ -65,13 +88,7 @@ Set a model and output a table(the prediction of users buying products in 18.Dec
 
 5. the time interval between other action_type and purchase
 
-6. the relationship between the times of other action_type and purchase of different item 
-
-
-
-
-
-
+6. the relationship between the times of other action_type and purchase of different item
 
 
 ## Analysis
@@ -82,19 +99,45 @@ Set a model and output a table(the prediction of users buying products in 18.Dec
 
 ![CTR](../pictures/CTR.png)
 
-![user_behavior](../pictures/buser.jpg)
+![CTR](../pictures/user_ctr.png)
 
-![user_behaviorrandom](../pictures/buserrandom.png)
+![time_interval](../pictures/buserrandom.png)
+
+
+
 
 ## Regulation based on analysis
-- 1.the product people add to shoppingcart last day have higher probability being purchased.
+1. the product people add to shoppingcart last day have higher probability being purchased.
 
 
 
 
 
 ## Model_selection
+- XGBoost
+
+
+- [basic_LogisticRegression](https://mr-rxz.github.io/%E6%BA%90%E7%A0%81%E8%A7%A3%E8%AF%BB/2016/08/16/%E6%BA%90%E7%A0%81%E8%A7%A3%E8%AF%BB-1-%E5%A4%A9%E6%B1%A0%E7%A7%BB%E5%8A%A8%E6%8E%A8%E8%8D%90%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B.html)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ## Problems
-1. how tp print a figure include9000item
+1. how to print a figure include 9000 item
+
+
+## Additional reading
+- [summary of ALI recommend algorithm ](https://blog.csdn.net/u014374284/article/details/49933487)
+- [competition thought](https://blog.csdn.net/Bryan__/article/details/51713596)

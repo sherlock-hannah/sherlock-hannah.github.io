@@ -9,7 +9,7 @@ download excel 2016
 - 1.`TEXT(WEEKAND([DATE],"dddd"))`   modify "date" format,
 `DATA`+FENLIE
 - 2.`FORMULATEXT` display formula of specify cells
-
+- 3.`CONCATENATE(B3,C3)` merge text of cells
 
 ## Tips
 - `ctrl + shift + down`
@@ -17,9 +17,10 @@ can select all on column datas
 `ctrl + shift + *` can select all table
 - F3 key lets you paste name in formula
 - `ctrl + 1` into format cells
+- `$`before cell can fix a cell
 
 ## Use decriptive statistics
-1. skewness-1<x<1`skew()`kurtosis`Kurt()`
+1. skewness-1<x<1`skew()`,kurtosis`Kurt()`
 2. mean`average()`,range,median`median()`,variance`var()`,
 standand deviation`stdev()`,mode`mode()`,standand error(most frequently occuring values)
 3. 2nd highest value`large(values,2)`
@@ -34,6 +35,10 @@ CAGR(compound annual growth rate)
 - box visually showing the range of the middle 50% of your data
 - The line in the box is the median. The X in the box is the mean
 
+![boxplot](../pictures/boxplot.png)
+
+
+
 ## Nominal data and ordinal data
 - inserting pivot table to count the number of each category
 - using `group` can divide data into some different scale
@@ -42,7 +47,11 @@ CAGR(compound annual growth rate)
 - Create a PivotTable and then change from Design tab the layout to Outline format and  then Paste Special Values the relevant data outside the PivotTable.
 - Create sunburst and treemap charts to summarize this data.
 
+## pivot table
+- drug the columnname into row and into value ,will count the number of different attributes in this columnname.
+
 ## 80-20 rule and pareto charts
+the 20% will generate 80%
 
 ## Finding the Mean of a Discrete Random Variable
 - `=SUMPRODUCT(:,:)` return the result of different array times each other
@@ -52,8 +61,9 @@ CAGR(compound annual growth rate)
 Probability of between s1 and s2,successes (inclusive)
 - Possion Random Variable
 
-`POISSON.DIST(x,mean,0)`gives probability of exactly x events
-`POISSON.DIST(x,mean,1) `gives probability of <=x events.
+`POISSON.DIST(x,mean,0)`gives probability of exactly x events,
+
+`POISSON.DIST(x,mean,1) `gives probability of <=x events.x inclusive.
 
 - Normal Random Variable
 
@@ -71,17 +81,17 @@ standand normal `NORM.S.DIST(x)` `NORM.S.INV(x)`
 ## Confidence Interval for Population Mean
 Lower Limit:xbar-1.96*sigma/sqrt(n)
 Upper Limit:xbar+1.96*sigma/sqrt(n)
-NORM.S.INV(0.975) = 1.96
+`NORM.S.INV(0.975) `= 1.96
 
 ## Blyth Confidence Interval
  1-alpha^(1/n)
  n = times
  alpha = 0.05
 
-## Sample Size 
+## Sample Size
  n = (1.96σ/E)^2
 
-
+E :accurate numbers
 ## Problem
 1. how to compute the rate of return for stock
 2. tell the difference of nominal and ordinal,numerical and categorical.

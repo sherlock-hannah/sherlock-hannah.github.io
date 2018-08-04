@@ -25,8 +25,12 @@ predict which passengers survived from the titanic sinking
 
 ## Goal
 For each PassengerId, predict a 0 or 1 value for the Survived variable.
+
+binary classifier problem.
 ## Metric
 the percentage of passengers you correctly predict
+
+TRUE positive/sum of test id
 ## Analysis
 
 ![pclassandage](../pictures/pclassandage.png)
@@ -43,11 +47,10 @@ the percentage of passengers you correctly predict
 ![PearsonCorrelationHeatmap](../pictures/PearsonCorrelationHeatmap.png)
 some correlation plots of the features to see how related one feature is to the next.
 
-![randomitem](../pictures/randomitem.png)
-
 ![pairplot](../pictures/pairplot.png)
 
-## Regulation based on analysis
+## feature engnieering
+[kaggle](https://www.kaggle.com/mitakayama/titanic-python-solutions)
 
 
 ## Model_selection
@@ -89,8 +92,56 @@ plot_learning_curve(LR, u'learning_rate', titanic[predictors], titanic['Survived
 ```
 
 3. RandomForest
-## Ensembling & Stacking models
+```
+from sklearn.ensemble import RandomForestClassifier
 
+rf = RandomForestClassifier(criterion='gini',
+                             n_estimators=700,
+                             min_samples_split=10,
+                             min_samples_leaf=1,
+                             max_features='auto',
+                             oob_score=True,
+                             random_state=1,
+                             n_jobs=-1)
+rf.fit(train.iloc[:, 1:], train.iloc[:, 0])
+print("%.4f" % rf.oob_score_)
+
+
+pd.concat((pd.DataFrame(train.iloc[:, 1:].columns, columns = ['variable']),
+           pd.DataFrame(rf.feature_importances_, columns = ['importance'])),
+          axis = 1).sort_values(by='importance', ascending = False)[:20]
+```
+
+4. decision tree
+
+```
+from sklearn.tree import DecisionTreeClassifier
+
+model = DecisionTreeClassifier()
+model.fit(X_train, y_train)
+```
+
+
+
+
+
+
+[online_test](https://classroom.udacity.com/nanodegrees/nd009-cn-preview/parts/d88d49be-6d08-43b2-90da-29de3603d321/modules/9a2f317e-48d2-4f9f-894b-4ce362b18720/lessons/a31de5d2-25c3-4fdb-b4f4-5a15770ff888/concepts/c61735ea-8a4f-4e98-b4a9-a2a855e824f5)
+
+
+
+
+
+
+## submit
+```
+predictions = rf.predict(test)
+
+test = pd.read_csv("../input/test.csv")
+
+submission = pd.DataFrame({ 'PassengerId': test['PassengerId'], 'Survived': predictions})
+submission.to_csv('submit.csv', index=False)
+```
 
 
 
