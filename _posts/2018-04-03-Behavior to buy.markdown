@@ -62,8 +62,8 @@ different behavior add by timing different value group by user or item
 
 details:
 ![BTB](/pictures/BTBfe1.png)
-![BTB](../pictures/BTBfe2.png)
-![BTB](../pictures/BTBfe3.png)
+![BTB](/pictures/BTBfe2.png)
+![BTB](/pictures/BTBfe3.png)
 
 
 
@@ -93,15 +93,14 @@ using user interactive data which date is the day before predictted day.
 
 ## Analysis
 
-![behaviortype](../pictures/behaviortype.png)
+![behaviortype](/pictures/behaviortype.png)
 
-![behaviortypeday](../pictures/behaviortypeday.png)
+![behaviortypeday](/pictures/behaviortypeday.png)
 
-![CTR](../pictures/CTR.png)
+![CTR](/pictures/CTR.png)
 
-![CTR](../pictures/user_ctr.png)
 
-![time_interval](../pictures/buserrandom.png)
+![time_interval](/pictures/buserrandom.png)
 
 
 
