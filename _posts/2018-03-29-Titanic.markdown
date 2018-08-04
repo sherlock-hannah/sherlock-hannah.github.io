@@ -35,7 +35,7 @@ TRUE positive/sum of test id
 
 ![pclassandage](/pictures/pclassandage.png)
 
-![agedistribution](../pictures/agedistribution.png)
+![agedistribution](/pictures/agedistribution.png)
 
 
 ![notalone](../pictures/notalone.png)
