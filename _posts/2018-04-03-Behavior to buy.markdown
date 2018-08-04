@@ -40,7 +40,7 @@ P dataset
 Set a model and output a table(the prediction of users buying products in 18.Dec) include two columns user_id and item_id.
 
 ## Metric
-![F1](../pictures/F1.png)
+![F1](/pictures/F1.png)
 
 ## Feature engnieering
 1. user feature
@@ -52,7 +52,7 @@ Set a model and output a table(the prediction of users buying products in 18.Dec
 
 Cross feature
 
-![BTB](../pictures/BTBfeature.JPG)
+![BTB](/pictures/BTBfeature.JPG)
 
 time series cut:
 

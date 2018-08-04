@@ -1,10 +1,10 @@
 ---
 layout: post
-title:  "model_metrics"
+title:  "Model_metrics"
 date:   2018-07-11 18:43:31 +0800
 categories: jekyll update
 ---
-![scoring](../pictures/scoring.png)
+![scoring](/pictures/scoring.png)
 
 
 
@@ -18,11 +18,12 @@ categories: jekyll update
 
 
 ## sklearn.metrics.f1_score
-![precision](../pictures/precision.png)
+![precision](/pictures/precision.png)
 
-![recall](../pictures/recall.png)
 
-![f1score_explain](../pictures/f1score_explain.png)
+![recall](/pictures/recall.png)
+
+![f1score_explain](/pictures/f1score_explain.png)
 - F1 = 2 * (precision * recall) / (precision + recall)
 - [f1_score](http://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html)
 - [sklearn.metrics.precision_recall_fscore_support](http://scikit-learn.org/stable/modules/generated/sklearn.metrics.precision_recall_fscore_support.html)
@@ -62,7 +63,7 @@ print('%.8f%% %.8f %.8f %.0f %.0f' %
 
 ## Metric: ROC AUC
 
-![Mean squared logarithmic error](../pictures/ROC-curve.png)
+![Mean squared logarithmic error](/pictures/ROC-curve.png)
 
 
 
@@ -73,7 +74,7 @@ print('%.8f%% %.8f %.8f %.0f %.0f' %
 
 ## Mean squared logarithmic error_sklearn
 
-![Mean squared logarithmic error](../pictures/Mean squared logarithmic error.png)
+![Mean squared logarithmic error](/pictures/Mean squared logarithmic error.png)
 
 [Mean squared logarithmic error_sklearn](http://scikit-learn.org/stable/modules/model_evaluation.html#mean-squared-error)
 

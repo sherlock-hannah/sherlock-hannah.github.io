@@ -24,6 +24,8 @@ show and change my git username
 
 [git cheat sheet](https://education.github.com/git-cheat-sheet-education.pdf)
 
+![gitdiagram](/pictures/gitdiagram.png)
+
 ## How to download a repository
 1. create a file and `cd` to the directory
 2. `git init`
@@ -32,6 +34,7 @@ show and change my git username
 
 ## proxy
 - [Set up proxy for your working environment](http://zhenfisher.xyz/geek/set-up-proxy-for-your-working-environment/)
+
 
 
 

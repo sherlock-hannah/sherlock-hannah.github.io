@@ -40,14 +40,14 @@ TRUE positive/sum of test id
 
 ![notalone](/pictures/notalone.png)
 
-![survivedandfeatures](../pictures/survivedandfeature.png)
+![survivedandfeatures](/pictures/survivedandfeature.png)
 
-![survivedandsib](../pictures/survivedandsib.png)
+![survivedandsib](/pictures/survivedandsib.png)
 
-![PearsonCorrelationHeatmap](../pictures/PearsonCorrelationHeatmap.png)
+![PearsonCorrelationHeatmap](/pictures/PearsonCorrelationHeatmap.png)
 some correlation plots of the features to see how related one feature is to the next.
 
-![pairplot](../pictures/pairplot.png)
+![pairplot](/pictures/pairplot.png)
 
 ## feature engnieering
 [kaggle](https://www.kaggle.com/mitakayama/titanic-python-solutions)
@@ -92,6 +92,7 @@ plot_learning_curve(LR, u'learning_rate', titanic[predictors], titanic['Survived
 ```
 
 3. RandomForest
+
 ```
 from sklearn.ensemble import RandomForestClassifier
 
@@ -113,6 +114,7 @@ pd.concat((pd.DataFrame(train.iloc[:, 1:].columns, columns = ['variable']),
 ```
 
 4. decision tree
+
 
 ```
 from sklearn.tree import DecisionTreeClassifier
@@ -149,5 +151,5 @@ submission.to_csv('submit.csv', index=False)
 
 
 ## Problems
-1.when I use linux ,it couldn't show my drawings.so at first I should put `%matlotlib inline`
-2.deprecation warning when using sklearn 0.19 , the solution is using `from sklearn.model_selection import KFold` instead of `from sklearn.cross_validation import KFold`
+1. when I use linux ,it couldn't show my drawings.so at first I should put `%matlotlib inline`
+2. deprecation warning when using sklearn 0.19 , the solution is using `from sklearn.model_selection import KFold` instead of `from sklearn.cross_validation import KFold`

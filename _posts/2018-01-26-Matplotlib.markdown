@@ -13,7 +13,7 @@ if you use python3 in ubuntun ,you should put`%matplotlib inline` ,then it could
 - `plt.show()` to display the plot
 - `plt.clf()` clean and start again
 
-### series.plot
+### Series.plot
 `series.plot(kind='line',xlim=[0,10])`
 
 xlim : limit of x axis
@@ -88,7 +88,7 @@ plt.show()
 `squarify.plot(sizes=data, label=data.index,color=colors)`
 [Treemap](https://python-graph-gallery.com/202-treemap-with-colors-mapped-on-values/)
 
-## Figure AND subplot
+## Figure and subplot
 - create a new figure `fig = plt.figure(figsize=(,))`
 - add subplot `ax1 = fig.add_subplot(2,2,1)`
 (2,2)means this figure is 2*2 and 1 is the first figure

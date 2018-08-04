@@ -32,9 +32,9 @@ mention spurious relationship
 ## sample space
 the set of all possible Outcomes.
 
-![count_sample](../pictures/count_sample.png)
+![count_sample](/pictures/count_sample.png)
 
-![sort_sample](../pictures/sort_sample.png)
+![sort_sample](/pictures/sort_sample.png)
 
 ## independent event :
 Two events A and B are independent if and only if Prob(A and B) = Prob(A) * Prob(B)
@@ -49,7 +49,7 @@ P(A|B)=P(A ∩ B) / P(B)
 
 P(A ∩ B)
 
-![eventA_eventB](../pictures/eventA_eventB.png)
+![eventA_eventB](/pictures/eventA_eventB.png)
 
 ## Law of Total Probability
 (find a chance of event by adding up all rhe mutually exclusive ways event can happen):
@@ -58,10 +58,10 @@ P(A) = ∑ P(A|Bi) * P(Bi)
 
 ## Blyth
 
-![blyth](../pictures/blyth.png)
+![blyth](/pictures/blyth.png)
 
 
-![blyth_formula](../pictures/blyth_formula.png)
+![blyth_formula](/pictures/blyth_formula.png)
 
 
 
@@ -74,7 +74,7 @@ P(A) = ∑ P(A|Bi) * P(Bi)
 - Each trial has two outcomes:Success and Failure
 Outcomes of trials are independent
 
-![Binomial](../pictures/Binomial.png)
+![Binomial](/pictures/Binomial.png)
 
 - example in excel:
 
@@ -88,8 +88,8 @@ calculate p value
 
 - expresses the probability of a given number of events occurring in a fixed interval of time or space if these events occur with a known constant rate and independently of the time since the last event
 
-![Binomial](../pictures/Possion.png)
-u is mean of 
+![Binomial](/pictures/Possion.png)
+u is mean of
 
 
 
@@ -185,7 +185,7 @@ The critical region is the range of values for a sample statistic that results i
 
 ## One Sample Z-Test
 One Sample Z-Test Test hypothesis about µ; Variance population  known Use when n>=30 because xbar will be normal by CLT.
-![ztest](../pictures/ztest.png)
+![ztest](/pictures/ztest.png)
 P Value<=α if and only if we reject H0.
 P-Value>α if and only if we accept H0.
 
@@ -199,11 +199,11 @@ n = sample size
 ### Critical Region
 Critical Region:
 
-![ttest](../pictures/ttest.jpg)
+![ttest](/pictures/ttest.jpg)
 
 ### P-Values
 
-![pvalue](../pictures/pvalue.png)
+![pvalue](/pictures/pvalue.png)
 
 - A small p-value (typically ≤ 0.05) indicates strong evidence against the null hypothesis, so you reject the null hypothesis.
 
@@ -281,6 +281,17 @@ if p value >0.05,then accept h0.
 
 
 
+# AB Test
+
+## Range of Application
+AB test cannot be used into some situation that needing long time and complex.
+
+## Example
+initial hypothesis
+- choose a metric :such as click through Probability or click through rate
+- review  statistics
+- design
+- analyse
 
 
 ## Problems:

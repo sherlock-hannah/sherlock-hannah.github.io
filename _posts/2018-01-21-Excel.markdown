@@ -35,7 +35,7 @@ CAGR(compound annual growth rate)
 - box visually showing the range of the middle 50% of your data
 - The line in the box is the median. The X in the box is the mean
 
-![boxplot](../pictures/boxplot.png)
+![boxplot](/pictures/boxplot.png)
 
 
 
@@ -56,16 +56,17 @@ the 20% will generate 80%
 ## Finding the Mean of a Discrete Random Variable
 - `=SUMPRODUCT(:,:)` return the result of different array times each other
 - Standard deviation `=SQRT(Variance)`
-- Binomial Random Variable
+
+### Binomial Random Variable
 `BINOM.DIST.RANGE(n,p,s1,s2)`
 Probability of between s1 and s2,successes (inclusive)
-- Possion Random Variable
+### Possion Random Variable
 
 `POISSON.DIST(x,mean,0)`gives probability of exactly x events,
 
 `POISSON.DIST(x,mean,1) `gives probability of <=x events.x inclusive.
 
-- Normal Random Variable
+### Normal Random Variable
 
 mean µ,standard deviation sigma σ
 

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "jingdong"
+title:  "Jingdong_user_buy_time"
 date:   2018-05-30 18:43:31 +0800
 categories: jekyll update
 ---
@@ -23,7 +23,7 @@ s2
 
 Table1.Basic info of prediction data
 
-|        | user_id|sku_id | a_date             |category|
+|        | user_id|sku_id |a_date              |category|
 | :------| :----- |:------| :---------         |:------ |
 | predict| 50000> |37724  |2017/5/01-2017/5/30 |101,30 |
 | all    | 98924  |99412  |2016/5/01-2017/4/30 |71,46,83, 101,1,30|
@@ -48,15 +48,17 @@ Table3.Statistics of users-buy data
 
 Figure1.Users age,sex and level distribution
 
-![userdistribution](../pictures/jduserdistribution.png)
+![userdistribution](/pictures/jduserdistribution.png)
 
 Figure2.Relationship between time and buy,click,focus
-![bcftmonth](../pictures/bcftmonth.png)
-![bcftday](../pictures/bcftday.png)
+
+![bcftmonth](/pictures/bcftmonth.png)
+
+![bcftday](/pictures/bcftday.png)
 
 Figure3.Time interval of repeat buy
 
-![timeinterval](../pictures/timeinterval.png)
+![timeinterval](/pictures/timeinterval.png)
 
 
 
@@ -66,16 +68,26 @@ Figure4.Time interval of buy after browse
 
 
 Figure5.The number of different category of item
-![cateitem](../pictures/cateitem.png)
+
+![cateitem](/pictures/cateitem.png)
+
 Figure6.The number of purchased item in different area
-![areabuy](../pictures/areabuy.png)
+
+![areabuy](/pictures/areabuy.png)
+
 Figure7.The number of purchased item of different category
-![cateitem](../pictures/201605cate.png)
-![cateitem](../pictures/201704cate.png)
+
+![cateitem](/pictures/201605cate.png)
+
+![cateitem](/pictures/201704cate.png)
+
 Figure8.The price of purchased item of different category
-![cateitem](../pictures/pricecate.png)
+
+![cateitem](/pictures/pricecate.png)
+
 Figure9.Total number of users purchased per month
-![monthuser](../pictures/monthuser.JPG)
+
+![monthuser](/pictures/monthuser.JPG)
 
 
 
@@ -88,7 +100,8 @@ Figure9.Total number of users purchased per month
 
 
 ## Feature engnieering
-![RTBfeature](../pictures/RTBfeature.JPG)
+![RTBfeature](/pictures/RTBfeature.JPG)
+
 ### user feature
 - rate of click to buy, focus to buy
 - the sum of different behavior in recent day
@@ -114,4 +127,4 @@ Figure9.Total number of users purchased per month
 
 
 ## Model
-- light bgm 
+- light bgm

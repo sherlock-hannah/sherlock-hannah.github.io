@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "cloud competition"
-date:   2018-07-11 18:43:31 +0800
+title:  "Cloud_competition"
+date:   2018-07-27 18:43:31 +0800
 categories: jekyll update
 ---
 [DataStudio](https://ide2-cn-shanghai.data.aliyun.com/)
@@ -30,3 +30,5 @@ to do :
 - [aliyun_document](https://help.aliyun.com/document_detail/42703.html?spm=a2c4g.11186623.6.563.rzwU4n#KV2Table)
 
 - [PAI](https://tianchi.aliyun.com/forum/new_articleDetail.html?spm=5176.8366600.0.0.7837311fyoOSie&raceId=231596&postsId=1516)
+
+- [Higher proficiency of sql](https://tianchi.aliyun.com/forum/new_articleDetail.html?spm=5176.9876270.0.0.4ce9e44awL7bHT&raceId=&postsId=2608)

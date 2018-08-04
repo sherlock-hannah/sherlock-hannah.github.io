@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "unbalanced train_set sampling "
+title:  "Unbalanced train_set sampling "
 date:   2018-07-04 18:43:31 +0800
 categories: jekyll update
 ---
@@ -19,7 +19,7 @@ trainsample2 = train_set[train_set['label']==1]
 trainsample = pd.concat([trainsample1,trainsample2])
 ```
 [pandas.DataFrame.sample](https://pandas.pydata.org/pandas-docs/version/0.22/generated/pandas.DataFrame.sample.html)
-- n : 
+- n :
 Number of items from axis to return. Cannot be used with frac. Default = 1 if frac = None.
 
 - frac :
@@ -39,5 +39,5 @@ Sample with or without replacement. Default = False.
 
 it is also a type of oversampling but in this we will make the synthetic example of Minority data and will give as a balanced data
 
-![smote](../pictures/smote.png)
+![smote](/pictures/smote.png)
 # References

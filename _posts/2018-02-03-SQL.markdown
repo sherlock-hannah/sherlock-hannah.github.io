@@ -485,7 +485,7 @@ or
 combine rows from multiple tables by specifying matching criteria,usually
 based on primary key -foreign key relationship
 
-![sqljoin](../pictures/sqljoin.JPG)
+![sqljoin](/pictures/sqljoin.JPG)
 - inner joins
 
 ```
@@ -515,7 +515,7 @@ FULL OUTER JOIN table2 ON table1.column_name = table2.column_name;
 - cross JOINS
 
 combine each row from first table with each row from second table
-![crossjoin](../pictures/crossjoin.png)
+![crossjoin](/pictures/crossjoin.png)
 
 ```
 select column_name1,column_name2

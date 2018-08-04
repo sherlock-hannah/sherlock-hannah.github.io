@@ -9,14 +9,13 @@ supervised learning
 
 # Classification
 
-- statistics learning theory
 
 ## loss functions
 measure classification error
 
-![lossfunction](../pictures/lossfunction.png)
+![lossfunction](/pictures/lossfunction.png)
 
-![lossfunctionmodel](../pictures/lossfunctionmodel.png)
+![lossfunctionmodel](/pictures/lossfunctionmodel.png)
 
 
 ## Statistics learning theory
@@ -26,7 +25,8 @@ measure classification error
 
 ## Logistic regression
 - logistic regression formula
-![Logistic_regression](../pictures/Logistic_regression.png)
+
+![Logistic_regression](/pictures/Logistic_regression.png)
 - minimize loss functions
 
 
@@ -44,7 +44,7 @@ classification error
 
 ## ROC curves(receiver operating characteristic curve)
 
-[wikiROC](https://zh.wikipedia.org/wiki/ROC%E6%9B%B2%E7%BA%BF?spm=5176.11409106.555.1.531e6b270Im2Yx#.E6.9B.B2.E7.B7.9A.E4.B8.8B.E9.9D.A2.E7.A9.8D.EF.BC.88AUC.EF.BC.89)
+- [wikiROC](https://zh.wikipedia.org/wiki/ROC%E6%9B%B2%E7%BA%BF?spm=5176.11409106.555.1.531e6b270Im2Yx#.E6.9B.B2.E7.B7.9A.E4.B8.8B.E9.9D.A2.E7.A9.8D.EF.BC.88AUC.EF.BC.89)
 
 
 
@@ -76,14 +76,14 @@ classification error
 
 entropy:
 
-![Entropy](../pictures/Entropy.png)
+![Entropy](/pictures/Entropy.png)
 
 gini index:
 
 
 Information Gain:
 
-![information_gain](../pictures/information_gain.png)
+![information_gain](/pictures/information_gain.png)
 
 pick largest information_gain
 
@@ -162,7 +162,8 @@ Light GBM is a gradient boosting framework that uses tree based learning algorit
 
 
 problems:
-1.module lightgbm have no method dataset???
+
+1. module lightgbm have no method dataset???
 
 
 

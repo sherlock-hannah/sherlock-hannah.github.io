@@ -5,7 +5,8 @@ date:   2018-07-04 18:43:31 +0800
 categories: jekyll update
 ---
 
-![covariate shift](../pictures/covariate shift.png)
+![covariate shift](/pictures/covariate shift.png)
+
 # How (dis)similar are train and test data
 [use auc to estimate whether different distribution between train and test data](https://towardsdatascience.com/how-dis-similar-are-my-train-and-test-data-56af3923de9b)
 

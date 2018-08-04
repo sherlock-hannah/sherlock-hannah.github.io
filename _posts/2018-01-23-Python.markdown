@@ -277,3 +277,6 @@ for i in tqdm(range(10000)):`
 
 
 [partial](https://docs.python.org/2/library/functools.html)
+
+# Additional Reading
+- [visualising data structures and algorithms through animation](https://visualgo.net/en)

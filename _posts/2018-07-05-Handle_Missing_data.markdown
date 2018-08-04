@@ -4,11 +4,11 @@ title:  "missing data"
 date:   2018-07-05 18:43:31 +0800
 categories: jekyll update
 ---
-## count the number of each column
+## Count the number of each column
 
 `df.isnull().sum()`
 
-## fill missing data
+## Fill missing data
 ```
 from sklearn.preprocessing import  Imputer
 

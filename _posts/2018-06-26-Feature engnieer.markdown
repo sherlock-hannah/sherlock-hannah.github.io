@@ -18,7 +18,7 @@ app_train[col] = le.transform(app_train[col])
 ```
 
 
-## one_hot encoding
+##  One_hot encoding
 - create a new column for each unique category in a categorical variable.
 - can plus PCA
 
@@ -54,7 +54,7 @@ app_train['TARGET'] = train_labels
 # Feature Selection
 
 
-## feature importances
+## Feature importances
 
 - random forest
 - XGBoost

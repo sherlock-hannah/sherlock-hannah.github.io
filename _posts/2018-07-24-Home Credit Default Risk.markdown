@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Home Credit Default Risk"
-date:   2018-07-11 18:43:31 +0800
+date:   2018-07-24 18:43:31 +0800
 categories: jekyll update
 ---
 # Metric: ROC AUC
@@ -10,7 +10,7 @@ categories: jekyll update
 
 
 
-# data analysis
+# Data analysis
 1. add diff feature
 2. add period feature
 
@@ -20,9 +20,9 @@ categories: jekyll update
 
 
 
-# reference
+# Reference
 - [Open Solution JournalLB 0.804](https://www.kaggle.com/c/home-credit-default-risk/discussion/57175)
 - [LightGBM with smarter features](https://github.com/neptune-ml/open-solution-home-credit/wiki/LightGBM-with-smarter-features)
 
-# problem
+# Problem
 1. how to join different table by primary key

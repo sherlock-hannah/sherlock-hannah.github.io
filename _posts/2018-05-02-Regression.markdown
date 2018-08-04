@@ -12,4 +12,4 @@ categories: jekyll update
 - outlier
 y= w0+w1x1+w1x2+ ... + wnxn
 
-[sklearn.linear_model.LinearRegression](http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html)
+- [sklearn.linear_model.LinearRegression](http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html)
