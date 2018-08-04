@@ -30,7 +30,8 @@ show and change my git username
 3. copy the repository url
 4. `git clone url`
 
-
+## proxy
+- [Set up proxy for your working environment](http://zhenfisher.xyz/geek/set-up-proxy-for-your-working-environment/)
 
 
 

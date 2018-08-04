@@ -33,7 +33,7 @@ the percentage of passengers you correctly predict
 TRUE positive/sum of test id
 ## Analysis
 
-![pclassandage](../pictures/pclassandage.png)
+![pclassandage](/pictures/pclassandage.png)
 
 ![agedistribution](../pictures/agedistribution.png)
 
