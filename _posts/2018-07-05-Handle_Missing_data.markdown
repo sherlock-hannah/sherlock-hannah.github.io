@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "missing data"
+title:  "Handle Missing data"
 date:   2018-07-05 18:43:31 +0800
 categories: jekyll update
 ---

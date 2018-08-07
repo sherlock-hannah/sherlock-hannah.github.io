@@ -22,6 +22,7 @@ show and change my git username
 - git-bash environment variable
 [1](http://www.cnblogs.com/xunzhiyou/p/5028789.html),[2](https://stackoverflow.com/questions/34169721/set-an-environment-variable-in-git-bash)
 
+- `gitk` can see each record of commit
 [git cheat sheet](https://education.github.com/git-cheat-sheet-education.pdf)
 
 ![gitdiagram](/pictures/gitdiagram.png)
@@ -46,3 +47,4 @@ show and change my git username
 1. can not git push
 `git push --force`
 [git  push  problems](http://www.cnblogs.com/renkangke/archive/2013/05/31/conquerAndroid.html)
+2. [progit](file:///media/zhen/datascience/progit.pdf)

@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "specified parameter "
+title:  "Tuning parameter "
 date:   2018-07-04 18:43:31 +0800
 categories: jekyll update
 ---
@@ -8,6 +8,7 @@ categories: jekyll update
 
 
 # sklearn.model_selection.GridSearchCV
+
 ```
 from sklearn.model_selection import GridSearchCV
 parameters = {'max_depth':[3,6,10,15], 'min_samples_leaf':[3,6,10,15],'min_samples_split':[5,10,20,50]}
@@ -52,6 +53,7 @@ print('best params',clf.best_params_)
 
 
 # Parameter Tuning in XGBoost
+
 - [Complete Guide to Parameter Tuning in Gradient Boosting (GBM) in Python](https://www.analyticsvidhya.com/blog/2016/02/complete-guide-parameter-tuning-gradient-boosting-gbm-python/)
 - [Complete Guide to Parameter Tuning in Gradient Boosting (GBM) in Python in chinese](https://blog.csdn.net/han_xiaoyang/article/details/52663170)
 - [XGBoost](https://xgboost.readthedocs.io/en/latest/how_to/param_tuning.html)

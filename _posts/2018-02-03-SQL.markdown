@@ -4,7 +4,8 @@ title:  "SQL"
 date:   2018-02-03 18:43:31 +0800
 categories: jekyll update
 ---
-## Execute sequence
+# Execute sequence
+
 (1)from
 (3) join
 (2) on
@@ -16,7 +17,8 @@ categories: jekyll update
 (9) distinct
 (10) order by
 
-## Tips
+# Tips
+
 - structure query language, GUI Tools:Navicat
 - RDBMS: Relational Database Management System.ER:entity relationship
 - Windows power shell:
@@ -27,8 +29,9 @@ categories: jekyll update
 - show the structure of tables:`desc tablename;`
 - `'string' as column_name`can use this string instead column
 
-## Loading data
-MySQL:
+# Loading data
+
+## MySQL
 
 ```
 load data local infile "C:/ProgramData/MySQL/MySQL Server 5.1/Data/Kaggle/test.csv"
@@ -41,7 +44,9 @@ IGNORE 1 LINES
 SET expired_date = STR_TO_DATE(@expired_date, '%m/%d/%Y');
 
 ```
-SQL Server:
+
+## SQL Server
+
 ```
 BULK INSERT RBP.dbo.user_log
 FROM 'D:\Repeat Buyers Prediction\data_format1\user_log_format1.csv'
@@ -54,7 +59,8 @@ WITH(
 - .mdf .ldf
 - .sql `source xxx.sql`import outside sql files
 
-## Export
+# Export
+
 ```
 select
 from test
@@ -64,7 +70,8 @@ OPTIONALLY ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 ```
 
-## PRIMARY KEY
+# PRIMARY KEY
+
 Primary keys must contain UNIQUE values, and cannot contain NULL values.
 
 A table can have only one primary key, which may consist of single or multiple fields
@@ -73,36 +80,59 @@ A table can have only one primary key, which may consist of single or multiple f
 - To create a PRIMARY KEY constraint on the "ID" column `ALTER TABLE Persons
 ADD PRIMARY KEY (ID);`
 
-## DDL(data defination language)
-- CREATE DATABASE `CREATE DATABASE <DATABASE Name>`
-- DELETE DATABASE `DROP DATABASE databasename;
+# DDL(data defination language)
+
+## CREATE DATABASE
+ `CREATE DATABASE <DATABASE Name>`
+
+## DELETE DATABASE
+`DROP DATABASE databasename;
 `
-- DELETE TABLE `DROP TABLE <tableNAME>;`
+## DELETE TABLE
+
+- `DROP TABLE <tableNAME>;`
+
+- `DELETE FROM table_name WHERE condition;`
+
+
+eg:
+
 ```
 DELETE FROM USER_action
 WHERE a_date
 BETWEEN '2017-06-01 00:00:00' AND '2017-06-20 00:00:00'
 ```
+- delete all data in table ,but save the table Structures `TRUNCATE TABLE table1`
 
 
 
+## UPDATE TABLE
+- statement is used to modify the existing records in a table
+ `update table_name set column_name="value" where condition`
 
-- Update TABLE
-`ALTER  <Tablename> ADD (<column name1>,<name2>,.....);`
-`UPDATE table_name SET column1 = value1, column2 = value2, ...
+- `ALTER  <Tablename> ADD (<column name1>,<name2>,.....);`
+
+- `UPDATE table_name SET column1 = value1, column2 = value2, ...
 WHERE condition;`
+
 - how to change column data_type
+
 `ALTER table TABLEname
 CHANGE column_name column_name datatype`
-- DROP COLUMN
+
+## DROP COLUMN
+
 `ALTER TABLE table_name
 DROP COLUMN column_name;`
 
 
-- create TABLE
+## CREATE TABLE
  `create table tablename(columnname1 type primary key,columnname2 type,columnname3 type ) ;`
+
+ eg:
+
  ```
- Create table test(PassengerId      int(64) primary key,
+Create table test(PassengerId      int(64) primary key,
 Pclass           int(64),
 Name            varchar,
 Sex             varchar,
@@ -117,70 +147,85 @@ Embarked        varchar);
 
 - rename `RENAME TABLE newname to oldname;`
 
-## DML(data Manipulation language)
-### SELECT(define which columns to return)
-`SELECT <Column name>,..,...
+# DML(data Manipulation language)
+
+## SELECT(define which columns to return)
+
+- `SELECT <Column name>,..,...
 FROM <TABLEname>;`
-query all columns: use `*` to replace ` <column name>`
+
+- query all columns: use `*` to replace ` <column name>`
+
 - using alias to creat a new column
 `select column_name1,column_name2 as alias from table_name`
+
 - removing duplicates
 `SELECT distinct `
 
-notice if you `SELECT distinct columnname1,column2`,
+ - notice if you `SELECT distinct columnname1,column2`,
 it will delete row when both columnname1 and column2 are repetated
 
 
-### WHERE(searsh condition,filters rows using a predicate)
-`WHERE search condition'`
-`WHERE like "k%"`
- to match any string of zero or more characters, use %
- to match characters that are not R, use [^R]
- to match a numeral, use [0-9]
+## WHERE(search condition,filters rows using a predicate)
 
-### GROUP BY
-`GROUP BY listname`group by list,arrange rows by group
+- `WHERE search condition'`
+- `WHERE like "k%"`
+  - to match any string of zero or more characters, use %
+  - to match characters that are not R, use [^R]
+  - to match a numeral, use [0-9]
+
+## GROUP BY
+
+- `GROUP BY column_name`group by list,arrange rows by group
 
 Grouping Operators
-- `GROUP BY year ASC WITH ROLLUP;` ROLLUP the query produces an extra super-aggregate summary row
+
+- `GROUP BY year ASC WITH ROLLUP;`
+
+ROLLUP the query produces an extra super-aggregate summary row
+
 - `GROUPING()`
 return 1 when  super-aggregate summary row
+
 - `CUBE`
+
 - `GROUPING SET`
 
 
-### HAVING(search condition,filters group using a predicate)
-specified group condition
- filter the groups
-`HAVING search condition`
-can't use `WHERE` because it run before `sum`and `group by`
+## HAVING(search condition,filters group using a predicate)
+- specified group condition,filter the groups
 
-### ORDER BY
-`ORDER BY listname asc`
-upward `asc`
-downward `desc`
-`offset x rows fetch next y rows only`
+- `HAVING search condition`
+
+ - can't use `WHERE` because it run before `sum`and `group by`
+
+## ORDER BY
+
+- `ORDER BY column_name asc`
+ - upward `asc`
+ - downward `desc`
+
+- `offset x rows fetch next y rows only`
 
 - limit
 `limit m,n`  m stands for starting from m-1 rows,n means n rows
 sort before limit
 
-### INSERT
+## INSERT
+
 `insert into table_name (column_name) value()`
-### UPDATE
-statement is used to modify the existing records in a table
- `update table_name set column_name="value" where condition`
-### DELETE `DELETE FROM table_name WHERE condition;`
-delete all data in table ,but save the table Structures `TRUNCATE TABLE table1`
 
 
 
 
-## DCL(data Control language)
+
+
+# DCL(data Control language)
 COMMIT ROLLBACK GRANT REVOKE
 
-## Data type
-data type(https://www.w3schools.com/sql/sql_datatypes.asp)
+# Data type
+[data type](https://www.w3schools.com/sql/sql_datatypes.asp)
+
 - null
 - int
 - float
@@ -190,6 +235,7 @@ data type(https://www.w3schools.com/sql/sql_datatypes.asp)
 
 ## Text datatype
 character type(repository of saving Text) :gbk (21000chinese character 2byte) , big5 ,gb2312 (6700 chinese character),utf8,unicode (alllanguage)
+
 - binary System(voice,image etc binary data)
 binary ,varbinary ,blob
 - non binary System
@@ -199,28 +245,29 @@ char, varchar, text
 `collate utf8_bin`
 `collate ut8_general_ci`
 
-## Functions
+# Functions
 
 [Functions](https://www.w3schools.com/sql/sql_ref_mysql.asp)
 
 
-### Aggregate functions
+## Aggregate functions
 
-`count(),sum(),avg(),max(),min()`
+- `count(),sum(),avg(),max(),min()`
 
-Statistical: `STDEV(),STDEVP(),VAR(),VARP()`
+- Statistical: `STDEV(),STDEVP(),VAR(),VARP()`
 
 
-### Calculate functions
-`mod()`
-`abs()` absolute value
-`round(numbers,ndigits)`
-`upper(),lower()` use in letter
+## Calculate functions
+
+- `mod()`
+- `abs()` absolute value
+- `round(numbers,ndigits)`
+- `upper(),lower()` use in letter
 - `SELECT length(column_name) from table_name`Returns the length of the specified string (in bytes)
 - `SELECT COALESCE(NULL, NULL, NULL, 'W3Schools.com', 'Example.com');`
 return the first non-null expression in a list
 
-### Conversion function
+## Conversion function
 
 - `CAST`Converts a value from one datatype to another datatype
 `CAST(column_name AS varchar)`
@@ -229,7 +276,7 @@ return the first non-null expression in a list
 
 
 
-### Logical Functions
+## Logical Functions
 SQL Server(MSSQL)
 
 - `ISNUMERIC(expression)` if the expression is number ,then return 1 else 0.
@@ -239,15 +286,17 @@ SQL Server(MSSQL)
 
 
 
-### Scala function
+## Scala function
+
+
+### Date Functions
 [MySQl time function conclusion](http://www.cnblogs.com/she27/articles/1377089.html)
-
-Date Functions
-
 
 - `datediff(interval,date1,date2)` Return the difference in days between two date values:
 
 - `getdate()`return the current date
+
+eg:
 
 ```
 datediff(yy,salestartdate,getdate())
@@ -255,8 +304,13 @@ datediff(yy,salestartdate,getdate())
 
 - `timediff(time1,time2)`the subtraction of two date
 
-`year(),day(),datename(mm,column_name),datename(dw,column_name)`
+- `year()`
+- `day()`
+- `datename(mm,column_name),datename(dw,column_name)`
+- mysql: `week()`,`weekday()`
+sql-server :`DATEPART(week,time)`, `DATEPART(weekday,time)`
 
+eg:
 
 ```
 SELECT DATENAME(year,o_date) as year,
@@ -267,13 +321,13 @@ FROM [jingdong].[dbo].[USER_order]
 GROUP BY DATENAME(year,o_date),DATENAME(month,o_date)
 ORDER BY CONVERT(INT,DATENAME(month,o_date)
 ```
-aggregate by month
 
 
 
 
 
-String Functions
+### String Functions
+
 - `CONCAT(string1, string2, ...., string_n)`Concatenate string together
 - `LEFT(string, number_of_chars)`Extract a substring from a string (starting from left):
 
@@ -283,25 +337,20 @@ mysql:`SUBSTR(string, start, length)`
 - `REVERSE(string)`  reverses a string and returns the result
 - `SELECT length(column_name) from table_name`Returns the length of the specified string (in bytes)
 `len()` (sql Server)
-
-- mysql: `week()`,`weekday()`
-sql-server :`DATEPART(week,time)`, `DATEPART(weekday,time)`
-
-
-
-Conversion Functions
-
-- `CAST`Converts a value from one datatype to another datatype
-`CAST(column_name AS varchar)`
-- `CONVERT(data_type(length), expression, style)`Convert an expression from one datatype to another, or one character set to another
-`convert(DATE,Birthday,112)`
-
 - `STR(number, length, decimal_places)` return a string representation of a number
 - `SELECT COALESCE(NULL, NULL, NULL, 'W3Schools.com', 'Example.com');`
 return the first non-null expression in a list
 
 
-### Window function(online analytical processing)
+
+
+
+
+
+
+
+## Window function(online analytical processing)
+### rank
 - `rank()`
 the same numeric value for ties (for example 1, 2, 2, 4, 5)
 
@@ -327,7 +376,8 @@ from tableNAME
 
 (just use in select sentence)
 
-- Aggregate functions as window function
+### Aggregate functions as window function
+- moving sum
 
 ```
 sum(columnname1) over (order by column_name2)
@@ -339,9 +389,17 @@ as columnname3
 
 `preceding` means n rows before current row,`following`means n rows after current row.
 
+##  Random data
+- rand() generate fixed scale random data
 
-## Grouping Sets and Pivoting Data
-### Grouping Sets
+- `RAND()*(max-min)+min `
+
+- `ROUND(CAST(RAND()*(9.5-0.5)+0.5 as double),2)`
+
+
+
+# Grouping Sets and Pivoting Data
+## Grouping Sets
 GROUPING SETS subclause builds on GROUP BY clause
 ```
 SELECT <column list with aggregate(s)>
@@ -359,7 +417,7 @@ GROUPING SETS
 2. group by (column_name2)
 
 
-### ROLLUP and CUBE
+## ROLLUP and CUBE
 ROLLUP provides shortcut for defining grouping sets with combinations that assume input columns form a hierarchy
 ```
 SELECT StateProvince, City, COUNT(CustomerID) AS Customers
@@ -384,10 +442,11 @@ ORDER BY SalesPersonName, CustomerName;
 3. group by (StateProvince, City)
 
 
-### Identifying Groupings in Results
+## Identifying Groupings in Results
 `GROUPING()`
 return 1 when  super-aggregate summary row
-### Pivoting Data
+
+# Pivoting Data
 Pivoting data is rotating data from a rows-based orientation to a columns-based orientation
 ```
 SELECT OrderID, Bikes, Accessories, Clothing
@@ -395,7 +454,7 @@ FROM
 (SELECT OrderID, Category, Revenue FROM Sales.SalesDetails) AS sales
 PIVOT (SUM(Revenue) FOR Category IN([Bikes], [Accessories], [Clothing])) AS pvt
 ```
-### Using PIVOT and UNPIVOT
+## Using PIVOT and UNPIVOT
 
 UNPIVOT ()
 
@@ -403,7 +462,7 @@ UNPIVOT ()
 
 
 
-## Case
+# Case when
 ```
 CASE WHEN <expression> THEN
      WHEN <expression> THEN
@@ -411,9 +470,21 @@ CASE WHEN <expression> THEN
 END
 ```
 
+eg:
 
+```
+SELECT sample_id, x, y,
+	case when label_value = 0 then 1
+	when label_value > 0 and label_value <=  9.9 then 2
+	when label_value > 9.9 and label_value <= 24.9 then 3
+	when label_value > 24.9 and label_value <= 49.9 then 4
+	ELSE 5 END
+	as label_value
+FROM ${t1};
+```
 
-## Null
+# Null
+
 The result of any expression containing a NULL value is NULL
 `2 + NULL = NULL`
 
@@ -425,7 +496,7 @@ sql Server
 The ISNULL() function returns the alt_value, if the expression is a NULL;
 The ISNULL() function returns the expression, if the expression is NOT NULL
 
-## Operators
+# Operators
 - `=`
 ` < >`
  is exclusive of the range of value specified
@@ -446,47 +517,50 @@ WHERE NOT condition;`
 
 
 
-## The predicates
+# The predicates
 
-- like
-`WHERE column_name like  '%ddd%'`
-`WHERE column_name like 'ddd_' `
-- between
-`SELECT column_name(s)
+## like
+
+= `WHERE column_name like  '%ddd%'`
+- `WHERE column_name like 'ddd_' `
+
+## between
+
+- `SELECT column_name(s)
 FROM table_name
 WHERE column_name BETWEEN value1 AND value2;`
 
 is inclusive of the range of the value specified
 
 
-- is NULL(extract some value is null)
-`WHERE column_name is NULL`
+## is NULL(extract some value is null)
+
+- `WHERE column_name is NULL`
 
 - is not NULL(extract some value is not null)
 `WHERE column_name is not NULL`
 
-- in (simple use of or )
+## in (simple use of or )
 `WHERE column_name (not) in (2,3,5) `
 
-- EXISTS
-`select *
+## EXISTS
+- `select *
 from user_info as I
 where exists
 (select * from train as T
 	where I.user_id = T.user_id)`
 
 
-or
 
-  `not exist`
+-   `not exist`
 
 
-## Joins
+# Joins
 combine rows from multiple tables by specifying matching criteria,usually
 based on primary key -foreign key relationship
 
 ![sqljoin](/pictures/sqljoin.JPG)
-- inner joins
+## inner joins
 
 ```
 SELECT column_name(s)
@@ -495,24 +569,25 @@ INNER JOIN table2 ON table1.column_name = table2.column_name;
 ```
 Inner joins return only rows where a match can be found in both tables.
 
-- outer JOINS(designated with left,right,full keyword)
+## outer JOINS(designated with left,right,full keyword)
 
-Use a Left Outer Join to include all rows from the first table and values from matched rows in the second table.
+- Use a Left Outer Join to include all rows from the first table and values from matched rows in the second table.
 
- Columns in the second table for which no matching rows exist are populated with NULLs.
+- Columns in the second table for which no matching rows exist are populated with NULLs.
+
 ```
 SELECT column_name(s)
 FROM table1
 LEFT JOIN table2 ON table1.column_name = table2.column_name;
 ```
-full
+### full
 ```
 SELECT column_name(s)
 FROM table1
 FULL OUTER JOIN table2 ON table1.column_name = table2.column_name;
 ```
 
-- cross JOINS
+## cross JOINS
 
 combine each row from first table with each row from second table
 ![crossjoin](/pictures/crossjoin.png)
@@ -523,7 +598,7 @@ FROM table1 as t1
 CROSS JOIN table2 as t2
 ```
 
-- self JOINS
+## self JOINS
 
 ```
 SELECT column_name(s)
@@ -531,15 +606,17 @@ FROM table1 T1, table1 T2
 WHERE condition;
 ```
 
-## Union
-- UNION(returns a result set of distinct rows)
+# Union
+## UNION(returns a result set of distinct rows)
 
 ```
 SELECT column_name(s) FROM table1
 UNION (ALL)
 SELECT column_name(s) FROM table2;
 ```
+
 UNION ALL retains duplicates during query processing
+
 - intersect(returns only distinct rows that appear in both result set )
 
 
@@ -548,9 +625,9 @@ UNION ALL retains duplicates during query processing
 
 
 
-## Table Expressions
+# Table Expressions
 
-### Views
+## Views
 a view is a virtual table based on the result-set of an SQL statement.
 - CREATE VIEW Examples
 
@@ -575,7 +652,7 @@ WHERE UnitPrice > (SELECT AVG(UnitPrice) FROM Products);
 1. not use `distinct` `having` `group by`
 2. just one table
 
-### Temporary Tables
+## Temporary Tables
 Temporary tables are used to hold temporary result sets within a user’s session
 ```
 CREATE TABLE #tmpProducts
@@ -585,7 +662,7 @@ GO
 …
 SELECT * FROM #tmpProducts;
 ```
-### Table Variables
+## Table Variables
 ```
 DECLARE @varProducts table
 (ProductID INTEGER,
@@ -595,7 +672,7 @@ SELECT * FROM @varProducts
 ```
 Use only on very small datasets
 
-### Table-Valued Functions
+## Table-Valued Functions
 ```
 CREATE FUNCTION Sales.fn_GetOrderItems (@OrderID AS Integer)
 RETURNS TABLE
@@ -610,7 +687,7 @@ SELECT * FROM Sales.fn_GetOrderItems (1025) AS LineItems;
 TVFs are named objects with definitions stored in a database
 Table-Valued Functions (TVFs) are functions that return a rowset.
 
-### Derived Tables
+## Derived Tables
 Derived table are named query expression created within an outer select query.
 ```
 SELECT orderyear, COUNT(DISTINCT custid) AS cust_count
@@ -620,7 +697,7 @@ FROM
 GROUP BY orderyear;
 ```
 
-### Common Table Expressions
+## Common Table Expressions
 ```
 WITH OrgReport (ManagerID, EmployeeID, EmployeeName, Level)
 AS
@@ -645,17 +722,17 @@ OPTION (MAXRECURSION 3);
 
 
 
-## Subqueries
+# Subqueries
 Results of inner query passed to outer query
 
 
-### Scalar subquery
+## Scalar subquery
 returns single value to outer query
-### Multi-valued subquery
+## Multi-valued subquery
 Used with IN predicate
-### self-contained
+## self-contained
 have no connection with the outer query other than passing it results
-### Correlated
+## Correlated
 - Dependent on outer query, cannot be executed separately
 - Behaves as if inner query is executed once per outer row
 
@@ -669,9 +746,9 @@ ORDER BY empid, orderdate;
 ```
 ??
 
-## Apply
+# Apply
 - cross apply conceptually similar to cross join
-- outer apply conceptually similae to left join
+- outer apply conceptually similar to left join
 ```
 SELECT S.supplierid, s.companyname, P.productid, 	P.productname, P.unitprice
 FROM Production.Suppliers AS S
@@ -682,12 +759,12 @@ CROSS APPLY dbo.fn_TopProductsByShipper(S.supplierid) AS P
 
 
 
-## Another reading
-[Documentayion](https://dev.mysql.com/doc/)
-[tutorial](https://www.w3schools.com/sql/default.asp)
-SQL Server :logfile - `.ldf`,main data file `.mdf`
+# Another reading
+- [Documentayion](https://dev.mysql.com/doc/)
+- [tutorial](https://www.w3schools.com/sql/default.asp)
+- SQL Server :logfile - `.ldf`,main data file `.mdf`
 
-## Problems
+# Problems
 - 1.when insert chinese character into table
 `ERROR 1366 (HY000): Incorrect string value: '\xD4\xF8\xBB\xAA' for column 'sname' at row 1`
 - 2.How to change the length of character
@@ -696,7 +773,7 @@ solution:`ALTER table table_name column_name varchar(30)`
 - 4.Which SQL statement is used to delete data from a database?
 - 5.With SQL, how do you select all the records from a table named "Persons" where the "LastName" is alphabetically between (and including) "Hansen" and "Pettersen"?
 - 6.How can you change "Hansen" into "Nilsen" in the "LastName" column in the Persons table?
-- 7. With SQL, how can you return the number of records in the "Persons" table?
+- 7.With SQL, how can you return the number of records in the "Persons" table?
 - 8.The error 26 when install mssql,and can not connect engine
 
 
@@ -705,17 +782,17 @@ solution:[add index](https://blog.csdn.net/qq_33556185/article/details/52192551)
 
 
 
-- 10. use T-sql create database ,but can find in database
+- 10.use T-sql create database ,but can find in database
 
 
 - 11.install problems:maybe compatibility errors
 solution: uninstall old edition and update
-- 12. table-valued user-defined function named dbo.ufnGetCustomerInformation???
+- 12.table-valued user-defined function named dbo.ufnGetCustomerInformation???
 
-- 13. ERROR 1290 (HY000): ERROR 1290 (HY000):.. MySQL server running with –secure-file-priv option
+- 13.ERROR 1290 (HY000): ERROR 1290 (HY000):.. MySQL server running with –secure-file-priv option
 
-solution :
-- `SELECT @@GLOBAL.secure_file_priv;`
+ - solution :
+ - `SELECT @@GLOBAL.secure_file_priv;`
 
-- `SELECT * FROM train INTO OUTFILE '/var/lib/mysql-files/test.csv' FIELDS TERMINATED BY ',';
+ - `SELECT * FROM train INTO OUTFILE '/var/lib/mysql-files/test.csv' FIELDS TERMINATED BY ',';
 `
