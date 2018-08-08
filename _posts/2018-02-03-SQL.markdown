@@ -193,6 +193,7 @@ return 1 when  super-aggregate summary row
 
 
 ## HAVING(search condition,filters group using a predicate)
+
 - specified group condition,filter the groups
 
 - `HAVING search condition`
@@ -221,6 +222,7 @@ sort before limit
 
 
 # DCL(data Control language)
+
 COMMIT ROLLBACK GRANT REVOKE
 
 # Data type
@@ -290,6 +292,7 @@ SQL Server(MSSQL)
 
 
 ### Date Functions
+
 [MySQl time function conclusion](http://www.cnblogs.com/she27/articles/1377089.html)
 
 - `datediff(interval,date1,date2)` Return the difference in days between two date values:
@@ -350,7 +353,9 @@ return the first non-null expression in a list
 
 
 ## Window function(online analytical processing)
+
 ### rank
+
 - `rank()`
 the same numeric value for ties (for example 1, 2, 2, 4, 5)
 
@@ -377,6 +382,7 @@ from tableNAME
 (just use in select sentence)
 
 ### Aggregate functions as window function
+
 - moving sum
 
 ```
@@ -390,6 +396,7 @@ as columnname3
 `preceding` means n rows before current row,`following`means n rows after current row.
 
 ##  Random data
+
 - rand() generate fixed scale random data
 
 - `RAND()*(max-min)+min `
@@ -399,7 +406,9 @@ as columnname3
 
 
 # Grouping Sets and Pivoting Data
+
 ## Grouping Sets
+
 GROUPING SETS subclause builds on GROUP BY clause
 ```
 SELECT <column list with aggregate(s)>
@@ -418,6 +427,7 @@ GROUPING SETS
 
 
 ## ROLLUP and CUBE
+
 ROLLUP provides shortcut for defining grouping sets with combinations that assume input columns form a hierarchy
 ```
 SELECT StateProvince, City, COUNT(CustomerID) AS Customers
@@ -443,10 +453,12 @@ ORDER BY SalesPersonName, CustomerName;
 
 
 ## Identifying Groupings in Results
+
 `GROUPING()`
 return 1 when  super-aggregate summary row
 
 # Pivoting Data
+
 Pivoting data is rotating data from a rows-based orientation to a columns-based orientation
 ```
 SELECT OrderID, Bikes, Accessories, Clothing
@@ -454,6 +466,7 @@ FROM
 (SELECT OrderID, Category, Revenue FROM Sales.SalesDetails) AS sales
 PIVOT (SUM(Revenue) FOR Category IN([Bikes], [Accessories], [Clothing])) AS pvt
 ```
+
 ## Using PIVOT and UNPIVOT
 
 UNPIVOT ()
@@ -463,6 +476,7 @@ UNPIVOT ()
 
 
 # Case when
+
 ```
 CASE WHEN <expression> THEN
      WHEN <expression> THEN
@@ -497,6 +511,7 @@ The ISNULL() function returns the alt_value, if the expression is a NULL;
 The ISNULL() function returns the expression, if the expression is NOT NULL
 
 # Operators
+
 - `=`
 ` < >`
  is exclusive of the range of value specified
@@ -541,9 +556,11 @@ is inclusive of the range of the value specified
 `WHERE column_name is not NULL`
 
 ## in (simple use of or )
+
 `WHERE column_name (not) in (2,3,5) `
 
 ## EXISTS
+
 - `select *
 from user_info as I
 where exists
@@ -556,10 +573,12 @@ where exists
 
 
 # Joins
+
 combine rows from multiple tables by specifying matching criteria,usually
 based on primary key -foreign key relationship
 
 ![sqljoin](/pictures/sqljoin.JPG)
+
 ## inner joins
 
 ```
@@ -580,7 +599,9 @@ SELECT column_name(s)
 FROM table1
 LEFT JOIN table2 ON table1.column_name = table2.column_name;
 ```
+
 ### full
+
 ```
 SELECT column_name(s)
 FROM table1
@@ -607,6 +628,7 @@ WHERE condition;
 ```
 
 # Union
+
 ## UNION(returns a result set of distinct rows)
 
 ```
@@ -628,6 +650,7 @@ UNION ALL retains duplicates during query processing
 # Table Expressions
 
 ## Views
+
 a view is a virtual table based on the result-set of an SQL statement.
 - CREATE VIEW Examples
 
@@ -653,6 +676,7 @@ WHERE UnitPrice > (SELECT AVG(UnitPrice) FROM Products);
 2. just one table
 
 ## Temporary Tables
+
 Temporary tables are used to hold temporary result sets within a user’s session
 ```
 CREATE TABLE #tmpProducts
@@ -662,7 +686,9 @@ GO
 …
 SELECT * FROM #tmpProducts;
 ```
+
 ## Table Variables
+
 ```
 DECLARE @varProducts table
 (ProductID INTEGER,
@@ -673,6 +699,7 @@ SELECT * FROM @varProducts
 Use only on very small datasets
 
 ## Table-Valued Functions
+
 ```
 CREATE FUNCTION Sales.fn_GetOrderItems (@OrderID AS Integer)
 RETURNS TABLE
@@ -688,6 +715,7 @@ TVFs are named objects with definitions stored in a database
 Table-Valued Functions (TVFs) are functions that return a rowset.
 
 ## Derived Tables
+
 Derived table are named query expression created within an outer select query.
 ```
 SELECT orderyear, COUNT(DISTINCT custid) AS cust_count
@@ -698,6 +726,7 @@ GROUP BY orderyear;
 ```
 
 ## Common Table Expressions
+
 ```
 WITH OrgReport (ManagerID, EmployeeID, EmployeeName, Level)
 AS
@@ -723,16 +752,24 @@ OPTION (MAXRECURSION 3);
 
 
 # Subqueries
+
 Results of inner query passed to outer query
 
 
 ## Scalar subquery
+
 returns single value to outer query
+
 ## Multi-valued subquery
+
 Used with IN predicate
+
 ## self-contained
+
 have no connection with the outer query other than passing it results
+
 ## Correlated
+
 - Dependent on outer query, cannot be executed separately
 - Behaves as if inner query is executed once per outer row
 
@@ -744,9 +781,11 @@ WHERE orderdate = (SELECT MAX(orderdate)
 	                          WHERE O2.empid = O1.empid)
 ORDER BY empid, orderdate;
 ```
-??
+
+
 
 # Apply
+
 - cross apply conceptually similar to cross join
 - outer apply conceptually similar to left join
 ```
@@ -760,11 +799,13 @@ CROSS APPLY dbo.fn_TopProductsByShipper(S.supplierid) AS P
 
 
 # Another reading
+
 - [Documentayion](https://dev.mysql.com/doc/)
 - [tutorial](https://www.w3schools.com/sql/default.asp)
 - SQL Server :logfile - `.ldf`,main data file `.mdf`
 
 # Problems
+
 - 1.when insert chinese character into table
 `ERROR 1366 (HY000): Incorrect string value: '\xD4\xF8\xBB\xAA' for column 'sname' at row 1`
 - 2.How to change the length of character
