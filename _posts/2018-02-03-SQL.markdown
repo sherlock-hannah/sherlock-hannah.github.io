@@ -646,7 +646,6 @@ UNION ALL retains duplicates during query processing
 
 
 
-
 # Table Expressions
 
 ## Views

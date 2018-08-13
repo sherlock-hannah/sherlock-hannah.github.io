@@ -4,22 +4,28 @@ title:  "Jingdong_user_buy_time"
 date:   2018-05-30 18:43:31 +0800
 categories: jekyll update
 ---
-## Description
+# Description
 predict users buy specified category item on which day
 
 - 1.classification: user buy or not :0 not ,1 buy
 - 2.regression : predict time of buy
 
-## Metric
-s
+# Metric
+a = 0.4
 
-s1
+![userdistribution](/pictures/s.png)
 
-s2
+user metric
+
+![userdistribution](/pictures/s1.png)
+
+time metric
+
+![userdistribution](/pictures/s2.png)
 
 
 
-## Data
+# Data
 
 Table1.Basic info of prediction data
 
@@ -42,7 +48,7 @@ Table3.Statistics of users-buy data
 |98924        |12     | 28   |1   |2   |6  |15 |3919 |
 
 
-## Visualization
+# Visualization
 
 
 
@@ -62,9 +68,9 @@ Figure3.Time interval of repeat buy
 
 
 
-Figure4.Time interval of buy after browse
+Figure4.The number of user of different order number
 
-
+![order_number](/pictures/order_number.png)
 
 
 Figure5.The number of different category of item
@@ -79,7 +85,7 @@ Figure7.The number of purchased item of different category
 
 ![cateitem](/pictures/201605cate.png)
 
-![cateitem](/pictures/201704cate.png)
+
 
 Figure8.The price of purchased item of different category
 
@@ -94,15 +100,15 @@ Figure9.Total number of users purchased per month
 
 8. label cate = 30,101  user buy  or not,and pearson feature correlation
 
-## Regulation based on Visualization analysis
+# Regulation based on Visualization analysis
 - outlier of  specified month such as 6,11,4 should be delete
 
 
 
-## Feature engnieering
+# Feature engnieering
 ![RTBfeature](/pictures/RTBfeature.JPG)
 
-### user feature
+## user feature
 - rate of click to buy, focus to buy
 - the sum of different behavior in recent day
 - the active level in recent day
@@ -110,21 +116,28 @@ Figure9.Total number of users purchased per month
 
 
 
-### item feature
+## item feature
 
-### Category feature
+## Category feature
 
-### user-item
+## user-item
 - repeat buyers
 
-### item-category
+## item-category
 - rank the most purchased item in category
 
-### user-cstegory
+## user-cstegory
 
-### time feature
+## time feature
 - weekday
 
 
-## Model
+# Model
 - light bgm
+
+
+
+
+
+# reference
+- [video](https://jdata.jd.com/html/knowledge.html)

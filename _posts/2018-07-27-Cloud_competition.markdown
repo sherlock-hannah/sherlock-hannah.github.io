@@ -22,7 +22,7 @@ to do :
 
 1. linear_regression
 2. gbdt_regression
-
+3. ps-smart
 
 # reference
 - [solution](https://tianchi.aliyun.com/forum/new_articleDetail.html?spm=5176.8366600.0.0.762d311fPJr24s&raceId=231669&postsId=6065)

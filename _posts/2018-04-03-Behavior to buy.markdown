@@ -140,3 +140,6 @@ using user interactive data which date is the day before predictted day.
 ## Additional reading
 - [summary of ALI recommend algorithm ](https://blog.csdn.net/u014374284/article/details/49933487)
 - [competition thought](https://blog.csdn.net/Bryan__/article/details/51713596)
+- [sql_code](https://blog.csdn.net/Datuqiqi/article/details/46834579)
+- [the F1 score based on different model](https://pnyuan.github.io/blog/tianchi-dm/%E5%A4%A9%E6%B1%A0%E7%A6%BB%E7%BA%BF%E8%B5%9B%20-%20%E7%A7%BB%E5%8A%A8%E6%8E%A8%E8%8D%90%E7%AE%97%E6%B3%95%EF%BC%88%E5%9B%9B%EF%BC%89%EF%BC%9A%E9%87%87%E7%94%A8%E9%9B%86%E6%88%90%E6%A8%A1%E5%9E%8B/)
+- [Tianchi-Wifi](https://www.ctolib.com/drop-out-Tianchi-Wifi-Positioning.html)

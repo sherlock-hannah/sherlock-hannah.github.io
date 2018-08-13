@@ -50,5 +50,17 @@ it is also a type of oversampling but in this we will make the synthetic example
 
 ![smote](/pictures/smote.png)
 
+
+
+# One ClassLearning or Novelty Detection
+
+# cost sensitive
+
+
+
+
+
+
 # References
 - [class-imbalance](https://zhuanlan.zhihu.com/p/36381828)
+- [](http://blog.51cto.com/yixianwei/2120352)
