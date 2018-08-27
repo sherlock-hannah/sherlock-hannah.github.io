@@ -11,6 +11,14 @@ categories: jekyll update
 
 
 # Data analysis
+## Distribution of the Target Column
+## Examine Missing Values¶
+
+
+
+
+
+
 1. add diff feature
 2. add period feature
 

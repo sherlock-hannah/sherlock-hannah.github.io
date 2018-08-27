@@ -5,13 +5,9 @@ date:   2018-01-21 18:43:31 +0800
 categories: jekyll update
 ---
 download excel 2016
-## Functions
-- 1.`TEXT(WEEKAND([DATE],"dddd"))`   modify "date" format,
-`DATA`+FENLIE
-- 2.`FORMULATEXT` display formula of specify cells
-- 3.`CONCATENATE(B3,C3)` merge text of cells
 
-## Tips
+
+# Tips
 - `ctrl + shift + down`
 can select all on column datas  
 `ctrl + shift + *` can select all table
@@ -19,7 +15,18 @@ can select all on column datas
 - `ctrl + 1` into format cells
 - `$`before cell can fix a cell
 
-## Use decriptive statistics
+# Functions
+
+## modify "date" format
+- `TEXT(WEEKAND([DATE],"dddd"))`,`DATA`+FENLIE
+
+## display formula of specify cells
+- `FORMULATEXT`
+
+## merge text of cells
+- `CONCATENATE(B3,C3)`
+
+# Use decriptive statistics
 1. skewness-1<x<1`skew()`,kurtosis`Kurt()`
 2. mean`average()`,range,median`median()`,variance`var()`,
 standand deviation`stdev()`,mode`mode()`,standand error(most frequently occuring values)
@@ -30,6 +37,12 @@ rank `rank(cell,columnname,0 or 1)`
 CAGR(compound annual growth rate)
 5. RULE OF THUMB:95% of your data is within 2 standand deviation of the mean, anything more than 2 std dev of mean is called outlier
 `HOME - conditional formating - highlight cells rule - less than or more than`
+6. construct a frequency distribution for the data
+`COUNTIF($A$2:$A$51,C2)`
+
+
+
+
 
 ## Boxplot
 - box visually showing the range of the middle 50% of your data
@@ -57,16 +70,16 @@ the 20% will generate 80%
 - `=SUMPRODUCT(:,:)` return the result of different array times each other
 - Standard deviation `=SQRT(Variance)`
 
-### Binomial Random Variable
+## Binomial Random Variable
 `BINOM.DIST.RANGE(n,p,s1,s2)`
 Probability of between s1 and s2,successes (inclusive)
-### Possion Random Variable
+## Possion Random Variable
 
 `POISSON.DIST(x,mean,0)`gives probability of exactly x events,
 
 `POISSON.DIST(x,mean,1) `gives probability of <=x events.x inclusive.
 
-### Normal Random Variable
+## Normal Random Variable
 
 mean µ,standard deviation sigma σ
 
@@ -93,7 +106,8 @@ Upper Limit:xbar+1.96*sigma/sqrt(n)
  n = (1.96σ/E)^2
 
 E :accurate numbers
-## Problem
+
+# Problem
 1. how to compute the rate of return for stock
 2. tell the difference of nominal and ordinal,numerical and categorical.
 If they do have a natural ordering, they are called ordinal categorical features. Otherwise if there is no intrinsic ordering, they are called nominal categorical features.(not numeral)

@@ -39,7 +39,10 @@ for i in range(1,101):
 
 
 ### 2D scatter
+Agraphical presentation of the relationship between two quantitative variables.
+
 `df.plot.scatter(x='',y='')`
+
 ```
 N = 50
 x = np.random.rand(N)

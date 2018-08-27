@@ -102,6 +102,9 @@ using user interactive data which date is the day before predictted day.
 
 ![time_interval](/pictures/buserrandom.png)
 
+to do list:
+1. different difftime click-buy rate
+
 
 
 

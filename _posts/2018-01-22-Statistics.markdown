@@ -28,6 +28,15 @@ mention spurious relationship
 
 - 7.regression standandlise regression coeffient
 
+# Simpson's paradox
+- In some cases the conclusions based upon the aggregated
+crosstabulation can be completely reversed if we look at the unaggregated data, an occurrence known as Simpson’s paradox.
+
+- [wiki](https://en.wikipedia.org/wiki/Simpson%27s_paradox)
+
+![simpson](/pictures/simpson.jpg)
+
+
 # Basic Probability
 ## sample space
 the set of all possible Outcomes.

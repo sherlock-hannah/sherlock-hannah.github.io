@@ -56,7 +56,9 @@ it is also a type of oversampling but in this we will make the synthetic example
 
 # cost sensitive
 
+# generate different distribution
 
+- [Rejection Sampling](https://am207.github.io/2017/wiki/rejectionsampling.html)
 
 
 

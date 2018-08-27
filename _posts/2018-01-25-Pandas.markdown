@@ -4,26 +4,30 @@ title:  "Pandas"
 date:   2018-01-30 18:43:31 +0800
 categories: jekyll update
 ---
-first `conda list` to ensure if pandas package has been installed
 
-if not `pip install pandas`
+# Tips
 
-then `import Pandas as pd`
+- first `conda list` to ensure if pandas package has been installed
+,if not `pip install pandas`
 
-two datastructures:series dataframe
+- then `import Pandas as pd`
 
-### Tips
-`any(titanic.Age.isnull())`
-can detect if this column have null values
-`pd.options.display.max_columns = n`
+- two datastructures:series dataframe
+
+
+- `pd.options.display.max_columns = n`
 can display n columns
 
+`with pd.option_context('display.max_rows', None, 'display.max_columns', 3):
+    print(df)`
+- `df.info()`
+- `df.describe()` basic statistic information
+- `df.columns`
 
 
+# Loading data
 
-
-## Loading data
-1. Here are some methods for loading data:
+Here are some methods for loading data:
 
 ```
 sql_dataframe   = pd.read_sql_table('my_table', engine, columns=['ColA', 'ColB'])
@@ -42,20 +46,20 @@ pip install html5lib
 pip install BeautifulSoup4
 
 ```
-[parameter](https://blog.csdn.net/HHTNAN/article/details/76019902)
+- [parameter](https://blog.csdn.net/HHTNAN/article/details/76019902)
 
 
 
 
-2. out datas
-`df.to_csv('D:\data\out2.csv',index=False,header =False)`
+## out datas
+`df.to_csv('D:\data\out2.csv',sep=",",index=False,header =False)`
 
-## Slicing
-1. column access`x[["column label","column_name2"]]`
-   raw access`x.loc[row label]`
-   elements access `x[row,column]`
+
+# Slicing
+## column access
+- `x[["column label","column_name2"]]`
 -  `loc` also allows you to select both rows and columns from a DataFrame.
-   `df.loc[number1:number2,['column_name','column_name1']]`used to slicing data ,.loc[] method selects by column label
+- `df.loc[number1:number2,['column_name','column_name1']]`used to slicing data ,.loc[] method selects by column label
 -  `df.iloc[:, [0]]`.iloc[] selects by column index
 
 ```
@@ -63,23 +67,31 @@ df.iloc[1,1]
 df.iloc[0:3, [0,1]]  
 df.iloc[[0, 3, 5], 0:2]  
 ```
-
 -  `.iloc[]`is non-inclusive. `.loc[] `is inclusive of the range of values specified
+
+## raw access
+- `x.loc[row label]`
 -  `df.loc[df['column_name'] == some_value]`can select rows when column_value is equal to some value
 -  `df.loc[(df['column_name'] == some_value) & df['other_column'].isin(some_values)]`
 combine different condition together
 
-3. To get a quick peek at your data by selecting its top or bottom few rows using `.head()`and `.tail()`
-4. To see a descriptive statistical summary of your dataframe's numeric columns using `.describe()`
-5. `.columns` will display the name of the columns in your dataframe:
-6. to display the index values, enter `.index`
-7. Print the entire dataframe, using `print dataframe_name`
-8. `my_dataframe.columns = ['new', 'column', 'header', 'labels']` can rename column title
-9. `.dtypes`can view columns datatypes
-10. `pandas.qcut(x, q, labels=None, retbins=False, precision=3)`q : integer or array of quantiles
+## elements access
+`x[row,column]`
+
+## describe data
+
+- To get a quick peek at your data by selecting its top or bottom few rows using `.head()`and `.tail()`
+- To see a descriptive statistical summary of your dataframe's numeric columns using `.describe()`
+- `.columns` will display the name of the columns in your dataframe
+- to display the index values, enter `.index`
+- Print the entire dataframe, using `print dataframe_name`
+- `my_dataframe.columns = ['new', 'column', 'header', 'labels']` can rename column title
+- `.dtypes`can view columns datatypes
+- `pandas.qcut(x, q, labels=None, retbins=False, precision=3)`q : integer or array of quantiles
 
 
-## Converte data type
+# Converte data type
+
 - using `astype` converte textual data to categorical
 `df['col2'] = df['col2'].astype(int)`change one column data_type
 
@@ -98,17 +110,26 @@ errors: If ‘coerce’, then invalid parsing will be set as NaT
 
 [pandas.DataFrame.values](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.values.html#pandas.DataFrame.values)
 
+`df.as_matrix()`
 
 
 
-## Wrangling Your Data
-check if there duplicate or null
+
+# Wrangling Your Data
+
+`axis=0` along the rows (namely, index in pandas), and `axis=1` along the columns
+
+## check if there duplicate or null
  ```
  test['Age'].isnull().value_counts()
  test.duplicated().value_counts()
  ```
- of `df.info()`
-1. Dropping Data
+
+
+ `any(titanic.Age.isnull())`
+ can detect if this column have null values
+
+## Dropping Data
 
 ```
 df = df.dropna(axis=0)  # remove any row with nans
@@ -130,7 +151,7 @@ df = df.dropna(axis=0, thresh=4)
  - drop duplicates
 `reference = reference.drop_duplicates(['user_id', 'item_id'])`
 
-2. filling data
+## filling data
 replace NA with a scalar value
 
 ```
@@ -145,30 +166,29 @@ df.fillna(method='ffill')  # fill the values forward
 df.fillna(method='bfill')  # fill the values in reverse
 df.fillna(limit=5)
 ```
-3. unique data in a column
+## unique data in a column
 
- `your_data_frame['your_column'].unique()` or equally, `your_data_frame.your_column.unique()` to see the unique values of each column and identify the rogue values.
+- `your_data_frame['your_column'].unique()` or equally, `your_data_frame.your_column.unique()` to see the unique values of each column and identify the rogue values.
 
-4. number of unique classes in each object column
-
+- number of unique classes in each object column
 `app_train.select_dtypes('object').apply(pd.Series.nunique, axis = 0)
 `
 
-### Qcut and cut
+## Qcut and cut
 `pd.qcut(factors, 5)`
 - `qcut`, the bins will be chosen so that you have the same number of records in each bin.
 - `cut` will choose the bins to be evenly spaced according to the values themselves and not the frequency of those values
 
 
 
-### Time series
-data_type:
+# Time series
+## data_type:
 1. date
 2. time
 3. datetime
 4. timedelta(the subtraction of two datetime)
 
-dateparse:
+## dateparse:
 convert value 'xxxx-xx-xx' into datetime.datetime(xxxx,x,x,x,x)
 
 - `train_user_df['time']=[datetime.strptime(x.split()[0],"%Y-%m-%d") for x in time_series]`
@@ -178,7 +198,8 @@ convert value 'xxxx-xx-xx' into datetime.datetime(xxxx,x,x,x,x)
 - eg:`Data['days'].map(lambda x: time.strptime(x, "%Y-%m-%d"))`
 
 
-set date index
+
+## set date index
 
 ```          
 df['date'] = pd.to_datetime(df['date'])
@@ -186,17 +207,17 @@ df = df.set_index('date')
 ```
 
 
-slice data
+## slice data
 - `series['2011']`
 
 - `df.ix['5-2011']`
 
 
-time plot
+## time plot
 
 - `time.ix['01-2011':'02-2011'].plot()`
 
-time resample
+## time resample
 
 - `series.resample('M',how='sum',closed='left',label ='left')`
 
@@ -204,11 +225,11 @@ time resample
 
 - closed: means left or right end is inclusive
 
-moving window functions
+## moving window functions
 - `rolling_sum(data,n)`
 - `rolling_mean(data,n)`
 
-calculate time interval
+## calculate time interval
 
 - first split datetime column into two column
 
@@ -226,7 +247,7 @@ data.merge(data, how='left', left_on=['id', 'rn'], right_on=['id', 'rn_1'])
 
 
 
-### Group by
+# Group by
 - `Survived_by_SibSp = data_t[['SibSp','Survived']].groupby('SibSp',as_index = False).mean().sort_values(by='Survived',ascending=False)`
 
 - eg:`USER_order['o_sku_num'].groupby(USER_order['user_id']).sum()`
@@ -238,24 +259,26 @@ data.merge(data, how='left', left_on=['id', 'rn'], right_on=['id', 'rn_1'])
 
 
 
-### Crosstab
+# Crosstab
 `pandas.crosstab(index, columns, rownames=None, colnames=None, aggfunc=None)`
 
 count the length of value in different groups
 
-### Pivot Table
+# Pivot Table
 `df.pivot_table(['column1','column2'],index = ['column1','column2'],columns='column',aggfunc= len,margins=True)`
 
 aggfunc:default is mean
 margins: total count of rows values
 
-## Series
+# Series
 value on the right ,index on the left
 can be created through
+
 `series([value],index=['index'])`
 or `a = {'a':value,'b':'value'} series(a)`
 
-### Series method
+## Series method
+### map
 - `Series.map(arg, na_action=None)`
 arg : function, dict, or Series
 eg:
@@ -269,13 +292,16 @@ titanic.loc[titanic["Sex"] == "female", "Sex"] = 1
 
 [pandas.Series.map](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.map.html)
 
-### DataFrame
+# DataFrame
 `DataFrame(data,columns=[])`
 
 `data={'key':[1,2,3],'key2':[1,2,3]}
 dataframe(data)`
 
-### DataFrame method
+## DataFrame method
+
+### replace
+
 - `.replace(to_replace=None, value=None, inplace=False, limit=None, regex=False, method='pad', axis=None)`
 
 Replace values given in ‘to_replace’ with ‘value’
@@ -284,32 +310,47 @@ eg:`dataset['Title'] = dataset['Title'].replace('Mlle', 'Miss')`
 - `DataFrame.apply(func, axis=0, broadcast=False, raw=False, reduce=None, args=(), **kwds)`
 
 Applies function along input axis of DataFrame.
+
+### correlation
 - `DataFrame.corr(method='pearson', min_periods=1)`
 
 Compute pairwise correlation of columns, excluding NA/null values
+
+### unstack
 - `df.unstack()`
 
  change the structure of dataframe
 
+ - row to column
+
+ ```
+ fd1=fd.stack() #set column to hierarchical index
+ fd1.unstack(0) #set first hierarchical index to column
+ ```
+
+
+### isin
+
 - `DataFrame.isin(values)`
 [pandas.DataFrame.isin](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.isin.html)
+
+### rank
 
 - `DataFrame.rank(axis=0, method='average', numeric_only=None, na_option='keep', ascending=True, pct=False)`
 
 
- method:
+- method:
 
-min: lowest rank in group
+ - min: lowest rank in group
 
-max: highest rank in group
+ - max: highest rank in group
+- [DataFrame.rank](http://pandas.pydata.org/pandas-docs/version/0.22/generated/pandas.DataFrame.rank.html)
 
-
-- random sample
+### random sample
 `DataFrame.sample(n=None, frac=None, replace=False, weights=None, random_state=None, axis=None)`
 
-[DataFrame.rank](http://pandas.pydata.org/pandas-docs/version/0.22/generated/pandas.DataFrame.rank.html
-)
 
+### nunique
 
 -  `DataFrame.nunique(axis=0, dropna=True)`
 
@@ -317,23 +358,29 @@ max: highest rank in group
 
 - `df.count(axis=1) ` count not null value each row
 
-- row to column
-```
-   fd1=fd.stack() #set column to hierarchical index
-   fd1.unstack(0) #set first hierarchical index to column
-   ```
+### append
 - add row to dataframe, as same as union in sql
 ` df_s=df_s.append(df_si)`
 
-
+### get dummies
 - `pd.get_dummies(features_raw)`
 create new feature through converting categorical variable into dummy/indicator variables
 
 [pandas.get_dummies](https://pandas.pydata.org/pandas-docs/version/0.22/generated/pandas.get_dummies.html)
 
+### rename
 
 - `df.rename(index=str, columns={"A": "a", "B": "c"})`
 [rename](https://pandas.pydata.org/pandas-docs/version/0.22/generated/pandas.DataFrame.rename.html)
+
+### Index
+- `df1.reindex(['a','b','c','d','e'],  inplace=Ture)`
+
+- `.reset_index()`will use groupby key as new index
+
+### apply
+- `df.apply(f,axis=1)` used in row
+
 
 ## Merge(like join in sql)
 Combine dataset
@@ -350,19 +397,15 @@ merge(USER_comment,on = ['user_id','o_id'],how = 'left').\
 merge(USERINFO,on='user_id',how='left')
 ```
 
-##  Concat
+## Concat
 
 `submit1 = pd.concat([test,submit],axis=1)`
 
 
 
 
-## Index
-- `df1.reindex(['a','b','c','d','e'],  inplace=Ture)`
 
-- `.reset_index()`will use groupby key as new index
-
-## Problems
+# Problems
 1. how to add columns
 2. [Get HTML table into pandas Dataframe, not list of dataframe objects
 ](https://stackoverflow.com/questions/38486477/get-html-table-into-pandas-dataframe-not-list-of-dataframe-objects)
@@ -378,31 +421,6 @@ solution:`USERcate['o_date'] = pd.to_datetime(USERcate['o_date']) `
 
 solution : pandas.Series doesn't have a built-in `reshape` method, but you can use `.values` to access the underlying numpy array object and call reshape on it:` .values.reshape`
 
-[Additional reading](http://pandas.pydata.org/)
-[Further Reading](https://courses.edx.org/courses/course-v1:Microsoft+DAT210x+1T2018/courseware/b7aa9093-0ee1-9e62-4188-6f9d25a2ce85/7fc08411-6ab9-100a-b198-91b8ac2dc84a/?child=first)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-member_sum double,
-member_median double,
-member_mode double,
-member_var double,
-member_min double,
-member_max double
+# Additional reading
+- [Additional reading](http://pandas.pydata.org/)
+- [Further Reading](https://courses.edx.org/courses/course-v1:Microsoft+DAT210x+1T2018/courseware/b7aa9093-0ee1-9e62-4188-6f9d25a2ce85/7fc08411-6ab9-100a-b198-91b8ac2dc84a/?child=first)
