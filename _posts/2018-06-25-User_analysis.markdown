@@ -6,7 +6,7 @@ categories: jekyll update
 ---
 # Goal
 
-To establish recommend system and reduce lossing customers.
+To establish recommend system and reduce lossing customers and improve buy rate of user.
 
 
 # Common index

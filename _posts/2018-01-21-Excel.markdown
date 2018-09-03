@@ -16,15 +16,10 @@ can select all on column datas
 - `$`before cell can fix a cell
 
 # Functions
-
-## modify "date" format
-- `TEXT(WEEKAND([DATE],"dddd"))`,`DATA`+FENLIE
-
-## display formula of specify cells
-- `FORMULATEXT`
-
-## merge text of cells
-- `CONCATENATE(B3,C3)`
+- 1.`TEXT(WEEKAND([DATE],"dddd"))`   modify "date" format,
+`DATA`+FENLIE
+- 2.`FORMULATEXT` display formula of specify cells
+- 3.`CONCATENATE(B3,C3)` merge text of cells
 
 # Use decriptive statistics
 1. skewness-1<x<1`skew()`,kurtosis`Kurt()`
@@ -70,7 +65,7 @@ the 20% will generate 80%
 - `=SUMPRODUCT(:,:)` return the result of different array times each other
 - Standard deviation `=SQRT(Variance)`
 
-## Binomial Random Variable
+### Binomial Random Variable
 `BINOM.DIST.RANGE(n,p,s1,s2)`
 Probability of between s1 and s2,successes (inclusive)
 ## Possion Random Variable
@@ -107,7 +102,7 @@ Upper Limit:xbar+1.96*sigma/sqrt(n)
 
 E :accurate numbers
 
-# Problem
+## Problem
 1. how to compute the rate of return for stock
 2. tell the difference of nominal and ordinal,numerical and categorical.
 If they do have a natural ordering, they are called ordinal categorical features. Otherwise if there is no intrinsic ordering, they are called nominal categorical features.(not numeral)

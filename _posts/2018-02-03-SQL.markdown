@@ -4,7 +4,7 @@ title:  "SQL"
 date:   2018-02-03 18:43:31 +0800
 categories: jekyll update
 ---
-# Execute sequence
+## Execute sequence
 
 (1)from
 (3) join
@@ -17,7 +17,7 @@ categories: jekyll update
 (9) distinct
 (10) order by
 
-# Tips
+## Tips
 
 - structure query language, GUI Tools:Navicat
 - RDBMS: Relational Database Management System.ER:entity relationship
@@ -29,9 +29,9 @@ categories: jekyll update
 - show the structure of tables:`desc tablename;`
 - `'string' as column_name`can use this string instead column
 
-# Loading data
+## Loading data
 
-## MySQL
+### MySQL
 
 ```
 load data local infile "C:/ProgramData/MySQL/MySQL Server 5.1/Data/Kaggle/test.csv"
@@ -206,11 +206,13 @@ return 1 when  super-aggregate summary row
  - upward `asc`
  - downward `desc`
 
-- `offset x rows fetch next y rows only`
 
 - limit
 `limit m,n`  m stands for starting from m-1 rows,n means n rows
 sort before limit
+
+`limit x offset y ` from Y rows next X rows
+
 
 ## INSERT
 
@@ -284,6 +286,11 @@ SQL Server(MSSQL)
 - `ISNUMERIC(expression)` if the expression is number ,then return 1 else 0.
 - `IIF(ProductCategoryID IN (5,6,7), 'Bike', 'Other')`
 'bike' is the true place ,'other' is the false place .
+
+MySQL
+
+- `IFNULL(expression,NULL) `
+if expression cannot find ,then return null.
 
 
 

@@ -24,6 +24,11 @@ can display n columns
 - `df.describe()` basic statistic information
 - `df.columns`
 
+# Reduce RAM of dataframe
+- [Reduce RAM of dataframe](https://www.jiqizhixin.com/articles/2018-03-07-3)
+
+`dow_cat = dow.astype('category')`
+
 
 # Loading data
 

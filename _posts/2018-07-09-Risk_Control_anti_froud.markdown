@@ -17,3 +17,11 @@ Isolation Forest
 - [Novelty and outlier Detection](http://scikit-learn.org/stable/modules/outlier_detection.html)
 
 - [ppd_nemo_submit](https://www.kesci.com/apps/home/competition/forum/574a932f874e65042e150ce8)
+
+
+# Solution
+- [solution_1_0.4368](https://openclub.alipay.com/read.php?tid=8927&fid=96)
+- [0.4221](https://openclub.alipay.com/read.php?tid=8890&fid=96)
+- [solution_rank_1](https://openclub.alipay.com/read.php?tid=8869&fid=96)
+
+- [new_feature_generation](https://openclub.alipay.com/read.php?tid=8956&fid=96)

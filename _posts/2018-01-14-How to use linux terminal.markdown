@@ -52,8 +52,12 @@ sudo apt-get install -y google-chrome-stable
  - `sudo apt-get install ocrmypdf` install ocrmypdf
  - `apt-get install tesseract-ocr-chi-sim`install chinese simplified language
  - `sudo ocrmypdf --force-ocr -l chi_sim 数据挖掘与数据化运营实战++思路、方法、技巧与应用.pdf out.pdf`
- - `ocrmypdf --help
-`
+ - `ocrmypdf --help`
+
+
+- convert jpg to gif
+ - `sudo apt-get install imagemagick`
+ - `convert -delay 20 -loop 0 *.png example.gif`
 
 # Editor
 

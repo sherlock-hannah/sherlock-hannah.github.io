@@ -11,7 +11,12 @@ categories: jekyll update
 Correlation Doesn’t Equal Causation
 
 # Decriptive statistics
-- 1.range,variance,standand deviation, standand error
+
+- 0.Measures of location:mean ,median,mode ,geometric mean ,percentile,quartiles
+- 1.Measures of variability:range,interquartile range,variance,standand deviation, standand error
+ - SAMPLE VARIANCE:s^2 = ∑(xi -x̄)^2/(n-1)
+ - POPULATION VARIANCE:σ^2 = ∑(xi -u)^2/N
+ - coefficient of variation:(Standard deviation/Mean) * 100 %
 
 - 2.skewness positive numbers means it's right skewed.
     negative numbers means it's left skewed
@@ -28,7 +33,7 @@ mention spurious relationship
 
 - 7.regression standandlise regression coeffient
 
-# Simpson's paradox
+## Simpson's paradox
 - In some cases the conclusions based upon the aggregated
 crosstabulation can be completely reversed if we look at the unaggregated data, an occurrence known as Simpson’s paradox.
 
@@ -36,12 +41,73 @@ crosstabulation can be completely reversed if we look at the unaggregated data, 
 
 ![simpson](/pictures/simpson.jpg)
 
+## Z Scores
+z  = (x-x̄)/s
+
+- x̄ = the sample mean
+- s = the sample standard deviation
+
+measure of the relative location
+of the observation
+
+## Chebyshev’s theorem
+
+- At least (1-1/z^2 ) of the data values must be within z standard deviations of the mean,where z is any value greater than 1.
+
+
+
+
+- it applies to any data set regardless of the shape of the distribution of the data
+
+
+## empirical rule
+
+When the data are believed to symmetric mound-shaped or bell-shaped distribution,the empirical rule can be used to determine the percentage of data values that must be within a specified number of standard deviations of the mean.
+
+- Approximately 68% of the data values will be within one standard deviation
+of the mean.
+- Approximately 95% of the data values will be within two standard deviations
+of the mean.
+- Almost all of the data values will be within three standard deviations of the mean.
+
+## detecting outlier
+
+
+- Any Z score >=+3 or <=-3 is an outlier
+
+## covariance
+- SAMPLE COVARIANCE:
+
+Sxy =∑(xi-x̄)(yi-ȳ)/n-1
+
+- Sxy Positive:(x and y are positively linearly related)
+- Sxy Approximately 0:(x and y are not linearly related)
+- Sxy Negative:(x and y are negatively linearly related)
+
+## correlation coefficient
+PEARSON PRODUCT MOMENT CORRELATION COEFFICIENT:
+
+rxy =Sxy/Sx*Sy
+
+- a sample correlation coefficient of +1 corresponds to a perfect positive linear relationship between x and y.
+
+
+
 
 # Basic Probability
 ## sample space
+
 the set of all possible Outcomes.
 
+counting rule:
+1. Multiple-step experiments
+
+n1*n2*...ni
+
+2. Combinations
+
 ![count_sample](/pictures/count_sample.png)
+3. Permutations
 
 ![sort_sample](/pictures/sort_sample.png)
 
@@ -120,9 +186,6 @@ u is mean of
 ## Central Limit Theorem
 Add together 30 or more independent random variables, Even if none of the individual random variables are normal,the sum of the random variables will be normal.
 
-## Z Scores
-z  = (x-μ)/σ
-Any Z score >=+2 or <=-2 is an outlier
 
 ## Samples and Sample Statistics
 Suppose a population has N individuals and we want to take a sample of size n. The sample is a simple random sample if each set of n individuals has the same chance of being chosen.
