@@ -8,7 +8,7 @@ categories: jekyll update
 if you use python3 in ubuntu ,you should put`%matplotlib inline` ,then it could display figure.
 
 
-# Basic Plots with Matplotlib
+## Basic Plots with Matplotlib
 
 - The general syntax is`import package.subpackage as local_name.`such as `import matplotlib.pyplot as plt `
 - `plt.plot(a, b)`  `plt.xscale(log)` on a logarithmic scale

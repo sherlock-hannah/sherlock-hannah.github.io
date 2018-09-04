@@ -8,7 +8,7 @@ categories: jekyll update
 
 Isolation Forest
 
-# Reference
+## Reference
 - [Fraud Detection machine learning Models](https://www.zhihu.com/question/30508773/answer/205831957)
 [PPD_RiskControlcompetition](https://github.com/wepe/PPD_RiskControlCompetition)
 
@@ -19,7 +19,7 @@ Isolation Forest
 - [ppd_nemo_submit](https://www.kesci.com/apps/home/competition/forum/574a932f874e65042e150ce8)
 
 
-# Solution
+## Solution
 - [solution_1_0.4368](https://openclub.alipay.com/read.php?tid=8927&fid=96)
 - [0.4221](https://openclub.alipay.com/read.php?tid=8890&fid=96)
 - [solution_rank_1](https://openclub.alipay.com/read.php?tid=8869&fid=96)

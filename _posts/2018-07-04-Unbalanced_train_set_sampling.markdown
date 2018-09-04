@@ -11,7 +11,7 @@ from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(features, outcomes, test_size=0.2, random_state=42)
 ```
 
-# Random Under-Sampling
+## Random Under-Sampling
 
 `pandas.DataFrame.sample()`
 
@@ -32,19 +32,19 @@ Fraction of axis items to return. Cannot be used with n.
 - replace :
 Sample with or without replacement. Default = False.
 
-## EasyEnsemble
+### EasyEnsemble
 
 ![EasyEnsemble](/pictures/EasyEnsemble.jpg)
 
 
-## BalanceCascade
+### BalanceCascade
 
 
-# Random Over-Sampling
+## Random Over-Sampling
 
 
 
-## SMOTE(Synthetic Minority Over-sampling Technique):
+### SMOTE(Synthetic Minority Over-sampling Technique):
 
 it is also a type of oversampling but in this we will make the synthetic example of Minority data and will give as a balanced data
 
@@ -52,17 +52,17 @@ it is also a type of oversampling but in this we will make the synthetic example
 
 
 
-# One ClassLearning or Novelty Detection
+## One ClassLearning or Novelty Detection
 
-# cost sensitive
+## cost sensitive
 
-# generate different distribution
+## generate different distribution
 
 - [Rejection Sampling](https://am207.github.io/2017/wiki/rejectionsampling.html)
 
 
 
 
-# References
+## References
 - [class-imbalance](https://zhuanlan.zhihu.com/p/36381828)
 - [](http://blog.51cto.com/yixianwei/2120352)

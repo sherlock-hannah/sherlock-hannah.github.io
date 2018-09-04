@@ -80,6 +80,10 @@ A table can have only one primary key, which may consist of single or multiple f
 - To create a PRIMARY KEY constraint on the "ID" column `ALTER TABLE Persons
 ADD PRIMARY KEY (ID);`
 
+## index
+
+`create INDEX index_name on table_name(column_name)`
+
 ## DDL(data defination language)
 
 ### CREATE DATABASE
@@ -215,10 +219,31 @@ sort before limit
 
 
 ### INSERT
+can omit identity columns,columns that allow null,and columns with default constraints.
+
+- insert value
 
 `insert into table_name (column_name) value()`
 
-- can omit identity columns,columns that allow null,and columns with default constraints.
+- insert ... select/insert ... EXEC
+
+insert results return by the query or stored procedure into existing table
+
+`insert into table_name (column_name)
+select column_name from table_name;`
+
+- select ... into
+create a new table from the result of query
+`select * into custcopy from Customers`
+
+aliyun odps
+
+```
+DROP TABLE if EXISTS train_copy;
+CREATE TABLE train_copy like odps_tc_257100_f673506e024.forecast_program_round1_train;
+insert OVERWRITE TABLE train_copy
+SELECT * from odps_tc_257100_f673506e024.forecast_program_round1_train;
+```
 
 
 

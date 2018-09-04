@@ -7,10 +7,10 @@ categories: jekyll update
 
 supervised learning
 
-# Classification
+## Classification
 
 
-## loss functions
+### loss functions
 measure classification error
 
 ![lossfunction](/pictures/lossfunction.png)
@@ -18,12 +18,12 @@ measure classification error
 ![lossfunctionmodel](/pictures/lossfunctionmodel.png)
 
 
-## Statistics learning theory
+### Statistics learning theory
 - regulation
 - Ockham’s Razor: The best models are simple models that fit the data well
 
 
-## Logistic regression
+### Logistic regression
 - logistic regression formula
 
 ![Logistic_regression](/pictures/Logistic_regression.png)
@@ -32,7 +32,7 @@ measure classification error
 
 - [sklearn.linear_model.LogisticRegression](http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html)
 
-## Maximum likelihood perspective
+### Maximum likelihood perspective
 
 
 
@@ -42,7 +42,7 @@ classification error
 (FN+FN)/N
 
 
-## ROC curves(receiver operating characteristic curve)
+### ROC curves(receiver operating characteristic curve)
 
 - [wikiROC](https://zh.wikipedia.org/wiki/ROC%E6%9B%B2%E7%BA%BF?spm=5176.11409106.555.1.531e6b270Im2Yx#.E6.9B.B2.E7.B7.9A.E4.B8.8B.E9.9D.A2.E7.A9.8D.EF.BC.88AUC.EF.BC.89)
 
@@ -67,7 +67,7 @@ classification error
 - ROC curves algorithm
 - Creating a Classifier with Python
 
-# Decision Tree
+## Decision Tree
 - machine learning classifier
 
 - the collection of `if then` regulation
@@ -98,11 +98,11 @@ how to deal with NAN values?
 
 [Decision Tree](http://www.saedsayad.com/decision_tree.htm)
 
-### RandomForest
+#### RandomForest
 
 random select feature and sample
 
-## GBDT（Gradient Boost Decision Tree）
+### GBDT（Gradient Boost Decision Tree）
 
 
 - [Greedy Function Approximation: A Gradient Boosting Machine](https://statweb.stanford.edu/~jhf/ftp/trebst.pdf)
@@ -113,19 +113,19 @@ random select feature and sample
 
 
 
-### XGBoost（eXtreme Gradient Boosting）
+#### XGBoost（eXtreme Gradient Boosting）
 ```
 import xgboost as xgb
-# read in data
+## read in data
 dtrain = xgb.DMatrix('demo/data/agaricus.txt.train')
 dtest = xgb.DMatrix('demo/data/agaricus.txt.test')
 
-# specify parameters via map
+## specify parameters via map
 param = {'max_depth':2, 'eta':1, 'silent':1, 'objective':'binary:logistic' }
 num_round = 2
 bst = xgb.train(param, dtrain, num_round)
 
-# make prediction
+## make prediction
 preds = bst.predict(dtest)
 ```
 
@@ -139,7 +139,7 @@ preds = bst.predict(dtest)
 - [XGBoost_API](https://xgboost.readthedocs.io/en/latest/python/python_api.html)
 
 
-#### XGBoost API
+##### XGBoost API
 - xgboost.train()
 - xgboost.cv()
 - xgboost.XGBClassifier()
@@ -152,7 +152,7 @@ preds = bst.predict(dtest)
 
 
 
-### Light GBM
+#### Light GBM
 
 Light GBM is a gradient boosting framework that uses tree based learning algorithm
 
@@ -180,30 +180,30 @@ problems:
 
 
 
-# Improving Machine Learning Models
+## Improving Machine Learning Models
 
 
 
-# Ensemble learning(multi_classifier-system)
+## Ensemble learning(multi_classifier-system)
 - it combine with a series individual learner using some strategy.
 - individual learner need precision and diversity.
 
-## Boosting
+### Boosting
 
 
 
-## Bagging
-
-
-
-
+### Bagging
 
 
 
 
 
 
-# Another Reading
+
+
+
+
+## Another Reading
 - [gitbook](https://legacy.gitbook.com/book/yoyoyohamapi/mit-ml/details)
 
 - [scikit-learn-chinese](http://sklearn.apachecn.org/cn/0.19.0/)
@@ -215,5 +215,5 @@ problems:
 - [learn-machine-learning](https://www.kaggle.com/dansbecker/learn-machine-learning/notebook)
 
 
-# problems
+## problems
 1. full singular value decomposition??

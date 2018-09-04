@@ -6,7 +6,7 @@ categories: jekyll update
 ---
 [DataStudio](https://ide2-cn-shanghai.data.aliyun.com/)
 
-# Nowcasting problems
+## Nowcasting problems
 
 - [Nowcasting (meteorology)](https://en.wikipedia.org/wiki/Nowcasting_(meteorology))
 - [Convolutional LSTM Network: A Machine Learning Approach for Precipitation Nowcasting](https://arxiv.org/abs/1506.04214)
@@ -15,13 +15,13 @@ categories: jekyll update
 
 
 
-# Metrics
+## Metrics
 to do:
 offline measure
 
 transform it to multi_class question
 
-# Data Preprocessing
+## Data Preprocessing
 1. create new feature x_y,concat by x,y.
 2. calculate mobile mean of predicted value by different member
 3. Add mobile STDEV but the score is 0.06
@@ -30,11 +30,11 @@ to do :
 1. create new feature by x,y geography feature and time feature by sample_id
 2. how to select useful feature
 
-## Imbalanced Classes
+### Imbalanced Classes
 
 - [Dealing with Imbalanced Classes in Machine Learning](https://towardsdatascience.com/dealing-with-imbalanced-classes-in-machine-learning-d43d6fa19d2)
 
-## Table operations in pandas
+### Table operations in pandas
 - [Cross join / cartesian product between pandas DataFrames](https://mkonrad.net/2016/04/16/cross-join--cartesian-product-between-pandas-dataframes.html)
   ```python
   def df_crossjoin(df1, df2, **kwargs):
@@ -69,7 +69,7 @@ to do :
 
 
 
-# Model
+## Model
 
 1. linear_regression
 2. gbdt_regression
@@ -77,14 +77,14 @@ to do :
 4. random_forest multi class  
 5. naive bayes classification
 
-# App
+## App
 1. write api
    - [example](https://help.aliyun.com/document_detail/87952.html)
    - [video](https://tianchi.aliyun.com/forum/videoStream.html?spm=5176.11409386.0.0.50ca1d071Xk1A1&postsId=9552#postsId=9552)
 2. visualization
    - [bar](https://help.aliyun.com/document_detail/88519.html)
 
-# Reference
+## Reference
 - [solution](https://tianchi.aliyun.com/forum/new_articleDetail.html?spm=5176.8366600.0.0.762d311fPJr24s&raceId=231669&postsId=6065)
 
 - [aliyun_document](https://help.aliyun.com/document_detail/42703.html?spm=a2c4g.11186623.6.563.rzwU4n#KV2Table)
@@ -98,5 +98,5 @@ to do :
 - [mybatis](http://www.mybatis.org/mybatis-3/)
 - [java_basic](http://www.runoob.com/java/java-basic-datatypes.html)
 
-# questions
+## questions
 1. what is oss

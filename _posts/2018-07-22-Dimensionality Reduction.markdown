@@ -9,9 +9,9 @@ categories: jekyll update
 
 
 
-# Dimensionality Reduction
+## Dimensionality Reduction
 
-## Principal Component Analysis (PCA)
+### Principal Component Analysis (PCA)
 [wiki_PCA](https://en.wikipedia.org/wiki/Principal_component_analysis)
 
 (unsupervised learning algorithm)
@@ -40,7 +40,7 @@ T = pca.transform(df)
 
 
 
-# overfitting
+## overfitting
 - add number of sample
 - cut off number of feature
 - regularization

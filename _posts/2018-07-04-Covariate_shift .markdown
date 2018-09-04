@@ -7,15 +7,15 @@ categories: jekyll update
 
 ![covariate shift](/pictures/covariate shift.png)
 
-# How (dis)similar are train and test data
+## How (dis)similar are train and test data
 [use auc to estimate whether different distribution between train and test data](https://towardsdatascience.com/how-dis-similar-are-my-train-and-test-data-56af3923de9b)
 
 If AUC score greater than 0.8 implies strong covariate shift between train and test.
 
-# solution
+## solution
 
 
-## Dropping of drifting features
+### Dropping of drifting features
 
 use random forest to rank the Importance of features
 
@@ -35,13 +35,13 @@ for f in range(x_train.shape[1]):
 
 
 
-## Importance weight using Density Ratio Estimation
+### Importance weight using Density Ratio Estimation
 
 
 
 
 
 
-## Outlier Detection
+### Outlier Detection
 
 - [Novelty and outlier Detection](http://scikit-learn.org/stable/modules/outlier_detection.html)

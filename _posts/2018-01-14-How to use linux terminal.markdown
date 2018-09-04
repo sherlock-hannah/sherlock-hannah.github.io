@@ -5,7 +5,7 @@ date:   2018-01-14 18:43:31 +0800
 categories: jekyll update
 ---
 
-# Basic command
+## Basic command
 - list files `ls`
 - `find / -name FILENAME` ingnore case `-iname FILENAME`
 - autocomplete filename `TAB`+`FILENAME`
@@ -34,7 +34,7 @@ u-owner g-group o-others
 - `less` can preview
 
 
-# Install package
+## Install package
 
 - `apt-get update` and `apt-get install APP`
 
@@ -59,7 +59,7 @@ sudo apt-get install -y google-chrome-stable
  - `sudo apt-get install imagemagick`
  - `convert -delay 20 -loop 0 *.png example.gif`
 
-# Editor
+## Editor
 
 - nano editor
   `CTRL`+`O` write out `CTRL`+`X`exit
@@ -70,17 +70,17 @@ sudo apt-get install -y google-chrome-stable
   - `ESC` + `:` + `Wq` save
 
 
-# Another reading
+## Another reading
 - [linux terminal cheat sheet](https://files.fosswire.com/2007/08/fwunixref.pdf)
 - [explainshell commands](explainshell.com)
 
 
-## Markdown
+### Markdown
   - [markdown cheatsheet1](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 
   - [markdown cheatsheet2](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf)
 
-# Problems
+## Problems
 - when open my laptop ,it access to old system
 
  - solution:

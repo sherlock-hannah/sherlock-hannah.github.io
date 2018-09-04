@@ -7,7 +7,7 @@ categories: jekyll update
 download excel 2016
 
 
-# Tips
+## Tips
 - `ctrl + shift + down`
 can select all on column datas  
 `ctrl + shift + *` can select all table
@@ -15,13 +15,13 @@ can select all on column datas
 - `ctrl + 1` into format cells
 - `$`before cell can fix a cell
 
-# Functions
+## Functions
 - 1.`TEXT(WEEKAND([DATE],"dddd"))`   modify "date" format,
 `DATA`+FENLIE
 - 2.`FORMULATEXT` display formula of specify cells
 - 3.`CONCATENATE(B3,C3)` merge text of cells
 
-# Use decriptive statistics
+## Use decriptive statistics
 1. skewness-1<x<1`skew()`,kurtosis`Kurt()`
 2. mean`average()`,range,median`median()`,variance`var()`,
 standand deviation`stdev()`,mode`mode()`,standand error(most frequently occuring values)
@@ -39,7 +39,7 @@ CAGR(compound annual growth rate)
 
 
 
-## Boxplot
+### Boxplot
 - box visually showing the range of the middle 50% of your data
 - The line in the box is the median. The X in the box is the mean
 
@@ -47,34 +47,34 @@ CAGR(compound annual growth rate)
 
 
 
-## Nominal data and ordinal data
+### Nominal data and ordinal data
 - inserting pivot table to count the number of each category
 - using `group` can divide data into some different scale
 
-## Hierarchical Data
+### Hierarchical Data
 - Create a PivotTable and then change from Design tab the layout to Outline format and  then Paste Special Values the relevant data outside the PivotTable.
 - Create sunburst and treemap charts to summarize this data.
 
-## pivot table
+### pivot table
 - drug the columnname into row and into value ,will count the number of different attributes in this columnname.
 
-## 80-20 rule and pareto charts
+### 80-20 rule and pareto charts
 the 20% will generate 80%
 
-## Finding the Mean of a Discrete Random Variable
+### Finding the Mean of a Discrete Random Variable
 - `=SUMPRODUCT(:,:)` return the result of different array times each other
 - Standard deviation `=SQRT(Variance)`
 
-### Binomial Random Variable
+#### Binomial Random Variable
 `BINOM.DIST.RANGE(n,p,s1,s2)`
 Probability of between s1 and s2,successes (inclusive)
-## Possion Random Variable
+### Possion Random Variable
 
 `POISSON.DIST(x,mean,0)`gives probability of exactly x events,
 
 `POISSON.DIST(x,mean,1) `gives probability of <=x events.x inclusive.
 
-## Normal Random Variable
+### Normal Random Variable
 
 mean µ,standard deviation sigma σ
 
@@ -87,22 +87,22 @@ standand normal `NORM.S.DIST(x)` `NORM.S.INV(x)`
 
 - Excel `STANDARDIZE` function can be used to compute Z scores
 
-## Confidence Interval for Population Mean
+### Confidence Interval for Population Mean
 Lower Limit:xbar-1.96*sigma/sqrt(n)
 Upper Limit:xbar+1.96*sigma/sqrt(n)
 `NORM.S.INV(0.975) `= 1.96
 
-## Blyth Confidence Interval
+### Blyth Confidence Interval
  1-alpha^(1/n)
  n = times
  alpha = 0.05
 
-## Sample Size
+### Sample Size
  n = (1.96σ/E)^2
 
 E :accurate numbers
 
-## Problem
+### Problem
 1. how to compute the rate of return for stock
 2. tell the difference of nominal and ordinal,numerical and categorical.
 If they do have a natural ordering, they are called ordinal categorical features. Otherwise if there is no intrinsic ordering, they are called nominal categorical features.(not numeral)
