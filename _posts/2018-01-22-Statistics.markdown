@@ -6,11 +6,11 @@ categories: jekyll update
 ---
 
 
-# Tips
+## Tips
 
 Correlation Doesn’t Equal Causation
 
-# Decriptive statistics
+## Decriptive statistics
 
 - 0.Measures of location:mean ,median,mode ,geometric mean ,percentile,quartiles
 - 1.Measures of variability:range,interquartile range,variance,standand deviation, standand error
@@ -33,7 +33,7 @@ mention spurious relationship
 
 - 7.regression standandlise regression coeffient
 
-## Simpson's paradox
+### Simpson's paradox
 - In some cases the conclusions based upon the aggregated
 crosstabulation can be completely reversed if we look at the unaggregated data, an occurrence known as Simpson’s paradox.
 
@@ -41,7 +41,7 @@ crosstabulation can be completely reversed if we look at the unaggregated data, 
 
 ![simpson](/pictures/simpson.jpg)
 
-## Z Scores
+### Z Scores
 z  = (x-x̄)/s
 
 - x̄ = the sample mean
@@ -50,7 +50,7 @@ z  = (x-x̄)/s
 measure of the relative location
 of the observation
 
-## Chebyshev’s theorem
+### Chebyshev’s theorem
 
 - At least (1-1/z^2 ) of the data values must be within z standard deviations of the mean,where z is any value greater than 1.
 
@@ -60,7 +60,7 @@ of the observation
 - it applies to any data set regardless of the shape of the distribution of the data
 
 
-## empirical rule
+### empirical rule
 
 When the data are believed to symmetric mound-shaped or bell-shaped distribution,the empirical rule can be used to determine the percentage of data values that must be within a specified number of standard deviations of the mean.
 
@@ -70,12 +70,12 @@ of the mean.
 of the mean.
 - Almost all of the data values will be within three standard deviations of the mean.
 
-## detecting outlier
+### detecting outlier
 
 
 - Any Z score >=+3 or <=-3 is an outlier
 
-## covariance
+### covariance
 - SAMPLE COVARIANCE:
 
 Sxy =∑(xi-x̄)(yi-ȳ)/n-1
@@ -84,7 +84,7 @@ Sxy =∑(xi-x̄)(yi-ȳ)/n-1
 - Sxy Approximately 0:(x and y are not linearly related)
 - Sxy Negative:(x and y are negatively linearly related)
 
-## correlation coefficient
+### correlation coefficient
 PEARSON PRODUCT MOMENT CORRELATION COEFFICIENT:
 
 rxy =Sxy/Sx*Sy
@@ -94,8 +94,8 @@ rxy =Sxy/Sx*Sy
 
 
 
-# Basic Probability
-## sample space
+## Basic Probability
+### sample space
 
 the set of all possible Outcomes.
 
@@ -111,14 +111,14 @@ n1*n2*...ni
 
 ![sort_sample](/pictures/sort_sample.png)
 
-## independent event :
+### independent event :
 Two events A and B are independent if and only if Prob(A and B) = Prob(A) * Prob(B)
 
-## mutually exclusive
+### mutually exclusive
 A and B are mutually exclusive,We know Prob(A and B) = 0. For independence, we then need Prob(A)* Prob(B) = 0.
 
 
-## Conditional Probability
+### Conditional Probability
 P(A|B)=P(A ∩ B) / P(B)
 
 
@@ -126,12 +126,12 @@ P(A ∩ B)
 
 ![eventA_eventB](/pictures/eventA_eventB.png)
 
-## Law of Total Probability
+### Law of Total Probability
 (find a chance of event by adding up all rhe mutually exclusive ways event can happen):
 
 P(A) = ∑ P(A|Bi) * P(Bi)
 
-## Blyth
+### Blyth
 
 ![blyth](/pictures/blyth.png)
 
@@ -142,9 +142,9 @@ P(A) = ∑ P(A|Bi) * P(Bi)
 
 
 
-# Random variable
-## Discrete Random Variable
-### Binomial Random Variable
+## Random variable
+### Discrete Random Variable
+#### Binomial Random Variable
 
 - Each trial has two outcomes:Success and Failure
 Outcomes of trials are independent
@@ -159,7 +159,7 @@ Probability of between s1 and s2,successes (inclusive)
 `P(x ≥ 4) = 1–BINOM.DIST(3, 10, 1/6, TRUE)`
 calculate p value
 
-### poisson Random Variable
+#### poisson Random Variable
 
 - expresses the probability of a given number of events occurring in a fixed interval of time or space if these events occur with a known constant rate and independently of the time since the last event
 
@@ -172,7 +172,7 @@ u is mean of
 
 - [Poisson distribution](https://en.wikipedia.org/wiki/Poisson_distribution)
 
-## Continuous Random Variable
+### Continuous Random Variable
 
 
 
@@ -183,14 +183,14 @@ u is mean of
 
 - Normal Random Variable
 
-## Central Limit Theorem
+### Central Limit Theorem
 Add together 30 or more independent random variables, Even if none of the individual random variables are normal,the sum of the random variables will be normal.
 
 
-## Samples and Sample Statistics
+### Samples and Sample Statistics
 Suppose a population has N individuals and we want to take a sample of size n. The sample is a simple random sample if each set of n individuals has the same chance of being chosen.
 
-### bias
+#### bias
 - Selection bias occurs when each item in population does not have same chance of being chosen in sample
 - Publication Bias occurs because drug studies with positive results are more likely to be published than negative results.
 - Survivorship Bias occurs when part of a population disappears.
@@ -202,10 +202,10 @@ sample mean
 
 Standard Normal (often called Z)is a normal random variable with mean =0 and standard deviation=1
 
-## Confidence interval
+### Confidence interval
 True Interpretation of 95% CI Take 100 samples compute 100 95% CI around 95 will contain the population mean.
 
-## Blyth Confidence Interval
+### Blyth Confidence Interval
 
 | Success    | Lower                |Upper
 | :--------- | :-------------       |
@@ -213,17 +213,17 @@ True Interpretation of 95% CI Take 100 samples compute 100 95% CI around 95 will
 | 1          |1-(1-0.5*alpha)^(1/n) |1-(0.5*alpha)^(1/n)
 | N          |(alpha)^(1/n)         |1
 
-## Sample Size
+### Sample Size
 n = (1.96σ/E)^2
 Sample Size for Population Proportion E=.03
 n= 1.96^2/4E^2
 
-## Finite Correction Factor
+### Finite Correction Factor
 SQRT((N-n)/(N-1))
 In general a more accurate sample size formula
 N*N0/(N+N0-1)
 
-## Hypothesis testing
+### Hypothesis testing
 1. state hypothesis
 H0 =null hypothesis H1= alternative hypothesis
 2. analysis plan
@@ -245,7 +245,7 @@ Ha: Annual Variance Stock Returns ≠ Annual Variance on Bond Returns.
 
 
 
-## Type 1 and type 2 errors
+### Type 1 and type 2 errors
 1. Reject H0 given H0 True.
 
  We let α= Probability of making a Type I Error. α is often called the level of significance of the test.
@@ -255,25 +255,25 @@ Ha: Annual Variance Stock Returns ≠ Annual Variance on Bond Returns.
 - Critical Region
 The critical region is the range of values for a sample statistic that results in rejection of H0
 
-## One Sample Z-Test
+### One Sample Z-Test
 One Sample Z-Test Test hypothesis about µ; Variance population  known Use when n>=30 because xbar will be normal by CLT.
 ![ztest](/pictures/ztest.png)
 P Value<=α if and only if we reject H0.
 P-Value>α if and only if we accept H0.
 
-## One Sample T-Test
-### T Random Variable
+### One Sample T-Test
+#### T Random Variable
 If population is normal with mean µ and standard deviation is unknown then (xbar-µ) /(s/sqrt(n)).
 
 s= sample standard deviation
 
 n = sample size
-### Critical Region
+#### Critical Region
 Critical Region:
 
 ![ttest](/pictures/ttest.jpg)
 
-### P-Values
+#### P-Values
 
 ![pvalue](/pictures/pvalue.png)
 
@@ -283,11 +283,11 @@ Critical Region:
 
 The P-value may also be interpreted as the probability of observing (given H0 is true) a value of the test statistic at least as extreme as the observed value of the test statistic.
 
-### T.INVERSE Function
+#### T.INVERSE Function
 excel:
-`t.dist(x,freedom,True)`'
+`t.dist(x,freedom,True)`
 `t.inv(α，freedom)`
-## Single Sample Test for Population Proportion
+### Single Sample Test for Population Proportion
 Right Tailed Test:
 
 `BINOM.DIST.RANGE(trials,Pzero,successes,trials)`
@@ -302,13 +302,13 @@ Two Tailed Test
 
 p-value is less than or equal to α，then reject H0
 
-## Testing Equality of Variances
+### Testing Equality of Variances
 
 USE F.TEST FUNCTION TO GET P-VALUE,
 PVALUE<=ALPHA Reject Null
 `F.TEST(F5:F18,G5:G22)`
 
-## Four Types of Tests
+### Four Types of Tests
 - Two Sample Z-Test
 
 Large sample size (n>=30)
@@ -338,7 +338,7 @@ if p value is big ,then accept H0.
 
 
 
-## Contingency Table and Hypothesis of Independence
+### Contingency Table and Hypothesis of Independence
 CHI SQUARE TEST FOR INDEPENDENCE
 
 H0:independent;H1:dependent
@@ -353,12 +353,12 @@ if p value >0.05,then accept h0.
 
 
 
-# AB Test
+## AB Test
 
-## Range of Application
+### Range of Application
 AB test cannot be used into some situation that needing long time and complex.
 
-## Example
+### Example
 initial hypothesis
 - choose a metric :such as click through Probability or click through rate
 - review  statistics
@@ -366,12 +366,12 @@ initial hypothesis
 - analyse
 
 
-## Problems:
+### Problems:
 - 1.right skewed
 - 2.liner regression
 
 
-## Additional reading
+### Additional reading
 - [Statistics Primer : A Brief Overview of Basic Statistical and Probability Principles](https://prod-edxapp.edx-cdn.org/assets/courseware/v1/d2dce71b2552f8d45d47102929821e87/asset-v1:Microsoft+DAT222x+1T2018+type@asset+block/Statistics_Overview_for_Essentials_Course-Updated.pdf)
 - [Crash Course Statistics](https://www.youtube.com/watch?v=zouPoc49xbk&list=PL8dPuuaLjXtNM_Y-bUAhblSAdWRnmBUcr)
 - [basic statistics](https://www.jianshu.com/p/76afb7193fa5)

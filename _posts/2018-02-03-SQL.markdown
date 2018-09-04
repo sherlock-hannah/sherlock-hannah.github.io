@@ -218,6 +218,9 @@ sort before limit
 
 `insert into table_name (column_name) value()`
 
+- can omit identity columns,columns that allow null,and columns with default constraints.
+
+
 
 
 

@@ -5,7 +5,7 @@ date:   2018-01-30 18:43:31 +0800
 categories: jekyll update
 ---
 
-# Tips
+## Tips
 
 - first `conda list` to ensure if pandas package has been installed
 ,if not `pip install pandas`
@@ -24,13 +24,13 @@ can display n columns
 - `df.describe()` basic statistic information
 - `df.columns`
 
-# Reduce RAM of dataframe
+## Reduce RAM of dataframe
 - [Reduce RAM of dataframe](https://www.jiqizhixin.com/articles/2018-03-07-3)
 
 `dow_cat = dow.astype('category')`
 
 
-# Loading data
+## Loading data
 
 Here are some methods for loading data:
 
@@ -56,12 +56,12 @@ pip install BeautifulSoup4
 
 
 
-## out datas
+### out datas
 `df.to_csv('D:\data\out2.csv',sep=",",index=False,header =False)`
 
 
-# Slicing
-## column access
+## Slicing
+### column access
 - `x[["column label","column_name2"]]`
 -  `loc` also allows you to select both rows and columns from a DataFrame.
 - `df.loc[number1:number2,['column_name','column_name1']]`used to slicing data ,.loc[] method selects by column label
@@ -74,16 +74,16 @@ df.iloc[[0, 3, 5], 0:2]
 ```
 -  `.iloc[]`is non-inclusive. `.loc[] `is inclusive of the range of values specified
 
-## raw access
+### raw access
 - `x.loc[row label]`
 -  `df.loc[df['column_name'] == some_value]`can select rows when column_value is equal to some value
 -  `df.loc[(df['column_name'] == some_value) & df['other_column'].isin(some_values)]`
 combine different condition together
 
-## elements access
+### elements access
 `x[row,column]`
 
-## describe data
+### describe data
 
 - To get a quick peek at your data by selecting its top or bottom few rows using `.head()`and `.tail()`
 - To see a descriptive statistical summary of your dataframe's numeric columns using `.describe()`
@@ -95,7 +95,7 @@ combine different condition together
 - `pandas.qcut(x, q, labels=None, retbins=False, precision=3)`q : integer or array of quantiles
 
 
-# Converte data type
+## Converte data type
 
 - using `astype` converte textual data to categorical
 `df['col2'] = df['col2'].astype(int)`change one column data_type
@@ -120,11 +120,11 @@ errors: If ‘coerce’, then invalid parsing will be set as NaT
 
 
 
-# Wrangling Your Data
+## Wrangling Your Data
 
 `axis=0` along the rows (namely, index in pandas), and `axis=1` along the columns
 
-## check if there duplicate or null
+### check if there duplicate or null
  ```
  test['Age'].isnull().value_counts()
  test.duplicated().value_counts()
@@ -134,13 +134,13 @@ errors: If ‘coerce’, then invalid parsing will be set as NaT
  `any(titanic.Age.isnull())`
  can detect if this column have null values
 
-## Dropping Data
+### Dropping Data
 
 ```
-df = df.dropna(axis=0)  # remove any row with nans
-df = df.dropna(axis=1)  # remove any column with nans
+df = df.dropna(axis=0)  ## remove any row with nans
+df = df.dropna(axis=1)  ## remove any column with nans
 
-# Drop any row with NaNs that has at least 4 non-NaNs within it:
+## Drop any row with NaNs that has at least 4 non-NaNs within it:
 df = df.dropna(axis=0, thresh=4)
 ```
  - drop columns
@@ -156,7 +156,7 @@ df = df.dropna(axis=0, thresh=4)
  - drop duplicates
 `reference = reference.drop_duplicates(['user_id', 'item_id'])`
 
-## filling data
+### filling data
 replace NA with a scalar value
 
 ```
@@ -167,11 +167,11 @@ df.fillna(0)
 how far you want the fill to go
 
 ```
-df.fillna(method='ffill')  # fill the values forward
-df.fillna(method='bfill')  # fill the values in reverse
+df.fillna(method='ffill')  ## fill the values forward
+df.fillna(method='bfill')  ## fill the values in reverse
 df.fillna(limit=5)
 ```
-## unique data in a column
+### unique data in a column
 
 - `your_data_frame['your_column'].unique()` or equally, `your_data_frame.your_column.unique()` to see the unique values of each column and identify the rogue values.
 
@@ -179,21 +179,21 @@ df.fillna(limit=5)
 `app_train.select_dtypes('object').apply(pd.Series.nunique, axis = 0)
 `
 
-## Qcut and cut
+### Qcut and cut
 `pd.qcut(factors, 5)`
 - `qcut`, the bins will be chosen so that you have the same number of records in each bin.
 - `cut` will choose the bins to be evenly spaced according to the values themselves and not the frequency of those values
 
 
 
-# Time series
-## data_type:
+## Time series
+### data_type:
 1. date
 2. time
 3. datetime
 4. timedelta(the subtraction of two datetime)
 
-## dateparse:
+### dateparse:
 convert value 'xxxx-xx-xx' into datetime.datetime(xxxx,x,x,x,x)
 
 - `train_user_df['time']=[datetime.strptime(x.split()[0],"%Y-%m-%d") for x in time_series]`
@@ -204,7 +204,7 @@ convert value 'xxxx-xx-xx' into datetime.datetime(xxxx,x,x,x,x)
 
 
 
-## set date index
+### set date index
 
 ```          
 df['date'] = pd.to_datetime(df['date'])
@@ -212,17 +212,17 @@ df = df.set_index('date')
 ```
 
 
-## slice data
+### slice data
 - `series['2011']`
 
 - `df.ix['5-2011']`
 
 
-## time plot
+### time plot
 
 - `time.ix['01-2011':'02-2011'].plot()`
 
-## time resample
+### time resample
 
 - `series.resample('M',how='sum',closed='left',label ='left')`
 
@@ -230,11 +230,11 @@ df = df.set_index('date')
 
 - closed: means left or right end is inclusive
 
-## moving window functions
+### moving window functions
 - `rolling_sum(data,n)`
 - `rolling_mean(data,n)`
 
-## calculate time interval
+### calculate time interval
 
 - first split datetime column into two column
 
@@ -252,7 +252,7 @@ data.merge(data, how='left', left_on=['id', 'rn'], right_on=['id', 'rn_1'])
 
 
 
-# Group by
+## Group by
 - `Survived_by_SibSp = data_t[['SibSp','Survived']].groupby('SibSp',as_index = False).mean().sort_values(by='Survived',ascending=False)`
 
 - eg:`USER_order['o_sku_num'].groupby(USER_order['user_id']).sum()`
@@ -264,26 +264,28 @@ data.merge(data, how='left', left_on=['id', 'rn'], right_on=['id', 'rn_1'])
 
 
 
-# Crosstab
+## Crosstab
 `pandas.crosstab(index, columns, rownames=None, colnames=None, aggfunc=None)`
 
 count the length of value in different groups
 
-# Pivot Table
-`df.pivot_table(['column1','column2'],index = ['column1','column2'],columns='column',aggfunc= len,margins=True)`
+## Pivot Table
+- `df.pivot_table(['column1','column2'],index = ['column1','column2'],columns='column',aggfunc= len,margins=True)`
 
-aggfunc:default is mean
-margins: total count of rows values
+- aggfunc:default is mean,len can get size of different group
+- margins: total count of rows values
+- columns: groupby column and divide by column
+- index: groupby unique value of column1,and divide by rows
 
-# Series
+## Series
 value on the right ,index on the left
 can be created through
 
 `series([value],index=['index'])`
 or `a = {'a':value,'b':'value'} series(a)`
 
-## Series method
-### map
+### Series method
+#### map
 - `Series.map(arg, na_action=None)`
 arg : function, dict, or Series
 eg:
@@ -297,15 +299,15 @@ titanic.loc[titanic["Sex"] == "female", "Sex"] = 1
 
 [pandas.Series.map](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.Series.map.html)
 
-# DataFrame
+## DataFrame
 `DataFrame(data,columns=[])`
 
 `data={'key':[1,2,3],'key2':[1,2,3]}
 dataframe(data)`
 
-## DataFrame method
+### DataFrame method
 
-### replace
+#### replace
 
 - `.replace(to_replace=None, value=None, inplace=False, limit=None, regex=False, method='pad', axis=None)`
 
@@ -316,12 +318,12 @@ eg:`dataset['Title'] = dataset['Title'].replace('Mlle', 'Miss')`
 
 Applies function along input axis of DataFrame.
 
-### correlation
+#### correlation
 - `DataFrame.corr(method='pearson', min_periods=1)`
 
 Compute pairwise correlation of columns, excluding NA/null values
 
-### unstack
+#### unstack
 - `df.unstack()`
 
  change the structure of dataframe
@@ -334,12 +336,12 @@ Compute pairwise correlation of columns, excluding NA/null values
  ```
 
 
-### isin
+#### isin
 
 - `DataFrame.isin(values)`
 [pandas.DataFrame.isin](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.isin.html)
 
-### rank
+#### rank
 
 - `DataFrame.rank(axis=0, method='average', numeric_only=None, na_option='keep', ascending=True, pct=False)`
 
@@ -351,11 +353,11 @@ Compute pairwise correlation of columns, excluding NA/null values
  - max: highest rank in group
 - [DataFrame.rank](http://pandas.pydata.org/pandas-docs/version/0.22/generated/pandas.DataFrame.rank.html)
 
-### random sample
+#### random sample
 `DataFrame.sample(n=None, frac=None, replace=False, weights=None, random_state=None, axis=None)`
 
 
-### nunique
+#### nunique
 
 -  `DataFrame.nunique(axis=0, dropna=True)`
 
@@ -363,31 +365,36 @@ Compute pairwise correlation of columns, excluding NA/null values
 
 - `df.count(axis=1) ` count not null value each row
 
-### append
+#### append
 - add row to dataframe, as same as union in sql
 ` df_s=df_s.append(df_si)`
 
-### get dummies
+#### get dummies
 - `pd.get_dummies(features_raw)`
 create new feature through converting categorical variable into dummy/indicator variables
 
 [pandas.get_dummies](https://pandas.pydata.org/pandas-docs/version/0.22/generated/pandas.get_dummies.html)
 
-### rename
+#### rename
 
 - `df.rename(index=str, columns={"A": "a", "B": "c"})`
 [rename](https://pandas.pydata.org/pandas-docs/version/0.22/generated/pandas.DataFrame.rename.html)
 
-### Index
+#### Index
 - `df1.reindex(['a','b','c','d','e'],  inplace=Ture)`
 
 - `.reset_index()`will use groupby key as new index
 
-### apply
+#### apply
+DataFrame
 - `df.apply(f,axis=1)` used in row
+- `df.apply(f)` used in column
+- `df.applymap(f)` used in each elements
+series
+- `frame['e'].map(format)` used in each elements
 
 
-## Merge(like join in sql)
+### Merge(like join in sql)
 Combine dataset
 - pandas.merge use key combine rows from different dataset
  `pd.merge(left, right, on='key')`
@@ -402,7 +409,7 @@ merge(USER_comment,on = ['user_id','o_id'],how = 'left').\
 merge(USERINFO,on='user_id',how='left')
 ```
 
-## Concat
+### Concat
 
 `submit1 = pd.concat([test,submit],axis=1)`
 
@@ -410,7 +417,7 @@ merge(USERINFO,on='user_id',how='left')
 
 
 
-# Problems
+## Problems
 1. how to add columns
 2. [Get HTML table into pandas Dataframe, not list of dataframe objects
 ](https://stackoverflow.com/questions/38486477/get-html-table-into-pandas-dataframe-not-list-of-dataframe-objects)
@@ -426,6 +433,6 @@ solution:`USERcate['o_date'] = pd.to_datetime(USERcate['o_date']) `
 
 solution : pandas.Series doesn't have a built-in `reshape` method, but you can use `.values` to access the underlying numpy array object and call reshape on it:` .values.reshape`
 
-# Additional reading
+## Additional reading
 - [Additional reading](http://pandas.pydata.org/)
 - [Further Reading](https://courses.edx.org/courses/course-v1:Microsoft+DAT210x+1T2018/courseware/b7aa9093-0ee1-9e62-4188-6f9d25a2ce85/7fc08411-6ab9-100a-b198-91b8ac2dc84a/?child=first)
