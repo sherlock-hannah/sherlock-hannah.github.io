@@ -94,9 +94,10 @@ ADD PRIMARY KEY (ID);`
 `
 ### DELETE TABLE
 
-- `DROP TABLE <tableNAME>;`
+- delete table `DROP TABLE <tableNAME>;`
 
-- `DELETE FROM table_name WHERE condition;`
+- delete rows of table `DELETE FROM table_name WHERE condition;`
+can be filtered with WHERE clause
 
 
 eg:
@@ -111,8 +112,17 @@ BETWEEN '2017-06-01 00:00:00' AND '2017-06-20 00:00:00'
 
 
 ### UPDATE TABLE
+
 - statement is used to modify the existing records in a table
  `update table_name set column_name="value" where condition`
+
+ eg:
+
+```
+UPDATE Products
+SET price = (3*price)
+WHERE id =1;
+```
 
 - `ALTER  <Tablename> ADD (<column name1>,<name2>,.....);`
 
@@ -150,6 +160,21 @@ Embarked        varchar);
 ```
 
 - rename `RENAME TABLE newname to oldname;`
+- specified column allow null or not ,add`NULL` OR `NOT NULL` after data_type
+- specified default value using `default VALUE ` after datatype
+
+eg :reference System_time as default time
+  - mysql:` default current_date()`
+  - sql server:`getdate()`
+  - sqlite:`date('now')`
+
+sql_server:
+- [identity](https://docs.microsoft.com/en-us/sql/t-sql/statements/create-table-transact-sql-identity-property?view=sql-server-2017)
+- [sequence](https://docs.microsoft.com/en-us/sql/relational-databases/sequence-numbers/sequence-numbers?view=sql-server-2017)
+
+
+
+
 
 ## DML(data Manipulation language)
 
@@ -397,6 +422,16 @@ the same numeric value for ties (for example 1, 2, 2, 4, 5)
 - `danse rank()`
 
  Returns the rank of rows within the partition of a result set, without any gaps in the ranking.
+
+ rank by not using dense rank
+
+ ```
+ select Score,
+ (select count(distinct Score) from Scores where Score >= s.Score) as Rank
+ from Scores s
+ order by Score desc
+
+ ```
 
 - `row_number()`
 numbers all rows sequentially (for example 1, 2, 3, 4, 5).

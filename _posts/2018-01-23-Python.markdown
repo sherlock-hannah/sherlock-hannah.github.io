@@ -199,8 +199,10 @@ for Pclass in Levels:
 `continue`into next iterator early
 
 ## while
+eg:
 ```
-while  :
+while  condition:
+
 ```
 
 

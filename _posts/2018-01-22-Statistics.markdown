@@ -14,6 +14,7 @@ Correlation Doesn’t Equal Causation
 
 - 0.Measures of location:mean ,median,mode ,geometric mean ,percentile,quartiles
 - 1.Measures of variability:range,interquartile range,variance,standand deviation, standand error
+
  - SAMPLE VARIANCE:s^2 = ∑(xi -x̄)^2/(n-1)
  - POPULATION VARIANCE:σ^2 = ∑(xi -u)^2/N
  - coefficient of variation:(Standard deviation/Mean) * 100 %
@@ -111,8 +112,15 @@ n1*n2*...ni
 
 ![sort_sample](/pictures/sort_sample.png)
 
-### independent event :
+### complement of event
+P(A) = 1 - P(A c )
+
+### independent event
 Two events A and B are independent if and only if Prob(A and B) = Prob(A) * Prob(B)
+- P(A |B) =P(A)
+- P(B |A) =P(B)
+
+
 
 ### mutually exclusive
 A and B are mutually exclusive,We know Prob(A and B) = 0. For independence, we then need Prob(A)* Prob(B) = 0.
@@ -121,7 +129,7 @@ A and B are mutually exclusive,We know Prob(A and B) = 0. For independence, we t
 ### Conditional Probability
 P(A|B)=P(A ∩ B) / P(B)
 
-
+hy  
 P(A ∩ B)
 
 ![eventA_eventB](/pictures/eventA_eventB.png)
