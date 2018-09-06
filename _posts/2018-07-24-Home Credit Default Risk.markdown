@@ -12,6 +12,8 @@ categories: jekyll update
 
 ## Data analysis
 ### Distribution of the Target Column
+
+
 ### Examine Missing Values¶
 
 

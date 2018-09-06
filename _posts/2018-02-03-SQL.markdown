@@ -7,8 +7,8 @@ categories: jekyll update
 ## Execute sequence
 
 (1)from
-(3) join
 (2) on
+(3) join
 (4) where
 (5)group by(use alias)
 (6) avg,sum....
@@ -16,6 +16,8 @@ categories: jekyll update
 (8) select
 (9) distinct
 (10) order by
+
+
 
 ## Tips
 
@@ -70,15 +72,7 @@ OPTIONALLY ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 ```
 
-## PRIMARY KEY
 
-Primary keys must contain UNIQUE values, and cannot contain NULL values.
-
-A table can have only one primary key, which may consist of single or multiple fields
-
--  if a column set primary key,there are not duplicated value `Alter table tableNAME drop primary key`
-- To create a PRIMARY KEY constraint on the "ID" column `ALTER TABLE Persons
-ADD PRIMARY KEY (ID);`
 
 ## index
 
@@ -160,7 +154,50 @@ Embarked        varchar);
 ```
 
 - rename `RENAME TABLE newname to oldname;`
+
+## AUTO_INCREMENT
+
+mysql:
+```
+CREATE TABLE Persons
+(
+P_Id int NOT NULL AUTO_INCREMENT,
+LastName varchar(255) NOT NULL,
+FirstName varchar(255),
+Address varchar(255),
+City varchar(255),
+PRIMARY KEY (P_Id)
+)
+```
+`AUTO_INCREMENT=100` start from 100
+
+sql_server:
+- [identity](https://docs.microsoft.com/en-us/sql/t-sql/statements/create-table-transact-sql-identity-property?view=sql-server-2017)
+- [sequence](https://docs.microsoft.com/en-us/sql/relational-databases/sequence-numbers/sequence-numbers?view=sql-server-2017)
+
+## Constraints
+### NOT Null
 - specified column allow null or not ,add`NULL` OR `NOT NULL` after data_type
+
+### UNIQUE
+- Primary keys must contain UNIQUE values
+
+### PRIMARY KEY
+
+Primary keys must contain UNIQUE values, and cannot contain NULL values.
+
+A table can have only one primary key, which may consist of single or multiple fields
+
+-  if a column set primary key,there are not duplicated value `Alter table tableNAME drop primary key`
+- To create a PRIMARY KEY constraint on the "ID" column `ALTER TABLE Persons
+ADD PRIMARY KEY (ID);`
+
+
+### FOREIGN KEY
+data in one table match data in another table
+
+
+### default
 - specified default value using `default VALUE ` after datatype
 
 eg :reference System_time as default time
@@ -168,9 +205,6 @@ eg :reference System_time as default time
   - sql server:`getdate()`
   - sqlite:`date('now')`
 
-sql_server:
-- [identity](https://docs.microsoft.com/en-us/sql/t-sql/statements/create-table-transact-sql-identity-property?view=sql-server-2017)
-- [sequence](https://docs.microsoft.com/en-us/sql/relational-databases/sequence-numbers/sequence-numbers?view=sql-server-2017)
 
 
 

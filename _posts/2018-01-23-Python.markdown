@@ -11,6 +11,8 @@ conda create -n py35 python=3.5 anaconda`
 [condacheatsheet](https://conda.io/docs/_downloads/conda-cheatsheet.pdf)
 
 ## Python Basic
+- environment
+
 `conda info --envs` can list different python version
 
 `conda list` ensure what package has been installed
@@ -24,12 +26,9 @@ conda create -n py35 python=3.5 anaconda`
 ` cd /mnt/c/Users/Administrator/Desktop/notebook` open
 some saving notebook
 
-- `python -m SimpleHTTPServer `
-
-upload to the url
-
+- upload to the url
+`python -m SimpleHTTPServer `
 http://192.168.31.92:8000
-
 just use in python2
 
 - `reset`
@@ -43,20 +42,30 @@ upgrade package
 
 
 ## Data type
-- 1.variable,type
-`**` means square
-- 2.list
-`x = [,]`
-don't forget`,`between two variables
-Subsetting list
-x[index],index=0,1,2....
-- 3.turple
-`tur = ()`
-- 4.dictionary
+![datatype](/pictures/datatype.png)
+
+[introduction](https://www.w3cschool.cn/python/python-variable-types.html)
+
+### Numbers
+### String
+### List
+
+
+
+
+### turple
+- eg:
+`tur = ('physics', 'chemistry', 1997, 2000)`
+- can not modify ,just read
+- `print tuple[0]`
+
+## dictionary
+
 `phonebook={'key':'value',}`
 
 
 ## Manipulating list
+`x = [,]`don't forget`,`between two variables,Subsetting list x[index],index=0,1,2....
 - 1.change List elements
 `x[n]=new elements`
  prevent changes in new List to also take effect in old list,  `list()` or by using `[:]`.also means do not copy the reference of the list x to y
@@ -181,7 +190,26 @@ expression
 
 ## Sort
 `titanic.sort_values(by = 'Pclass', inplace=True)`
+
 rank value
+
+## Condition clause  
+```
+num = 5     
+if num == 3:            
+    print 'boss'        
+elif num == 2:
+    print 'user'
+elif num == 1:
+    print 'worker'
+elif num < 0:           
+    print 'error'
+else:
+    print 'roadman'  
+
+```
+notice else not with condition clause,it will true when other false
+
 
 ## For
 [for-loop](http://www.runoob.com/python/python-for-loop.html)`for value in collection
@@ -197,6 +225,8 @@ for Pclass in Levels:
 [More Control Flow Tools](https://docs.python.org/3.5/tutorial/controlflow.html)
 `break`exit loop
 `continue`into next iterator early
+
+
 
 ## while
 eg:

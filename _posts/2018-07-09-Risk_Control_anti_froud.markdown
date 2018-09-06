@@ -8,14 +8,37 @@ categories: jekyll update
 
 Isolation Forest
 
+## Description
+detect fraud from transaction data
+
+
+## Metric
+TPR = TP / (TP + FN)
+FPR = FP / (FP + TN)
+
+TPR1：when FPR=0.001
+TPR2：when FPR=0.005
+TPR3：when FPR=0.01
+
+Score = 0.4 * TPR1 + 0.3 * TPR2 + 0.3 * TPR3
+
+## Data analysis
+
+### check missing data information
+![userdistribution](/pictures/ateccolumnmissing.png)
+
+
+
+#### detect outlier
+
+
+
+
 ## Reference
 - [Fraud Detection machine learning Models](https://www.zhihu.com/question/30508773/answer/205831957)
-[PPD_RiskControlcompetition](https://github.com/wepe/PPD_RiskControlCompetition)
-
+- [PPD_RiskControlcompetition](https://github.com/wepe/PPD_RiskControlCompetition)
 - [Build A Complete Project In Machine Learning | Credit Card Fraud Detection Eduonix](https://www.youtube.com/watch?v=gCWBFyFTxVU)
-
 - [Novelty and outlier Detection](http://scikit-learn.org/stable/modules/outlier_detection.html)
-
 - [ppd_nemo_submit](https://www.kesci.com/apps/home/competition/forum/574a932f874e65042e150ce8)
 
 
@@ -23,5 +46,4 @@ Isolation Forest
 - [solution_1_0.4368](https://openclub.alipay.com/read.php?tid=8927&fid=96)
 - [0.4221](https://openclub.alipay.com/read.php?tid=8890&fid=96)
 - [solution_rank_1](https://openclub.alipay.com/read.php?tid=8869&fid=96)
-
 - [new_feature_generation](https://openclub.alipay.com/read.php?tid=8956&fid=96)

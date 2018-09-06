@@ -29,6 +29,46 @@ can display n columns
 
 `dow_cat = dow.astype('category')`
 
+eg :
+
+```
+def reduce(df):
+    col = df.columns.tolist()
+    for i in range(0,len(col)):
+        if df[col[i]].dtype == ('object'):
+            df[col[i]] = df[col[i]].astype('category')
+        elif df[col[i]].dtype == ('int64'):
+            df[col[i]] = df[col[i]].astype('uint8')
+        elif df[col[i]].dtype == ('float64'):
+            df[col[i]] = df[col[i]].astype('float32')
+    print(df.info(memory_usage='deep'))
+    return df
+```
+use self_defined function to reduce ROM or define dtype when import
+```
+def creatDtype():
+    dtype = {'id':'object',
+             'label':'int8',
+             'date':'int64',
+             'f1':'uint8',
+             'f2': 'uint8',
+             'f3': 'uint8',
+             'f4': 'uint8',
+             'f5': 'float32',
+             'ndays':'uint8'
+             }
+
+    for i in range(20,298):
+        dtype['f'+str(i)] = 'float32'
+
+    for i in range(6,20):
+        dtype['f'+str(i)] = 'uint8'
+    return dtype
+
+train_data = pd.read_csv('atec_anti_fraud_train.csv',dtype=creatDtype())
+train_data.info(memory_usage='deep')
+```
+
 
 ## Loading data
 

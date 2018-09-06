@@ -23,7 +23,11 @@ add subplot
 
 ```
 seaborn.heatmap
-(data, vmin=None, vmax=None, cmap=None, center=None, robust=False, annot=None, fmt='.2g', annot_kws=None, linewidths=0, linecolor='white', cbar=True, cbar_kws=None, cbar_ax=None, square=False, xticklabels='auto', yticklabels='auto', mask=None, ax=None, **kwargs)
+(data, vmin=None, vmax=None, cmap=None, center=None, robust=False,
+annot=None, fmt='.2g', annot_kws=None, linewidths=0,
+linecolor='white', cbar=True, cbar_kws=None, cbar_ax=None,
+square=False, xticklabels='auto', yticklabels='auto',
+mask=None, ax=None, **kwargs)
 
 ```
 
@@ -41,14 +45,18 @@ seaborn.heatmap
 plt.figure(figsize=(14,12))
 plt.title('Pearson Correlation of Features', y=1.05, size=15)
 colormap = plt.cm.RdBu
-sns.heatmap(train.astype(float).corr(),cmap=colormap,vmax=1.0,linewidths= 0.1,annot=True)
+sns.heatmap(train.astype(float).corr(),cmap=colormap,vmax=1.0,
+linewidths= 0.1,annot=True)
 ```
 
 ## Pairplot
 the diagonal subplots show the distribution of variable,
 the others show the relationship of two variable
 ```
-seaborn.pairplot(data, hue=None, hue_order=None, palette=None, vars=None, x_vars=None, y_vars=None, kind='scatter', diag_kind='hist', markers=None, size=2.5, aspect=1, dropna=True, plot_kws=None, diag_kws=None, grid_kws=None)
+seaborn.pairplot(data, hue=None, hue_order=None, palette=None,
+vars=None, x_vars=None, y_vars=None, kind='scatter',
+diag_kind='hist', markers=None, size=2.5, aspect=1,
+dropna=True, plot_kws=None, diag_kws=None, grid_kws=None)
 ```
 - hue : Variable in data to map plot aspects to different colors
 - palette : Set of colors for mapping the hue variable. If a dict, keys should be values in the hue variable.
