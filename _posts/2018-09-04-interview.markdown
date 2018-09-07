@@ -25,6 +25,7 @@ categories: jekyll update
 ### Home credit
 1. basic finance knowledge to feature engineering
 2. time series
+3. Category data analysis
 
 ### Cloud competition
 1. how to extract geography feature

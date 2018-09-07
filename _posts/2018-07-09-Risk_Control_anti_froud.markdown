@@ -25,11 +25,21 @@ Score = 0.4 * TPR1 + 0.3 * TPR2 + 0.3 * TPR3
 ## Data analysis
 
 ### check missing data information
+
+column missing data :
+
 ![userdistribution](/pictures/ateccolumnmissing.png)
+
+![userdistribution](/pictures/atectestcolumnmiss.png)
+
+row missing data:
+
+![userdistribution](/pictures/atecrowmiss.png)
 
 
 
 #### detect outlier
+#### stability analysis of feature
 
 
 
@@ -37,7 +47,7 @@ Score = 0.4 * TPR1 + 0.3 * TPR2 + 0.3 * TPR3
 ## Reference
 - [Fraud Detection machine learning Models](https://www.zhihu.com/question/30508773/answer/205831957)
 - [PPD_RiskControlcompetition](https://github.com/wepe/PPD_RiskControlCompetition)
-- [Build A Complete Project In Machine Learning | Credit Card Fraud Detection Eduonix](https://www.youtube.com/watch?v=gCWBFyFTxVU)
+- [Build A Complete Project In Machine Learning Credit Card Fraud Detection Eduonix](https://www.youtube.com/watch?v=gCWBFyFTxVU)
 - [Novelty and outlier Detection](http://scikit-learn.org/stable/modules/outlier_detection.html)
 - [ppd_nemo_submit](https://www.kesci.com/apps/home/competition/forum/574a932f874e65042e150ce8)
 
