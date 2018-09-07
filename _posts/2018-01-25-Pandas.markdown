@@ -242,6 +242,12 @@ convert value 'xxxx-xx-xx' into datetime.datetime(xxxx,x,x,x,x)
 
 - eg:`Data['days'].map(lambda x: time.strptime(x, "%Y-%m-%d"))`
 
+- parse
+
+```
+from dateutil.parser import parse
+parse('2011-11-22')
+```
 
 
 ### set date index

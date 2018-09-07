@@ -40,6 +40,11 @@ row missing data:
 
 #### detect outlier
 #### stability analysis of feature
+![sta_time_atec](/pictures/sta_time_atec2.png)
+![sta_time_atec](/pictures/sta_time_atec1.png)
+
+
+
 
 
 

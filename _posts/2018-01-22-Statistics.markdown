@@ -159,6 +159,9 @@ Outcomes of trials are independent
 
 ![Binomial](/pictures/Binomial.png)
 
+- E(x) = np
+- Var(x) = np(1-p)
+
 - example in excel:
 
 `BINOM.DIST.RANGE(n,p,s1,s2)`
