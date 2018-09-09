@@ -6,7 +6,10 @@ categories: jekyll update
 ---
 ## Metric: ROC AUC
 - `sklearn.metrics.roc_auc_score(y_true, y_score, average=’macro’, sample_weight=None)`
-- [sklearn.metrics.roc_auc_score](http://scikit-learn.org/stable/modules/generated/sklearn.metrics.roc_auc_score.html#sklearn.metrics.roc_auc_score)
+ [sklearn.metrics.roc_auc_score](http://scikit-learn.org/stable/modules/generated/sklearn.metrics.roc_auc_score.html#sklearn.metrics.roc_auc_score)
+
+## Raw Data
+1.application table 
 
 
 

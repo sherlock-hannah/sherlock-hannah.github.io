@@ -21,6 +21,8 @@ categories: jekyll update
 1. unbalanced train set
 2. covariate shift
 3. memory error
+4. feature selection
+ - feature risk distribution
 
 ### Home credit
 1. basic finance knowledge to feature engineering
