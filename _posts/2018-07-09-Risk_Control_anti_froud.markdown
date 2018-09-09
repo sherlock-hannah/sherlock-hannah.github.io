@@ -21,6 +21,8 @@ TPR3：when FPR=0.01
 
 Score = 0.4 * TPR1 + 0.3 * TPR2 + 0.3 * TPR3
 
+![userdistribution](/pictures/roc_auc.png)
+
 - detect fraud and reduce false positive
 
 ```
@@ -58,8 +60,10 @@ when label =0
 
 column missing data :
 
+train_set
 ![userdistribution](/pictures/ateccolumnmissing.png)
 
+test_set
 ![userdistribution](/pictures/atectestcolumnmiss.png)
 
 row missing data:
@@ -68,7 +72,16 @@ row missing data:
 
 
 
-#### detect outlier
+#### feature distribution
+![sta_time_atec](/pictures/f20.png)
+![sta_time_atec](/pictures/f26.png)
+![sta_time_atec](/pictures/f27.png)
+![sta_time_atec](/pictures/f31.png)
+![sta_time_atec](/pictures/f32.png)
+![sta_time_atec](/pictures/f34.png)
+
+
+
 #### stability analysis of feature
 the sum of missing data
 ![sta_time_atec](/pictures/sta_time_atec2.png)
@@ -97,10 +110,17 @@ using LR to separate into two part (label :positive and negative )
 ### feature group
 - high liner correlation
 
+![sta_time_atec](/pictures/fcorr.png)
+- count group feature
+`train['acc1'] = train.groupby(['f'+str(k) for k in range(6,20)]).cumcount()
+`
+
 
 
 ## Models
 ### supervised
+
+- LightGBM
 
 ### unsupervised
 
