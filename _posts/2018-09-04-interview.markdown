@@ -14,6 +14,7 @@ categories: jekyll update
 1. risk control
 2. home credit
 3. cloud competition
+4. jingdong
 
 
 ## Problems and How to Resolve Them
@@ -32,6 +33,8 @@ categories: jekyll update
 ### Cloud competition
 1. how to extract geography feature
 2. why transfer regression question to multi-classification
+3. model selection and why Blyes ,gbdt ,random Forest
+4. web app ? java Basic
 
 ### BTB and JingDong
 
@@ -43,3 +46,7 @@ categories: jekyll update
 ## Sql leetcode
 1. stored procedure
 2. difference between hive sql and sql
+3. database theory
+
+## Statistics
+1. p Values

@@ -5,10 +5,6 @@ date:   2018-07-22 18:43:31 +0800
 categories: jekyll update
 ---
 
-
-
-
-
 ## Dimensionality Reduction
 
 ### Principal Component Analysis (PCA)
@@ -34,8 +30,8 @@ T = pca.transform(df)
 - principal component feature space with the `.transform()` method.
 - `whiten`When True (False by default) the components_ vectors are multiplied by the square root of n_samples
 
-[parameter](sklearn.decomposition.PCA)
-
+- [parameter](sklearn.decomposition.PCA)
+- [theory](https://stats.stackexchange.com/questions/217995/what-is-an-intuitive-explanation-for-how-pca-turns-from-a-geometric-problem-wit)
 
 
 
