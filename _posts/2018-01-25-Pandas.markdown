@@ -290,6 +290,8 @@ rnColumn = data.groupby('id').rank(method='min')
 data['rn'] = rnColumn
 data['rn_1'] = rnColumn-1
 data.merge(data, how='left', left_on=['id', 'rn'], right_on=['id', 'rn_1'])
+ut30new['diff'] = (ut30new['o_date_y']- ut30new['o_date_x']).dt.days
+
 ```
 
 - n : specified numbers of no-NA value
