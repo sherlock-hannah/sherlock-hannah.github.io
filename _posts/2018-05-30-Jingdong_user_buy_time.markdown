@@ -65,6 +65,11 @@ Figure2.Relationship between time and buy,click,focus
 Figure3.Time interval of repeat buy
 
 ![timeinterval](/pictures/timeinterval.png)
+cate = 30
+![timeinterval](/pictures/diff_30_jd.png)
+cate = 101
+![timeinterval](/pictures/diff_101_jd.png)
+
 
 
 
