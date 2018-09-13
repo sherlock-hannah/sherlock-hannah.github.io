@@ -26,6 +26,12 @@ time metric
 
 
 ## Data
+raw data:
+1. item_info(item_id,price,category,parameter1,2,3)
+2. user_info(user_id,age,gender,level)
+3. user_action(user_id,item_id,action_date,action_types,action_times)
+4. user_order(user_id,item_id,order_id,order_date,order_region,order_number)
+5. user_comment(user_id,order_id,comment_date,comment_level)
 
 Table1.Basic info of prediction data
 
@@ -46,6 +52,13 @@ Table3.Statistics of users-buy data
 |userscount   |mean   |std   |min |25 %|50%|75%|max  |
 | :-----      | :---- |:---- |:---|:---|:--|:--|:--  |
 |98924        |12     | 28   |1   |2   |6  |15 |3919 |
+
+
+## pre_process
+1. transfer datatype ,eg:object to datetime
+2. examine duplicate `user_order.duplicated().value_counts()`
+if exists ,then `user_order = user_order.drop_duplicates()`
+
 
 
 ## Visualization
@@ -69,6 +82,7 @@ cate = 30
 ![timeinterval](/pictures/diff_30_jd.png)
 cate = 101
 ![timeinterval](/pictures/diff_101_jd.png)
+
 
 
 
@@ -100,7 +114,12 @@ Figure9.Total number of users purchased per month
 
 ![monthuser](/pictures/monthuser.JPG)
 
+Figure10.Comment hour in one day
 
+![monthuser](/pictures/comment_hour_jd.png)
+
+Figure11.The first order day in different month
+![monthuser](/pictures/different_month_first_order_day.png)
 
 
 8. label cate = 30,101  user buy  or not,and pearson feature correlation

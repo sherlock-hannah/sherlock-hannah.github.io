@@ -36,6 +36,20 @@ for i in range(1,101):
 
 ```
 
+```
+f, ax = plt.subplots(1, 4, figsize=(14,6))
+ax[0].set_title('May')
+ax[1].set_title('June')
+ax[2].set_title('July')
+ax[3].set_title('August')
+
+user_order_cate_first.loc[user_order_cate_first['o_month']==5,'o_day'].plot(kind='hist',ax = ax[0])
+user_order_cate_first.loc[user_order_cate_first['o_month']==6,'o_day'].plot(kind='hist',ax = ax[1])
+user_order_cate_first.loc[user_order_cate_first['o_month']==7,'o_day'].plot(kind='hist',ax = ax[2])
+user_order_cate_first.loc[user_order_cate_first['o_month']==8,'o_day'].plot(kind='hist',ax = ax[3])
+```
+
+
 
 
 ### 2D scatter
